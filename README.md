@@ -293,4 +293,7 @@ Every repository here is public. Each publishes an `aither-manifest.json` beside
 | [awresearch](https://github.com/Aitherium/awresearch) | Ask a research question, get a cited report you can check | [docs](https://aitherium.github.io/awresearch/) |
 | **awkno** _(you are here)_ | The man page for the Aither World — every brick, stack and law, offline | [docs](https://aitherium.github.io/awkno/) |
 
+<div id="aither-constellation" data-self="awkno"></div>
+<script src="aither-constellation.js"></script>
+
 <!-- aither-ecosystem:end -->
