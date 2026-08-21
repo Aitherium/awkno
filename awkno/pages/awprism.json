@@ -8,7 +8,7 @@
     "awgraph",
     "awdit"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "Turn a failure into ranked hypotheses \u00e2\u20ac\u201d and say what would confirm each one.",
   "topic": "awprism"
 }

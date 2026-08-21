@@ -7,7 +7,7 @@
     "awm",
     "awfind"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "Answer a question over a context far larger than the window \u00e2\u20ac\u201d recursively, with the trace kept.",
   "topic": "awrecurse"
 }

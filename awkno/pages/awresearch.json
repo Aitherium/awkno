@@ -8,7 +8,7 @@
     "awreason",
     "awgraph"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "Ask a research question, get a cited report you can check.",
   "topic": "awresearch"
 }

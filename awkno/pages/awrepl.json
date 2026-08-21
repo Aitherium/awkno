@@ -7,7 +7,7 @@
     "awdk",
     "awnix"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "A REPL an agent can actually use \u00e2\u20ac\u201d state that survives between turns.",
   "topic": "awrepl"
 }
