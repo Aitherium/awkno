@@ -1,0 +1,13 @@
+{
+  "adopt": "Ask one question and get ranked answers back instead of a page of results.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAn agent with no search guesses from training data; an agent handed a raw web API gets ten blue links and burns its context reading them.\n\nInstall\npip install awfind",
+  "see_also": [
+    "awdk",
+    "awbrowse",
+    "awsh"
+  ],
+  "status": "public",
+  "synopsis": "A portable search client \u00e2\u20ac\u201d query, results, ranking.",
+  "topic": "awfind"
+}

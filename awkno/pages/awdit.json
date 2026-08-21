@@ -1,0 +1,12 @@
+{
+  "adopt": "Write one sensitive action to it and then try to remove the record.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAn audit log you can silently delete from is decoration. Most are. The property that matters is not \"it records\" but \"a missing record is visible\".\n\nInstall\npip install awdit",
+  "see_also": [
+    "awbac",
+    "awseal"
+  ],
+  "status": "unpublished",
+  "synopsis": "An append-only audit trail whose gaps are DETECTABLE.",
+  "topic": "awdit"
+}

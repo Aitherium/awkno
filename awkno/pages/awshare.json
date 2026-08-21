@@ -1,0 +1,12 @@
+{
+  "adopt": "Publish one file and fetch it on another machine with verification on.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nPublishing is easy; proving the bytes that arrived are the bytes you sent is the part everyone skips.\n\nInstall\npip install awshare",
+  "see_also": [
+    "awseal",
+    "awrecover"
+  ],
+  "status": "public",
+  "synopsis": "Publish an artifact and fetch it back verified.",
+  "topic": "awshare"
+}

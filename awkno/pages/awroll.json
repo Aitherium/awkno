@@ -1,0 +1,13 @@
+{
+  "adopt": "Point it at a set of units and one change, and watch it stop at the first that does not converge.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nRolling one change across many services is the part everybody hand-writes and everybody gets wrong the same three ways. Editing config makes the FILE current and never the PROCESS, so a green restart can still serve the old value. A unit that is DOWN reads its file at the next boot, so a change you think you finished reverts one restart at a time, weeks later. And a roll that reached NOTHING is indistinguishable from one that finished, because both exit 0. Measured 2026-08-20 on a 117-unit fleet: the existing roller reported \"0 to roll, 54 unmanaged\" and returned SUCCESS \u00e2\u20ac\u201d it could not touch a single service, and said so only in a warning nobody reads.\n\nInstall\npip install awroll",
+  "see_also": [
+    "awgit",
+    "awrecover",
+    "awrelay"
+  ],
+  "status": "planned",
+  "synopsis": "Roll a change across a fleet one unit at a time \u00e2\u20ac\u201d verified inside each, or stopped.",
+  "topic": "awroll"
+}

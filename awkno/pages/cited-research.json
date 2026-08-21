@@ -1,0 +1,14 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "A research question answered against real sources, where the report names what it read (awresearch), the sources are found and actually opened rather than hallucinated (awfind, awbrowse), and what was learned survives the session (awm). The one failure this set exists for is the plausible document: fluent, well-formed, citing pages nobody fetched.\n\nIncludes: awresearch, awfind, awbrowse, awm",
+  "see_also": [
+    "awresearch",
+    "awfind",
+    "awbrowse",
+    "awm"
+  ],
+  "status": "partial",
+  "synopsis": "Research you can check",
+  "topic": "cited-research"
+}

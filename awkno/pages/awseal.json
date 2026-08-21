@@ -1,0 +1,12 @@
+{
+  "adopt": "Sign one release file and hand someone the verify command.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\n\"Download this and run it\" is a request for trust with nothing behind it.\n\nInstall\npip install awseal",
+  "see_also": [
+    "awshare",
+    "awdit"
+  ],
+  "status": "public",
+  "synopsis": "Sign an artifact so a stranger can verify it.",
+  "topic": "awseal"
+}

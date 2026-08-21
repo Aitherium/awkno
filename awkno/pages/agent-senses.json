@@ -1,0 +1,13 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "What an agent needs to perceive things outside its own process \u00e2\u20ac\u201d search and pages.\n\nIncludes: awfind, awbrowse, awdk",
+  "see_also": [
+    "awfind",
+    "awbrowse",
+    "awdk"
+  ],
+  "status": "planned",
+  "synopsis": "Senses",
+  "topic": "agent-senses"
+}

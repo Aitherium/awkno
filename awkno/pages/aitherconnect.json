@@ -1,0 +1,11 @@
+{
+  "adopt": "Install it and ask an agent about the tab you are on.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nYour agent cannot see the page you are looking at, so you paste it in by hand.\n\nInstall\nload unpacked \u00e2\u20ac\u201d see the repo",
+  "see_also": [
+    "awdk"
+  ],
+  "status": "public",
+  "synopsis": "Browser extension \u00e2\u20ac\u201d federated AI search, page context, and the Living OS overlay.",
+  "topic": "AitherConnect"
+}

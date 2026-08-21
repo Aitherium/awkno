@@ -1,0 +1,14 @@
+{
+  "adopt": "Run one hard question as a session you can open up afterwards \u00e2\u20ac\u201d the phases, the thoughts, the tool calls \u00e2\u20ac\u201d instead of a paragraph you have to take on faith.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAn agent that reasoned well and an agent that reasoned badly return the same shape: one paragraph. So a wrong answer is indistinguishable from a right one until it has been acted on, and the only available debugging tool is asking again. The structure exists inside the model turn and is discarded at the boundary, which is why nothing downstream can ever check it.\n\nInstall\npip install awreason",
+  "see_also": [
+    "awdk",
+    "awfind",
+    "awbrowse",
+    "awm"
+  ],
+  "status": "planned",
+  "synopsis": "A portable reasoning client \u00e2\u20ac\u201d sessions, phases, thoughts, and the chain that produced the answer.",
+  "topic": "awreason"
+}

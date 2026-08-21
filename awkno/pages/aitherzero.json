@@ -1,0 +1,11 @@
+{
+  "adopt": "Run one numbered script and read what it says it did.",
+  "category": "brick",
+  "description": "Kind: corpus\n\nProblem\nOps knowledge lives in people's shell history, so the same recovery gets improvised differently every time it is needed.\n\nInstall\ngit clone https://github.com/Aitherium/AitherZero",
+  "see_also": [
+    "awrecover"
+  ],
+  "status": "public",
+  "synopsis": "PowerShell 7+ automation framework \u00e2\u20ac\u201d numbered, self-describing scripts.",
+  "topic": "AitherZero"
+}

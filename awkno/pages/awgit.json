@@ -1,0 +1,12 @@
+{
+  "adopt": "Take a lease on a file before you edit it in a shared checkout.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nSeveral agents editing one worktree silently sweep each other's work; a diff tells you WHAT changed but not who meant it or whether they were mid-edit.\n\nInstall\npip install awgit",
+  "see_also": [
+    "awgraph",
+    "awrelay"
+  ],
+  "status": "public",
+  "synopsis": "Semantic version control on top of git \u00e2\u20ac\u201d edit-ops and leases.",
+  "topic": "awgit"
+}

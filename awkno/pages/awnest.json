@@ -1,0 +1,19 @@
+{
+  "adopt": "Gate one action behind a human check and watch an automated caller fail it.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAny surface an agent can use, a bot can flood. CAPTCHA is hostile to the humans it is meant to serve and is beaten by the machines it is meant to stop, so the check has to be something other than a puzzle -- and every check that does exist fails OPEN, because \"we could not tell\" and \"it is fine\" reach the caller as the same empty value.\n\nInstall\npip install awnest",
+  "see_also": [
+    "awiam",
+    "awbac",
+    "awdit",
+    "awseal",
+    "awrelay",
+    "awgit",
+    "awnet",
+    "awtunnel",
+    "awdk"
+  ],
+  "status": "public",
+  "synopsis": "Prove there is a human before you let them into the nest.",
+  "topic": "awnest"
+}

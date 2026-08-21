@@ -1,0 +1,20 @@
+{
+  "adopt": "Put a gate in front of one URL and let exactly one person through it with a code you sent them.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nLetting one specific person reach one specific thing is still, in 2026, either a whole identity deployment or a link anyone who sees it can use. So everybody ships the link: an unguessable URL in an email, no expiry, no audience, no record of who walked through it -- and no way to take it back without breaking it for everyone.\n\nInstall\npip install awnboard",
+  "see_also": [
+    "awnest",
+    "awiam",
+    "awbac",
+    "awdit",
+    "awseal",
+    "awshare",
+    "awtunnel",
+    "awnet",
+    "awdk",
+    "awmail"
+  ],
+  "status": "public",
+  "synopsis": "A front gate you can put in front of anything, and hand someone the key to.",
+  "topic": "awnboard"
+}

@@ -1,0 +1,11 @@
+{
+  "adopt": "Quantize the cache on one model you already serve and measure the headroom.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nKV cache, not weights, is what runs a GPU out of room during real serving, and it grows with every token of every concurrent request.\n\nInstall\npip install aither-kvcache",
+  "see_also": [
+    "awnode"
+  ],
+  "status": "public",
+  "synopsis": "Near-optimal KV cache quantization for LLM inference \u00e2\u20ac\u201d sub-byte compression.",
+  "topic": "aitherkvcache"
+}

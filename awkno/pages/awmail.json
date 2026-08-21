@@ -1,0 +1,18 @@
+{
+  "adopt": "Send one email from an agent using a mailbox you already own, in about a minute.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAn agent that cannot send email cannot finish most real errands: it drafts the invitation, the receipt, the reply, and then hands a human a block of text to paste somewhere. The usual fix is a transactional provider, which means a domain, DNS records, a paid account and a warm-up period before the first message \u00e2\u20ac\u201d an afternoon of setup to send one email from a mailbox you already own. Receiving is worse: almost nothing gives an agent an inbox, so agents are write-only and cannot close a loop that a person answers by replying.\n\nInstall\npip install awmail",
+  "see_also": [
+    "awnboard",
+    "awnest",
+    "awseal",
+    "awdit",
+    "awiam",
+    "awrelay",
+    "awdk",
+    "awshare"
+  ],
+  "status": "public",
+  "synopsis": "Give an agent an email address \u00e2\u20ac\u201d send, and actually receive.",
+  "topic": "awmail"
+}

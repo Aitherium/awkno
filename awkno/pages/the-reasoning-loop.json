@@ -1,0 +1,13 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "The thinking core, kept apart from the senses and the hands on purpose. A hard question becomes a session with phases you can inspect (awreason); a failure inside it becomes ranked hypotheses with a falsifying check for each (awprism); and the check is actually RUN against live state rather than recalled (awrepl). Those three are the loop. It composes with `agent-senses` for what is outside the process and with `shared-worktree` for what is in the codebase \u00e2\u20ac\u201d which is why neither set is repeated here.\n\nIncludes: awreason, awprism, awrepl",
+  "see_also": [
+    "awreason",
+    "awprism",
+    "awrepl"
+  ],
+  "status": "planned",
+  "synopsis": "The reasoning loop",
+  "topic": "the-reasoning-loop"
+}

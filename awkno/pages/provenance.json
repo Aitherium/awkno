@@ -1,0 +1,14 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Prove what an artifact is, who acted on it, and that nothing was quietly removed from the record.\n\nIncludes: awseal, awshare, awdit, awbac",
+  "see_also": [
+    "awseal",
+    "awshare",
+    "awdit",
+    "awbac"
+  ],
+  "status": "partial",
+  "synopsis": "Provenance",
+  "topic": "provenance"
+}

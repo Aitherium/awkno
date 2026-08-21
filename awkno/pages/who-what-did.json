@@ -1,0 +1,13 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "The three questions every access decision needs answered separately: who is this caller, what may they do, and what did they actually do. Kept apart on purpose -- one component that answers all three is one component that can quietly answer all three wrongly.\n\nIncludes: awiam, awbac, awdit",
+  "see_also": [
+    "awiam",
+    "awbac",
+    "awdit"
+  ],
+  "status": "partial",
+  "synopsis": "Identity, authority, and the record",
+  "topic": "who-what-did"
+}

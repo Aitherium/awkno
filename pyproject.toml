@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awkno"
+version = "0.1.0"
+description = "The man page for the Aither World — every brick, stack and law, in your terminal, offline."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+awkno = "awkno.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Aitherium/awkno"
+Documentation = "https://github.com/Aitherium/awkno#readme"
+Repository = "https://github.com/Aitherium/awkno.git"
+Issues = "https://github.com/Aitherium/awkno/issues"
+
+[tool.setuptools]
+packages = ["awkno"]
+license-files = ["LICENSE"]
+
+[tool.setuptools.package-data]
+awkno = ["pages/*.json"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = []
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501", "E402", "E741"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

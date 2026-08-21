@@ -1,0 +1,14 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Several agents editing one codebase without sweeping each other's work or re-deriving what the last one already learned.\n\nIncludes: awgit, awgraph, awrelay, awm",
+  "see_also": [
+    "awgit",
+    "awgraph",
+    "awrelay",
+    "awm"
+  ],
+  "status": "ready",
+  "synopsis": "Many agents, one repo",
+  "topic": "shared-worktree"
+}

@@ -1,0 +1,11 @@
+{
+  "adopt": "Gate one endpoint and read the explanation it gives for a denial.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nMost authz answers \"no\" without saying why, so every denial becomes a debugging session \u00e2\u20ac\u201d and the ones that fail OPEN never announce themselves at all.\n\nInstall\npip install awbac",
+  "see_also": [
+    "awdit"
+  ],
+  "status": "unpublished",
+  "synopsis": "Role-based access control that fails closed and explains itself.",
+  "topic": "awbac"
+}

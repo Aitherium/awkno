@@ -1,0 +1,12 @@
+{
+  "adopt": "Give one agent a memory scoped to one project and watch it stop re-asking.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAn agent that forgets everything between sessions re-derives the same facts forever; one that remembers everything globally leaks context across projects.\n\nInstall\npip install awm",
+  "see_also": [
+    "awdk",
+    "awgraph"
+  ],
+  "status": "public",
+  "synopsis": "A portable, scoped agent memory.",
+  "topic": "awm"
+}

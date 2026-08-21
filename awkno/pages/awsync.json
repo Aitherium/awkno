@@ -1,0 +1,16 @@
+{
+  "adopt": "Send a heartbeat up and receive pack updates down, and know exactly what changed.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA deployment that drifts is worse than one that breaks: it is silently out of sync, reporting success while the platform has moved on. Every sync daemon hides this by collapsing network failures into empty results, so \"could not tell\" reads as \"in step\".\n\nInstall\nships inside AitherConnect",
+  "see_also": [
+    "awnode",
+    "awrelay",
+    "awrecover",
+    "awshare",
+    "awtunnel",
+    "awm"
+  ],
+  "status": "merged",
+  "synopsis": "Keep one client in step with a platform \u00e2\u20ac\u201d and never confuse \"cannot tell\" with \"fine\".",
+  "topic": "awsync"
+}

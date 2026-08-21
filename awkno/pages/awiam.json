@@ -1,0 +1,12 @@
+{
+  "adopt": "Deactivate one session and watch it stop working immediately.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nDeactivation that takes effect \"eventually\" is not deactivation, and a store that cannot be read reports zero users \u00e2\u20ac\u201d which every caller reads as \"nobody is authorised\" or, worse, as an empty directory to helpfully repopulate.\n\nInstall\npip install awiam",
+  "see_also": [
+    "awbac",
+    "awdit"
+  ],
+  "status": "unpublished",
+  "synopsis": "Who is this caller? A directory and session store that fails honestly.",
+  "topic": "awiam"
+}

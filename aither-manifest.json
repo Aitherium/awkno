@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1",
+  "name": "awkno",
+  "description": "The man page for the Aither World — every brick, stack and law, offline.",
+  "url": "https://aitherium.github.io/awkno/",
+  "repository": "https://github.com/Aitherium/awkno",
+  "kind": "tool",
+  "status": "planned",
+  "adopt": "Ask it what a brick does and get the answer with your network cable out.",
+  "pairs_with": [
+    "awskills",
+    "awfind",
+    "awm"
+  ],
+  "includes": []
+}

@@ -1,0 +1,20 @@
+{
+  "adopt": "Boot one throwaway box and try to make a change you cannot reproduce.",
+  "category": "brick",
+  "description": "Kind: base\n\nProblem\nAn agent with root on a mutable host eventually produces a machine nobody can reproduce.\n\nInstall\npodman build -t awnix-base:latest -f .DEPLOYMENT/standalone/bootc/Containerfile.awnix .",
+  "see_also": [
+    "awdk",
+    "awrecover",
+    "awnode",
+    "awgit",
+    "awgraph",
+    "awrelay",
+    "awm",
+    "awrecover",
+    "awseal",
+    "awshare"
+  ],
+  "status": "planned",
+  "synopsis": "A Linux you can hand to an agent \u00e2\u20ac\u201d immutable base, capabilities included.",
+  "topic": "awnix"
+}

@@ -1,0 +1,13 @@
+{
+  "adopt": "Drive one page and get back what is on it in a form worth reasoning about.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nHanding an agent a screenshot makes it read a picture of text; handing it raw DOM makes it read a megabyte of markup. Neither of those is the page.\n\nInstall\npip install awbrowse",
+  "see_also": [
+    "awdk",
+    "awfind",
+    "awsh"
+  ],
+  "status": "public",
+  "synopsis": "A portable browser client \u00e2\u20ac\u201d navigate, console, network, DOM, screenshot.",
+  "topic": "awbrowse"
+}

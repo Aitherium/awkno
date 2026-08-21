@@ -1,0 +1,12 @@
+{
+  "adopt": "Copy one.md into your agent's skills dir and tell it to use that skill.",
+  "category": "brick",
+  "description": "Kind: corpus\n\nProblem\nPrompt knowledge dies in a transcript. A skill is a procedure written once, in a file, that any agent can load when the situation calls for it.\n\nInstall\ngit clone https://github.com/Aitherium/awskills",
+  "see_also": [
+    "awdk",
+    "awknowledge"
+  ],
+  "status": "public",
+  "synopsis": "Portable agent skills \u00e2\u20ac\u201d self-contained procedures an agent loads on demand.",
+  "topic": "awskills"
+}

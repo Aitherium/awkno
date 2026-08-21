@@ -1,0 +1,12 @@
+{
+  "adopt": "Run it once and point one app at it instead of a vendor URL.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nEvery app hardcodes a different provider SDK, so switching backends means editing every app.\n\nInstall\npip install awnode",
+  "see_also": [
+    "awdk",
+    "aitherkvcache"
+  ],
+  "status": "public",
+  "synopsis": "A lightweight local gateway \u00e2\u20ac\u201d bridges your apps to the AI backends you chose.",
+  "topic": "awnode"
+}

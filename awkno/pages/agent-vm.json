@@ -1,0 +1,13 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "awnix already carries the capabilities; adding an agent is three lines in a Dockerfile, and your skills and credentials layer on top of that. The point of the order is that the guarantees live in the base, so swapping the agent keeps them.\n\nIncludes: awnix, awdk, awskills",
+  "see_also": [
+    "awnix",
+    "awdk",
+    "awskills"
+  ],
+  "status": "partial",
+  "synopsis": "The bare agent VM",
+  "topic": "agent-vm"
+}

@@ -1,0 +1,14 @@
+{
+  "adopt": "Point it at a backend you already pay for and run one agent loop.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nRunning one agent is easy and running fifty is a different job: budgets, retries, which model, whose machine. Most frameworks make you adopt their whole world to find out.\n\nInstall\npip install awdk",
+  "see_also": [
+    "awskills",
+    "awm",
+    "awnode",
+    "awrun"
+  ],
+  "status": "public",
+  "synopsis": "Build AI agent fleets \u00e2\u20ac\u201d 3 lines, any backend, local or cloud.",
+  "topic": "awdk"
+}

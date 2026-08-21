@@ -1,0 +1,12 @@
+{
+  "adopt": "Queue two runs at different priorities and watch the urgent one overtake.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nA shared runner pool serves whoever asked first, so an urgent one-line fix waits behind a queue of speculative work \u00e2\u20ac\u201d and the only lever anyone has is asking people to stop pushing.\n\nInstall\npip install awrun",
+  "see_also": [
+    "awdk",
+    "awrelay"
+  ],
+  "status": "public",
+  "synopsis": "A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds.",
+  "topic": "awrun"
+}

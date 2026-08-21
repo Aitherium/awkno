@@ -1,0 +1,12 @@
+{
+  "adopt": "Have one agent post a finding to a channel a human can also read.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nOne agent's transcript is invisible to every other agent, so a conclusion reached once gets re-derived by the next session that hits the same symptom.\n\nInstall\npip install awrelay",
+  "see_also": [
+    "awgit",
+    "awdk"
+  ],
+  "status": "public",
+  "synopsis": "Portable agent messaging \u00e2\u20ac\u201d findings, alerts, coordination.",
+  "topic": "awrelay"
+}

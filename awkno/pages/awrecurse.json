@@ -1,0 +1,13 @@
+{
+  "adopt": "Ask a question about a document far bigger than your model's context, and get an answer that names which parts it actually read.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA context window that overflows does not raise. The middle is dropped, the model answers fluently from the ends, and the reply looks exactly like one drawn from the whole document. The failure is a SILENCE \u00e2\u20ac\u201d no error, no truncation warning, no shorter answer \u00e2\u20ac\u201d and the only signal is that it is quietly wrong about the part nobody checked.\n\nInstall\npip install awrecurse",
+  "see_also": [
+    "awreason",
+    "awm",
+    "awfind"
+  ],
+  "status": "planned",
+  "synopsis": "Answer a question over a context far larger than the window \u00e2\u20ac\u201d recursively, with the trace kept.",
+  "topic": "awrecurse"
+}

@@ -1,0 +1,11 @@
+{
+  "adopt": "Read one law and apply it to the next thing you ship.",
+  "category": "brick",
+  "description": "Kind: corpus\n\nProblem\nEveryone learns the same lessons about agent-written code the same expensive way, and writes none of them down where the next person looks.\n\nInstall\nread it \u00e2\u20ac\u201d https://aitherium.github.io/awknowledge/",
+  "see_also": [
+    "awskills"
+  ],
+  "status": "unpublished",
+  "synopsis": "How to run a coding agent so the result survives \u00e2\u20ac\u201d the laws, with evidence.",
+  "topic": "awknowledge"
+}
