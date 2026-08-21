@@ -14,7 +14,7 @@
     "awseal",
     "awshare"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "A Linux you can hand to an agent",
   "topic": "awnix"
 }

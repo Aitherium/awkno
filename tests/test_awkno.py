@@ -166,18 +166,32 @@ class TestAwknoRegistry:
             page = registry.get(brick_id)
             assert page.category == "brick", f"{brick_id} should be a brick"
 
+    #: A FLOOR pinned to the CURRENT count, raised in the same change that adds
+    #: a law. It is not an equality (that goes red on correct work and gets
+    #: edited without being read) and it is not a historical low-water mark
+    #: either: pinned below the real count, deleting the NEWEST law leaves a
+    #: corpus that is still contiguous and still above the floor, so the rule
+    #: passes on the exact regression it exists to catch. Measured: with the
+    #: floor at 18 and 19 laws shipped, removing law-19 was undetectable.
+    MIN_LAWS = 19
+
     def test_law_coverage(self):
-        """Test that all 18 laws are in corpus."""
+        """Every law is present, numbered contiguously from 01, and none was lost."""
         registry = AwknoRegistry()
-
-        # Should have 18 laws (law-01 through law-18)
         laws = registry.list_by_category("law")
-        assert len(laws) == 18, f"Expected 18 laws, got {len(laws)}"
 
-        # Check each law exists
-        for i in range(1, 19):
+        assert len(laws) >= self.MIN_LAWS, (
+            f"corpus has {len(laws)} laws, fewer than the {self.MIN_LAWS} it had when "
+            "this rule was written — a law was dropped from the corpus"
+        )
+
+        # Contiguity is the real assertion. A gap means the generator skipped a
+        # source file, which an aggregate count would happily absorb by adding
+        # a new law at the end while losing one in the middle.
+        for i in range(1, len(laws) + 1):
             law_key = f"law-{i:02d}"
             page = registry.get(law_key)
+            assert page is not None, f"{law_key} missing — the law numbering has a gap"
             assert page.category == "law"
 
     def test_law_access_by_number(self):
