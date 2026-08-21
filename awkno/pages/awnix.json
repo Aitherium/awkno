@@ -1,7 +1,7 @@
 {
   "adopt": "Boot one throwaway box and try to make a change you cannot reproduce.",
   "category": "brick",
-  "description": "Kind: base\n\nProblem\nAn agent with root on a mutable host eventually produces a machine nobody can reproduce.\n\nInstall\npodman build -t awnix-base:latest -f .DEPLOYMENT/standalone/bootc/Containerfile.awnix .",
+  "description": "Kind: base\n\nProblem\nAn agent with root on a mutable host eventually produces a machine nobody can reproduce.\n\nInstall\nsee the repo — image builder",
   "see_also": [
     "awdk",
     "awrecover",

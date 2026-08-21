@@ -1,0 +1,11 @@
+{
+  "adopt": "Wrap an environment you already have and ask it what happens next.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAn agent that cannot anticipate its environment can only react. Every framework that offers this makes you adopt its whole training stack to find out whether a learned model beats the lookup table you already have.\n\nInstall\npip install awpredict",
+  "see_also": [
+    "awm"
+  ],
+  "status": "planned",
+  "synopsis": "Predict what your environment does next, and how surprised you were.",
+  "topic": "awpredict"
+}
