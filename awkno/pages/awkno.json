@@ -1,13 +1,13 @@
 {
   "adopt": "Ask it what a brick does and get the answer with your network cable out.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nThe family is only useful if you can find it. Its registry lives in one yaml in one monorepo and the laws live in a public skills pack, so a stranger with a terminal and no browser can reach neither \u00e2\u20ac\u201d which makes \"what exists and what should this talk to\" a question asked of a person instead of a tool.\n\nInstall\npip install awkno",
+  "description": "Kind: tool\n\nProblem\nThe family is only useful if you can find it. Its registry lives in one yaml in one monorepo and the laws live in a public skills pack, so a stranger with a terminal and no browser can reach neither — which makes \"what exists and what should this talk to\" a question asked of a person instead of a tool.\n\nInstall\npip install awkno",
   "see_also": [
     "awskills",
     "awfind",
     "awm"
   ],
   "status": "public",
-  "synopsis": "The man page for the Aither World \u00e2\u20ac\u201d every brick, stack and law, offline.",
+  "synopsis": "The man page for the Aither World",
   "topic": "awkno"
 }

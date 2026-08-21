@@ -1,7 +1,7 @@
 {
   "adopt": "Hand it a failure and get back ranked candidate causes, each with the one observation that would rule it in or out.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nDebugging with an agent collapses onto the first plausible story, because nothing forces a second. The cost is not the wrong guess, it is the hours spent proving it \u00e2\u20ac\u201d measured repeatedly here, where five hypotheses were spent on a service that was genuinely correct, and where a symptom named the wrong component so consistently that \"the symptom names the INNOCENT service\" had to be written down as a standing rule.\n\nInstall\npip install awprism",
+  "description": "Kind: tool\n\nProblem\nDebugging with an agent collapses onto the first plausible story, because nothing forces a second. The cost is not the wrong guess, it is the hours spent proving it — measured repeatedly here, where five hypotheses were spent on a service that was genuinely correct, and where a symptom named the wrong component so consistently that \"the symptom names the INNOCENT service\" had to be written down as a standing rule.\n\nInstall\npip install awprism",
   "see_also": [
     "awreason",
     "awrepl",
@@ -9,6 +9,6 @@
     "awdit"
   ],
   "status": "public",
-  "synopsis": "Turn a failure into ranked hypotheses \u00e2\u20ac\u201d and say what would confirm each one.",
+  "synopsis": "Turn a failure into ranked hypotheses",
   "topic": "awprism"
 }

@@ -66,7 +66,13 @@ class AwknoGenerator:
         pages = {}
 
         # Load ecosystem
-        with open(self.ecosystem_file) as f:
+        # encoding is NOT optional here. Python's default is the platform's
+        # preferred encoding, which is cp1252 on Windows — so every em dash in
+        # the registry decoded to three junk characters. It never LOOKED wrong,
+        # because the writer below escaped non-ASCII on the way out, turning the
+        # damage into `â€”` inside the JSON where no text search
+        # for a mojibake sequence would ever match it.
+        with open(self.ecosystem_file, encoding="utf-8") as f:
             ecosystem = yaml.safe_load(f)
 
         # Generate brick pages
@@ -90,8 +96,12 @@ class AwknoGenerator:
         # Write all pages to JSON
         for topic_key, page_data in pages.items():
             output_file = self.output_dir / f"{topic_key}.json"
-            with open(output_file, "w") as f:
-                json.dump(page_data, f, indent=2, sort_keys=True)
+            # ensure_ascii=False keeps real characters in the file. With the
+            # default (True) any encoding damage upstream is escaped into
+            # \uXXXX and becomes invisible to inspection — the corpus reads as
+            # clean ASCII while rendering as garbage in the terminal.
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(page_data, f, indent=2, sort_keys=True, ensure_ascii=False)
 
         return pages
 

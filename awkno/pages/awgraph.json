@@ -7,6 +7,6 @@
     "awdk"
   ],
   "status": "public",
-  "synopsis": "A semantic code graph for agents \u00e2\u20ac\u201d AST + tree-sitter, call graphs.",
+  "synopsis": "A semantic code graph for agents",
   "topic": "awgraph"
 }

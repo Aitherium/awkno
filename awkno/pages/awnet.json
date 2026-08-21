@@ -1,13 +1,13 @@
 {
   "adopt": "Host a mesh on one machine and join it from another.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nAgents are islands. Every deployment reinvents how a peer is found, addressed and trusted, so two agents on two machines cost more to introduce than either cost to build \u00e2\u20ac\u201d and the answers (port forwards, a VPN per pair, public IPs, a broker somebody has to run) all become permanent maintenance.\n\nInstall\npip install awnet",
+  "description": "Kind: runtime\n\nProblem\nAgents are islands. Every deployment reinvents how a peer is found, addressed and trusted, so two agents on two machines cost more to introduce than either cost to build — and the answers (port forwards, a VPN per pair, public IPs, a broker somebody has to run) all become permanent maintenance.\n\nInstall\npip install awnet",
   "see_also": [
     "awnode",
     "awdk",
     "awrelay"
   ],
   "status": "unpublished",
-  "synopsis": "The agentic web \u00e2\u20ac\u201d agents host a mesh, and agents join one.",
+  "synopsis": "The agentic web",
   "topic": "awnet"
 }

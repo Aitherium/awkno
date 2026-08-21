@@ -6,6 +6,6 @@
     "awnode"
   ],
   "status": "public",
-  "synopsis": "Near-optimal KV cache quantization for LLM inference \u00e2\u20ac\u201d sub-byte compression.",
+  "synopsis": "Near-optimal KV cache quantization for LLM inference",
   "topic": "aitherkvcache"
 }
