@@ -4,6 +4,7 @@
   "category": "law",
   "description": "Law #14",
   "see_also": null,
+  "slug": "you-wrote-it-that-does-not-mean-it-ships",
   "status": "published",
   "synopsis": "You wrote it; that does not mean it ships — a file is tracked when the tooling says so",
   "topic": "law-14"

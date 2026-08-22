@@ -4,6 +4,7 @@
   "category": "law",
   "description": "Law #17",
   "see_also": null,
+  "slug": "fail-closed-then-prove-the-happy-path",
   "status": "published",
   "synopsis": "Fail closed, then prove the happy path — a gate that denies everything passes every denial test",
   "topic": "law-17"

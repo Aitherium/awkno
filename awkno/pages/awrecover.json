@@ -4,7 +4,8 @@
   "description": "Kind: tool\n\nProblem\nA restore that half-succeeds is worse than one that fails, because you now have a state that never existed.\n\nInstall\npip install awrecover",
   "see_also": [
     "awnix",
-    "awshare"
+    "awshare",
+    "AitherZero"
   ],
   "status": "public",
   "synopsis": "Labelled snapshots with an all-or-nothing restore.",

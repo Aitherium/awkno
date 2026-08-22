@@ -31,6 +31,11 @@ class AwknoPage:
     status: Optional[str] = None
     see_also: Optional[list[str]] = None
     body: Optional[str] = None
+    # The law filename's own slug (`design-for-the-silence`). Carried rather
+    # than re-derived from the synopsis: the generator already computes it, and
+    # a slug inferred from a title silently stops matching the moment a law is
+    # retitled.
+    slug: Optional[str] = None
 
     def render(self, plain: bool = False) -> str:
         """Render the page as text.
@@ -102,6 +107,7 @@ class AwknoPage:
             "status": self.status,
             "see_also": self.see_also,
             "body": self.body,
+            "slug": self.slug,
         }
 
     @classmethod

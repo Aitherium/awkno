@@ -4,6 +4,7 @@
   "category": "law",
   "description": "Law #18",
   "see_also": null,
+  "slug": "never-trust-the-caller",
   "status": "published",
   "synopsis": "Never trust the caller for an authorization decision — the payload is not evidence",
   "topic": "law-18"

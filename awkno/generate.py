@@ -279,6 +279,10 @@ class AwknoGenerator:
             "status": "published",
             "synopsis": synopsis,
             "topic": topic_key,
+            # The filename slug. `awkno law <N|SLUG>` advertised this lookup
+            # while the value was computed here and thrown away, so no slug
+            # ever resolved -- a documented invocation that could not work.
+            "slug": law_slug or None,
         }
 
 

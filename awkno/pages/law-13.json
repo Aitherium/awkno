@@ -4,6 +4,7 @@
   "category": "law",
   "description": "Law #13",
   "see_also": null,
+  "slug": "written-is-not-deployed",
   "status": "published",
   "synopsis": "Written is not deployed — ask the running thing, never the source",
   "topic": "law-13"

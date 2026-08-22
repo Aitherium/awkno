@@ -4,6 +4,7 @@
   "category": "law",
   "description": "Law #19",
   "see_also": null,
+  "slug": "count-the-closure-not-the-edge",
   "status": "published",
   "synopsis": "Count the closure, not the edge — an import count is not a portability measurement",
   "topic": "law-19"

@@ -6,7 +6,8 @@
     "awskills",
     "awm",
     "awnode",
-    "awrun"
+    "awrun",
+    "AitherConnect"
   ],
   "status": "public",
   "synopsis": "Build AI agent fleets",

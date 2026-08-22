@@ -4,6 +4,7 @@
   "category": "law",
   "description": "Law #4",
   "see_also": null,
+  "slug": "mutate-the-test-not-just-the-code",
   "status": "published",
   "synopsis": "Mutate the test, not just the code — a fixture that cannot fail proves nothing",
   "topic": "law-04"

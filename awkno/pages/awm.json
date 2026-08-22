@@ -3,6 +3,7 @@
   "category": "brick",
   "description": "Kind: tool\n\nProblem\nAn agent that forgets everything between sessions re-derives the same facts forever; one that remembers everything globally leaks context across projects.\n\nInstall\npip install awm",
   "see_also": [
+    "awpredict",
     "awdk",
     "awgraph"
   ],
