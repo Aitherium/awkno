@@ -1,0 +1,13 @@
+{
+  "adopt": "pip install \"awdk[memory]\"\nadk gobbonet",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nRun GobboNet's chat on an agent loop, with campaign memory scoped by who knows what, and character-card / lorebook import-export.\n\nRuntime\nawdk>=3.7.4 with extras: memory\n\nTools\n  campaign_note\n  campaign_recall\n  campaign_import_card\n  campaign_import_lorebook\n  campaign_export_card",
+  "see_also": [
+    "awdk",
+    "awpack",
+    "awm"
+  ],
+  "status": "preview",
+  "synopsis": "Run GobboNet's chat on an agent loop, with campaign memory scoped by who knows what, and character-card / lorebook import-export.",
+  "topic": "gobbonet"
+}

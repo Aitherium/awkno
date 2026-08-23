@@ -1,0 +1,15 @@
+{
+  "adopt": "Ask a human a question from a script, and keep working on their answer.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA decision buried in terminal prose is a stream event — it scrolls past, and the agent either stalls waiting for someone who is not reading, or guesses and does days of the wrong work. Every agent framework can print a question; almost none can carry the ANSWER back into the run that asked it, so the human is a bottleneck exactly when they are least able to be one.\n\nInstall\npip install awask",
+  "see_also": [
+    "awdk",
+    "awrelay",
+    "awmail",
+    "awsh",
+    "awnest"
+  ],
+  "status": "unpublished",
+  "synopsis": "Your agent asks you a question",
+  "topic": "awask"
+}

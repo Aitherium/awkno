@@ -5,7 +5,7 @@
   "see_also": [
     "awdit"
   ],
-  "status": "unpublished",
+  "status": "public",
   "synopsis": "Role-based access control that fails closed and explains itself.",
   "topic": "awbac"
 }

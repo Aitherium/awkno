@@ -1,0 +1,13 @@
+{
+  "adopt": "Install one pack and run it. Each carries its own manifest, licence and version, so taking one costs you nothing else.",
+  "category": "brick",
+  "description": "Kind: corpus\n\nProblem\nA pack bundled into the SDK inherits the SDK's licence and the SDK's release cadence. That is backwards in both directions: a proprietary pack blocks the SDK's public publish (measured — the adk sync gate aborts on exactly this and names it), and a good pack cannot ship a fix without an SDK release. Packs and the runtime that loads them are different products with different audiences.\n\nInstall\ngit clone https://github.com/Aitherium/awpack",
+  "see_also": [
+    "awdk",
+    "awskills",
+    "awsh"
+  ],
+  "status": "unpublished",
+  "synopsis": "First-party agent packs",
+  "topic": "awpack"
+}

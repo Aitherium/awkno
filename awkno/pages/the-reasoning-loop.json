@@ -8,7 +8,7 @@
     "awrepl",
     "awrecurse"
   ],
-  "status": "planned",
+  "status": "partial",
   "synopsis": "The reasoning loop",
   "topic": "the-reasoning-loop"
 }

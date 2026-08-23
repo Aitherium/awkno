@@ -6,7 +6,7 @@
     "awbac",
     "awdit"
   ],
-  "status": "unpublished",
+  "status": "public",
   "synopsis": "Who is this caller? A directory and session store that fails honestly.",
   "topic": "awiam"
 }

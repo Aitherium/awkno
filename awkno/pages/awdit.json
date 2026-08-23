@@ -6,7 +6,7 @@
     "awbac",
     "awseal"
   ],
-  "status": "unpublished",
+  "status": "public",
   "synopsis": "An append-only audit trail whose gaps are DETECTABLE.",
   "topic": "awdit"
 }

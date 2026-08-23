@@ -4,7 +4,8 @@
   "description": "Kind: runtime\n\nProblem\nA shared runner pool serves whoever asked first, so an urgent one-line fix waits behind a queue of speculative work — and the only lever anyone has is asking people to stop pushing.\n\nInstall\npip install awrun",
   "see_also": [
     "awdk",
-    "awrelay"
+    "awrelay",
+    "awevolve"
   ],
   "status": "public",
   "synopsis": "A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds.",

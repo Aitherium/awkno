@@ -1,7 +1,7 @@
 {
   "adopt": "Type a question at your prompt and get an answer instead of \"command not found\".",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA shell has exactly one response to a line it does not recognise: command not found. So the moment you want to look something up you leave the terminal for a browser and lose the directory, the environment and the session you were already in -- when everything needed to answer you was right there.\n\nInstall\nnpm i -g @aitherium/shell-cli",
+  "description": "Kind: tool\n\nProblem\nA shell has exactly one response to a line it does not recognise: command not found. So the moment you want to look something up you leave the terminal for a browser and lose the directory, the environment and the session you were already in -- when everything needed to answer you was right there.\n\nInstall\nnpm i -g awsh",
   "see_also": [
     "awdk",
     "awfind",

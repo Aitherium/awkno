@@ -6,7 +6,7 @@
     "awnet",
     "awnode"
   ],
-  "status": "unpublished",
+  "status": "public",
   "synopsis": "Reach a service that has no public address.",
   "topic": "awtunnel"
 }

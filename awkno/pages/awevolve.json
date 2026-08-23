@@ -1,0 +1,15 @@
+{
+  "adopt": "Point it at a file and a command that scores that file, and watch an agent improve it -- keeping every version and the score it earned.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAutomated improvement loops fail silently and look identical while doing it. A run that explored honestly and found nothing produces the same logs, the same records and the same stop reason as a run that changed nothing at all -- there is no exception to catch and no failing request, so the loop keeps running and a human periodically concludes the search space is just hard. And the loops that DO work are usually one-shot generators: the model is asked for a candidate, handed no history, and never allowed to test its own idea before committing it.\n\nInstall\npip install awevolve",
+  "see_also": [
+    "awdk",
+    "awrun",
+    "awgit",
+    "awm",
+    "awpredict"
+  ],
+  "status": "unpublished",
+  "synopsis": "Point an agent at a file and a command that scores it, and let it improve.",
+  "topic": "awevolve"
+}

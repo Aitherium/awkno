@@ -7,7 +7,9 @@
     "awm",
     "awnode",
     "awrun",
-    "AitherConnect"
+    "awask",
+    "AitherConnect",
+    "awpack"
   ],
   "status": "public",
   "synopsis": "Build AI agent fleets",

@@ -1,0 +1,19 @@
+{
+  "adopt": "Block one outbound host for one workload and watch the call fail closed with the rule that denied it.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nEvery other gate asks about the CALLER — who they are, what role they hold, whether they are human. Nothing asks what a workload is allowed to REACH. So a service quietly dials whatever its config says, and when that config is stale the failure is a DNS or connect error naming a host with no relationship to the problem — the symptom points at an innocent service. Measured on our own fleet 2026-08-23: 11 registry entries pointed at hosts that did not exist while the real container was running, and every one of those failures named the wrong subsystem.\n\nInstall\npip install awwall",
+  "see_also": [
+    "awiam",
+    "awbac",
+    "awnest",
+    "awnboard",
+    "awdit",
+    "awnet",
+    "awtunnel",
+    "awnode",
+    "awdk"
+  ],
+  "status": "planned",
+  "synopsis": "Say what a workload may reach, and watch everything else fail closed.",
+  "topic": "awwall"
+}

@@ -7,7 +7,7 @@
     "awdk",
     "awrelay"
   ],
-  "status": "unpublished",
+  "status": "public",
   "synopsis": "The agentic web",
   "topic": "awnet"
 }
