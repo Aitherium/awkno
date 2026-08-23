@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1",
+  "name": "awkno",
+  "description": "The man page for the Aither World — every brick, stack and law, offline.",
+  "url": "https://aitherium.github.io/awkno/",
+  "repository": "https://github.com/Aitherium/awkno",
+  "kind": "tool",
+  "status": "public",
+  "adopt": "Ask it what a brick does and get the answer with your network cable out.",
+  "pairs_with": [
+    "awskills",
+    "awfind",
+    "awm"
+  ],
+  "includes": [],
+  "metrics": {
+    "files": {
+      "value": 81,
+      "as_of": "2026-08-22T18:47:19-07:00"
+    },
+    "tests": {
+      "value": 1,
+      "as_of": "2026-08-22T18:47:19-07:00"
+    }
+  }
+}
