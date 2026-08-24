@@ -1,0 +1,13 @@
+{
+  "adopt": "Turn speech into text and text into speech, on a service you host.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAn agent that can only read text is deaf and mute. Every route to fixing that today is a vendor SDK that wants the audio uploaded, an API key, and a per-minute bill -- which rules it out for exactly the recordings people most want transcribed.\n\nInstall\npip install awvoice",
+  "see_also": [
+    "awdk",
+    "awbrowse",
+    "awrelay"
+  ],
+  "status": "planned",
+  "synopsis": "Hear and speak",
+  "topic": "awvoice"
+}

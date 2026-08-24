@@ -13,6 +13,7 @@ corpus generation.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -56,6 +57,10 @@ class AwknoGenerator:
         self.repo_root = Path(repo_root)
         self.ecosystem_file = self.repo_root / "config" / "ecosystem.yaml"
         self.laws_dir = self.repo_root.parent / "awknowledge" / "laws"
+        # The Aither World Guide: the journey manifest and its chapter prose.
+        # Same brick as the laws, same offline promise -- `awkno guide 2` must
+        # answer on a plane with no network, which is why it is COMMITTED here.
+        self.guide_dir = self.repo_root.parent / "awknowledge"
         # The PUBLIC shelf. Deliberately not `AitherOS/config/pack_shelf.yaml`:
         # that file is the internal backlog and its hold reasons name internal
         # services and debt ids. A public corpus that reads it and filters is
@@ -100,7 +105,7 @@ class AwknoGenerator:
                 pages[page["topic"].lower()] = page
 
         # Generate a page per pack ON THE SHELF. Held packs are absent by
-        # design -- see _make_pack_page.
+        # design — see _make_pack_page.
         if self.shelf_dir.exists():
             for manifest in sorted(self.shelf_dir.glob("*/pack.yaml")):
                 page = self._make_pack_page(manifest)
@@ -111,6 +116,12 @@ class AwknoGenerator:
         if self.laws_dir.exists():
             for law_file in sorted(self.laws_dir.glob("*.md")):
                 page = self._make_law_page(law_file)
+                pages[page["topic"].lower()] = page
+
+        # Generate guide pages (the journey), plus the guide index itself
+        journey = self.guide_dir / "journey.yaml"
+        if journey.exists():
+            for page in self._make_guide_pages(journey):
                 pages[page["topic"].lower()] = page
 
         # Write all pages to JSON
@@ -171,6 +182,27 @@ class AwknoGenerator:
         text = re.sub(r"\bD-\d+\b", "", text)
 
         # Quality-gate rule codes.
+        #
+        # BACKTICKED ids first, and the whole SPAN goes -- not just its contents.
+        # Removing the id from inside a code span leaves an EMPTY one, so a law
+        # that read "Asserted by `SHW024` (a delivery command ...)" published as
+        # "Asserted by `` (a delivery command ...)": a sentence whose subject has
+        # been deleted, on a page whose own status is published. Measured
+        # 2026-08-23, 17 tracked pages already carried it (law-06 and law-18 three
+        # each), and nothing could see it -- the JSON is valid, the corpus builds,
+        # the mirror publishes, and the boundary scan is HAPPY precisely because
+        # the identifier is gone. The only signal was a human reading the sentence.
+        #
+        # Same trap the filename rule below already documents ("the replacement
+        # must stay a valid FILENAME") -- solved there for filenames, never for
+        # ids. "a gate" reads correctly in prose and is obviously a placeholder:
+        # the lesson survives, the internal vocabulary does not.
+        text = re.sub(
+            r"`(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC)"
+            r"\d{3,4}`",
+            "a gate",
+            text,
+        )
         text = re.sub(
             r"\b(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC)"
             r"\d{3,4}\b",
@@ -197,6 +229,12 @@ class AwknoGenerator:
         # sentence does not read as though a word is missing.
         text = re.sub(r"[ \t]{2,}", " ", text)
         text = re.sub(r" ([,.;:)])", r"\1", text)
+
+        # Safety net: an EMPTY inline-code span is never legitimate content, and
+        # it is exactly what every removal above leaves behind if a future rule
+        # forgets the span. Counted across the published corpus by EC013 in
+        # gen_ecosystem.py, which ratchets DOWN only.
+        text = re.sub(r"`` ?", "", text)
 
         return text
 
@@ -337,6 +375,84 @@ class AwknoGenerator:
             "synopsis": synopsis,
             "topic": stack_id,
         }
+
+    def _make_guide_pages(self, journey_file: Path) -> list[dict[str, Any]]:
+        """Pages for the Aither World Guide: one per chapter, plus `guide`.
+
+        The chapter's DO steps are rendered from the MANIFEST (journey.yaml),
+        never from the prose, so what `awkno guide 2` tells a reader to type is
+        exactly what the journey gate checked against the kit. The prose's own
+        Teach section is carried as the body. Internal refs are scrubbed like
+        every other page -- the guide is written public-safe, and this is the
+        second line.
+        """
+        with open(journey_file, encoding="utf-8") as f:
+            journey = yaml.safe_load(f) or {}
+        chapters = journey.get("chapters") or []
+        out: list[dict[str, Any]] = []
+        path_dir = journey_file.parent / "path"
+        index_lines = []
+        for i, ch in enumerate(chapters):
+            cid = str(ch.get("id", ""))
+            md_file = path_dir / f"{cid}.md"
+            teach = ""
+            if md_file.exists():
+                text = self._scrub_internal_refs(md_file.read_text(encoding="utf-8"))
+                m = re.search(r"^## Teach\b.*?$(.*?)(?=^## |\Z)", text, re.M | re.S)
+                teach = (m.group(1).strip() if m else "")
+            steps = []
+            for n, step in enumerate(ch.get("do") or [], 1):
+                opt = " (optional)" if step.get("optional") else ""
+                label = "type" if step.get("kind") == "prompt" else "$"
+                steps.append(f"{n}.{opt}  {label} {step.get('cmd', '')}")
+                if step.get("expect"):
+                    steps.append(f"     you should see: {step['expect']}")
+                if step.get("if_not"):
+                    steps.append(f"     if not: {step['if_not']}")
+            dc = ch.get("done_check") or {}
+            if dc:
+                steps.append("")
+                steps.append(f"done when:  $ {dc.get('cmd', '')}")
+                steps.append(f"     you should see: {dc.get('expect', '')}")
+            learned = [f"- {x}" for x in (ch.get("learned") or [])]
+            body_parts = [teach]
+            if steps:
+                body_parts += ["", "DO", ""] + steps
+            if learned:
+                body_parts += ["", "WHAT YOU LEARNED", ""] + learned
+            topic = f"guide-{i:02d}"
+            index_lines.append(
+                f"{topic:<10} {ch.get('title', '')}  (~{int(ch.get('minutes', 0))} min)")
+            out.append({
+                "adopt": None,
+                "body": "\n".join(body_parts).strip() or None,
+                "category": "guide",
+                "description": (f"Chapter {i} of {len(chapters) - 1} -- "
+                                f"{ch.get('blurb', '')}\n\nAbout {int(ch.get('minutes', 0))} "
+                                f"minutes. Read online: https://aitherium.github.io/awknowledge/"
+                                f"path/{cid}.html"),
+                "see_also": list(ch.get("bricks") or []) + (
+                    [f"guide-{i + 1:02d}"] if i + 1 < len(chapters) else []),
+                "status": "published",
+                "synopsis": str(ch.get("title", "")),
+                "topic": topic,
+                "slug": cid,
+            })
+        site = journey.get("site") or {}
+        out.append({
+            "adopt": "awkno guide 1   # start at chapter 1; `awkno open guide` for the browser",
+            "body": "\n".join(index_lines) or None,
+            "category": "guide",
+            "description": str(site.get("tagline", "The Aither World Guide")) +
+                           "\n\nOnline: " +
+                           str(site.get("url", "https://aitherium.github.io/awknowledge/")),
+            "see_also": [p["topic"] for p in out],
+            "status": "published",
+            "synopsis": str(site.get("title", "The Aither World Guide")),
+            "topic": "guide",
+            "slug": None,
+        })
+        return out
 
     def _make_law_page(self, law_file: Path) -> dict[str, Any]:
         """Create a page for a law.
