@@ -1,0 +1,15 @@
+{
+  "adopt": "Wake something on a schedule, let it do one thing, and put it back to sleep.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA scheduled agent fails as a SILENCE. A wake that never fired because the host was down, a wake that overlapped the run before it and corrupted shared state, and a wake that hung forever holding its slot are INDISTINGUISHABLE from outside: in every case nothing happened and nothing said so. Cron has no memory -- a missed minute is simply gone -- so \"not due yet\" and \"due, and never ran\" read identically, and the operator finds out days later by noticing absent output rather than by being told.\n\nInstall\npip install awrise",
+  "see_also": [
+    "awdk",
+    "awrun",
+    "awrelay",
+    "awm",
+    "awask"
+  ],
+  "status": "planned",
+  "synopsis": "Wake an agent on a schedule, let it do one thing, and put it back to sleep.",
+  "topic": "awrise"
+}

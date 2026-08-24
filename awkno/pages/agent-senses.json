@@ -1,10 +1,13 @@
 {
   "adopt": null,
   "category": "stack",
-  "description": "What an agent needs to perceive things outside its own process — search and pages.\n\nIncludes: awfind, awbrowse, awdk",
+  "description": "What an agent needs to perceive things outside its own process. Search and pages are the two it has; voice, vision and the screen in front of it are the three it does not, and they are named here so they stop being rediscovered as absences.\n\nIncludes: awfind, awbrowse, awvoice, awvision, awscreen, awdk",
   "see_also": [
     "awfind",
     "awbrowse",
+    "awvoice",
+    "awvision",
+    "awscreen",
     "awdk"
   ],
   "status": "partial",

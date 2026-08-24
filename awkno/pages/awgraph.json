@@ -4,7 +4,8 @@
   "description": "Kind: tool\n\nProblem\n\"Who calls this?\" answered by grep is a guess. Agents burn enormous context re-reading files to rebuild a graph the parser already knows.\n\nInstall\npip install awgraph",
   "see_also": [
     "awm",
-    "awdk"
+    "awdk",
+    "awtoll"
   ],
   "status": "public",
   "synopsis": "A semantic code graph for agents",
