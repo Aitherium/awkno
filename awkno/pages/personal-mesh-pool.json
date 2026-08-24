@@ -1,0 +1,13 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Owner directive 2026-08-24: someone with a laptop, a desktop and a phone should be able to join their OWN devices into one pool and have a model stay warm and servable across whichever of them is on, without joining the platform's shared AitherNet compute market. Registered here because it does not exist yet, and the three pieces that would compose into it are each individually real: `awnet` is a peer REGISTRY + three-valued TCP reachability check (\"is anyone listening\") -- explicitly not a VPN and not a placement/pooling primitive, by its own README; `awnode` is the local gateway that would route a request to whichever peer has the model warm; `awdk` is the runtime that would run on each device. None of the three knows about model PLACEMENT or WARM-KEEPING across peers today -- that logic is the actual gap, not the transport (mesh-deploy/WireGuard already exists for that) and not per-node serving (node-bootstrap already detects hardware and stands up a local backend). The closest existing precedent is the platform's own DGX+5090+RTX ggml-RPC pooled-inference stack, run at fleet scale and never packaged as something a customer's own device fleet can stand up for itself. NOT `aithernet-provider` (that joins the PLATFORM's community pool with settlement -- a different shape) and NOT a rename of the fleet's pooled-inference stack (/client-not-lift: that stack is thousands of lines of fleet-specific orchestration; a personal-pool brick would be a small client speaking to whichever peers `awnet` says are reachable, same relationship as `awrelay` to `AitherRelay.py`).\n\nIncludes: awnet, awnode, awdk",
+  "see_also": [
+    "awnet",
+    "awnode",
+    "awdk"
+  ],
+  "status": "partial",
+  "synopsis": "A pool across your own devices",
+  "topic": "personal-mesh-pool"
+}

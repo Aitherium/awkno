@@ -9,7 +9,7 @@
     "awm",
     "awpredict"
   ],
-  "status": "unpublished",
+  "status": "planned",
   "synopsis": "Point an agent at a file and a command that scores it, and let it improve.",
   "topic": "awevolve"
 }
