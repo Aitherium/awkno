@@ -1,0 +1,16 @@
+{
+  "adopt": null,
+  "body": "### Three words you will see everywhere\n\n**Aitherium** is the company and the platform: the hosted service at aitherium.com,\nthe accounts, the marketplace, the people.\n\n**AitherOS** is the operating system underneath it — not a Linux you install, but the\nrunning fleet of services that gives agents memory, identity, tools and a place to\ntalk. You never have to run AitherOS yourself. Everything in this guide works on your\nown laptop; the platform is there when you want more.\n\n**aw** is short for **Aither World**. Every tool in the family is named as a phrase:\n`awdk` is *Aither World Dev Kit*, `awnix` is *Aither World Nix* (a Linux), `awsh` is\n*Aither World Shell*. If a name does not read aloud as \"Aither World <something>\", it\nis not one of ours. We call each of these tools a **brick** — small, standalone, and\nuseful on its own before it is useful together.\n\n### What an agent actually is\n\nA chatbot answers. An **agent** *acts*: it can run a command, read a file, search the\nweb, send a message, and then decide what to do next based on what happened. The\ndifference is tools. Give a brain tools and a job, and you have an agent.\n\nSo an agent is three things:\n\n- a **brain** — the model that reads and writes language;\n- **tools** — functions the brain is allowed to call;\n- a **job** — what it is for, written down in a small file.\n\nChapter 4 has you write that file. It is shorter than this page.\n\n### The brains are open\n\nAitherium's own brains are open models you can download and run:\n\n- **The orchestrator model** — an open 8-billion-parameter model the platform itself runs on.\n It fits on an ordinary laptop.\n- **Bonsai** — a family of models squeezed to about *one bit per weight*. Bonsai-27B is\n a 27-billion-parameter brain in 3.8 GB, and it runs on a plain CPU with 8 GB of RAM.\n\n\"Open\" means the numbers that make up the model are published. You can run them\nwith no account, no network, no bill. Chapter 2 does exactly that.\n\n### How this guide works\n\nEvery chapter from here on has two columns. **Teach** (left) explains what a thing\nis and why it exists, in plain words. **Do** (right) is the exact command to type,\nwhat you should see, and what to do if you do not see it. Every chapter ends with\none command that proves you finished.\n\nYou never need a later chapter to do an earlier one. If you stop after chapter 3 you\nhave a working local brain you can talk to, and that is a fine place to stop.\n\nWHAT YOU LEARNED\n\n- An agent is a program that can take actions, not just answer.\n- A brain is the model behind it; Bonsai and our 8B orchestrator model are ours and they are open.\n- \"aw\" means Aither World - every brick name is a phrase: awdk is Aither World Dev Kit.",
+  "category": "guide",
+  "description": "Chapter 0 of 9 -- What Aitherium, AitherOS and the aw* bricks are - in plain words, before you install anything.\n\nAbout 5 minutes. Read online: https://aitherium.github.io/awknowledge/path/00-welcome.html",
+  "see_also": [
+    "awknowledge",
+    "awdk",
+    "awnix",
+    "guide-01"
+  ],
+  "slug": "00-welcome",
+  "status": "published",
+  "synopsis": "Welcome to Aither World",
+  "topic": "guide-00"
+}

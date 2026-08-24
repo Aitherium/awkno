@@ -1,0 +1,22 @@
+{
+  "adopt": "awkno guide 1   # start at chapter 1; `awkno open guide` for the browser",
+  "body": "guide-00   Welcome to Aither World  (~5 min)\nguide-01   Install awdk  (~10 min)\nguide-02   Your first local brain  (~20 min)\nguide-03   Talk to it  (~15 min)\nguide-04   Build your first agent  (~30 min)\nguide-05   Agent packs  (~15 min)\nguide-06   Your own hardware  (~30 min)\nguide-07   Deploy on awnix  (~45 min)\nguide-08   Many agents, one repo  (~30 min)\nguide-09   The omnibox  (~10 min)",
+  "category": "guide",
+  "description": "From \"what is an agent?\" to a terminal that answers you - one path, nothing skipped.\n\nOnline: https://aitherium.github.io/awknowledge/",
+  "see_also": [
+    "guide-00",
+    "guide-01",
+    "guide-02",
+    "guide-03",
+    "guide-04",
+    "guide-05",
+    "guide-06",
+    "guide-07",
+    "guide-08",
+    "guide-09"
+  ],
+  "slug": null,
+  "status": "published",
+  "synopsis": "The Aither World Guide",
+  "topic": "guide"
+}
