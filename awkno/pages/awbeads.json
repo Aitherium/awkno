@@ -1,0 +1,13 @@
+{
+  "adopt": "Drop a canvas into one page, arrange two things on it, reload, and find them where you left them.",
+  "category": "brick",
+  "description": "Kind: ui\n\nProblem\nEvery product eventually grows a screen where things are placed rather than listed — a board, a map, a graph of what connects to what. That screen is almost always re-implemented per product, and the arrangement lives in component state, so it dies on reload and cannot be exported, reviewed, or moved to another surface. Measured on this tree 2026-08-24, the same hand-vendored tarball appears in three separate product frontends because there was no registered brick to depend on.\n\nInstall\nnpm i @aitheros/bead-space",
+  "see_also": [
+    "awkit",
+    "awsh",
+    "awnboard"
+  ],
+  "status": "unpublished",
+  "synopsis": "A spatial canvas for a page",
+  "topic": "awbeads"
+}

@@ -1,7 +1,7 @@
 {
   "adopt": "Snapshot one directory, break it, restore it, diff it.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA restore that half-succeeds is worse than one that fails, because you now have a state that never existed.\n\nInstall\npip install awrecover",
+  "description": "Kind: tool\n\nProblem\nA restore that half-succeeds is worse than one that fails, because you now have a state that never existed.\n\nInstall\npip install git+https://github.com/Aitherium/awrecover.git",
   "see_also": [
     "awnix",
     "awshare",

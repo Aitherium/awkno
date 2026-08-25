@@ -1,7 +1,7 @@
 {
   "adopt": "Expose one local port to one remote caller and take it away again.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nEverything an agent runs is behind NAT on somebody's laptop, and every workaround (a port forward, a public IP, a broker somebody maintains) becomes permanent.\n\nInstall\npip install awtunnel",
+  "description": "Kind: tool\n\nProblem\nEverything an agent runs is behind NAT on somebody's laptop, and every workaround (a port forward, a public IP, a broker somebody maintains) becomes permanent.\n\nInstall\npip install git+https://github.com/Aitherium/awtunnel.git",
   "see_also": [
     "awnet",
     "awnode"

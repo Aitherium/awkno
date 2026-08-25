@@ -1,0 +1,13 @@
+{
+  "adopt": "Load one page and get an answer from a model that never left the tab.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nEvery in-browser LLM demo either phones home for the real answer or downloads a few hundred MB unasked. Getting BOTH right -- genuinely local inference, and a consent gate that runs BEFORE the fetch instead of after -- is the part nobody ships, so most \"runs in your browser\" claims are marketing for a server call.\n\nInstall\nnpm i @aitherium/portal-kit",
+  "see_also": [
+    "awkit",
+    "awsprite",
+    "AitherConnect"
+  ],
+  "status": "planned",
+  "synopsis": "Run a real model in the visitor's own browser",
+  "topic": "awbonsai"
+}

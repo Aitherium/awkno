@@ -1,7 +1,7 @@
 {
   "adopt": "Ask one question and get back a report where every claim carries the source it came from.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nAn agent asked to research something returns a fluent report whose citations were never read. The failure is not a refusal and not an error — it is a plausible document, which is the most expensive possible output, because checking it costs more than writing it did.\n\nInstall\npip install awresearch",
+  "description": "Kind: tool\n\nProblem\nAn agent asked to research something returns a fluent report whose citations were never read. The failure is not a refusal and not an error — it is a plausible document, which is the most expensive possible output, because checking it costs more than writing it did.\n\nInstall\npip install git+https://github.com/Aitherium/awresearch.git",
   "see_also": [
     "awfind",
     "awbrowse",

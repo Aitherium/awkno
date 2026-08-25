@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Owner directive 2026-08-24, reinforcing the existing `.PRODUCTS/.SPRITE/` Phase 2/3 roadmap (`AitherOS/dev/prompts/aithersprite-knowledge-companion-program.md`): AitherSprite today is playable but shallow -- flat per-sprite knowledge rows, titles-only in the talk prompt, server-side inference only, and \"download it\" is a paid pack with no guided path to actually WIRE it to real local tools and data. The directive is four upgrades composed together, and none of the four pieces is new -- the gap is that nothing connects them for this product: teaching should build a real personal knowledge GRAPH (`awgraph` is a CODE graph today -- CodeChunk/CodeGraph/CodeGraphStore -- and `awm` is scoped FACTS, not a traversable graph; a per-user knowledge graph does not exist as a brick yet); the companion should run and be TRAINABLE fully in-browser on `awbonsai`, not only through a server round trip; and graduating a companion should walk the owner through a real self-service CONNECT of `awdk` + `awsh` + `awnode` on their own machine -- the same shape as the `selfhost-bonsai` skill's stranger-to-provider flow, but ending in \"your companion can now use your files/tools\" instead of \"your GPU now serves the mesh\". NOT a rewrite of `lib/companion/AitherSprite.py` -- its deterministic engine (needs/mood/evolution, no I/O) is correct and stays the server-authoritative source of truth even for a browser-trained companion, so growth cannot be forged client-side (`security-review-patterns.md` #1: a fail-closed gate is not optional). What changes is WHERE teach/talk execute (in-tab via `awbonsai` when offline or pre-account, server via MicroScheduler when connected) and how knowledge is stored (a graph, not a flat table).\n\nIncludes: awsprite, awbonsai, awdk, awsh, awnode",
+  "see_also": [
+    "awsprite",
+    "awbonsai",
+    "awdk",
+    "awsh",
+    "awnode"
+  ],
+  "status": "planned",
+  "synopsis": "Grow a companion in the browser, then take it home",
+  "topic": "browser-companion-graduation"
+}
