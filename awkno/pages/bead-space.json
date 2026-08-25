@@ -1,0 +1,12 @@
+{
+  "adopt": "# Download BeadSpace from https://github.com/wbern/bead-space\n# or visit https://pages.bernting.se/bead-space/\n# Then enable the adk companion:\npip install awdk\nadk <your-command>  # Use adk with bead-space agents",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nAgent companion for BeadSpace: an interactive D3 work graph rendered as a tiny space universe. Provides system prompting for agents assisting BeadSpace use.\n\nRuntime\nawdk>=3.7.0",
+  "see_also": [
+    "awdk",
+    "awpack"
+  ],
+  "status": "preview",
+  "synopsis": "Agent companion for BeadSpace: an interactive D3 work graph rendered as a tiny space universe",
+  "topic": "bead-space"
+}

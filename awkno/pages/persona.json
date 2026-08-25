@@ -1,0 +1,12 @@
+{
+  "adopt": "# Download Persona from https://github.com/xikhar/persona\n# Extract and run it locally on your desktop.\n# Then enable persona support in adk:\npip install \"awdk\"\nADK_PERSONA=1 adk <your-command>\n\n# Or set the env var for all adk sessions:\n#   Windows: setx ADK_PERSONA 1\n#   Linux:   export ADK_PERSONA=1 >> ~/.bashrc",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nDesktop avatar bridge for Persona. Control a VRM avatar's state, animation, voice, and audio via HTTP loopback — host-run only.\n\nRuntime\nawdk>=3.7.0\n\nTools\n  persona_status\n  persona_animate\n  persona_set_character\n  persona_speak_state\n  persona_audio_level\n  persona_mute_microphone\n  persona_mute_output",
+  "see_also": [
+    "awdk",
+    "awpack"
+  ],
+  "status": "preview",
+  "synopsis": "Desktop avatar bridge for Persona",
+  "topic": "persona"
+}

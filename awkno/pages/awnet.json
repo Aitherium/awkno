@@ -1,11 +1,12 @@
 {
   "adopt": "Host a mesh on one machine and join it from another.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nAgents are islands. Every deployment reinvents how a peer is found, addressed and trusted, so two agents on two machines cost more to introduce than either cost to build — and the answers (port forwards, a VPN per pair, public IPs, a broker somebody has to run) all become permanent maintenance.\n\nInstall\npip install awnet",
+  "description": "Kind: runtime\n\nProblem\nAgents are islands. Every deployment reinvents how a peer is found, addressed and trusted, so two agents on two machines cost more to introduce than either cost to build — and the answers (port forwards, a VPN per pair, public IPs, a broker somebody has to run) all become permanent maintenance.\n\nInstall\npip install git+https://github.com/Aitherium/awnet.git",
   "see_also": [
     "awnode",
     "awdk",
-    "awrelay"
+    "awrelay",
+    "awwall"
   ],
   "status": "public",
   "synopsis": "The agentic web",

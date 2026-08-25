@@ -5,7 +5,8 @@
   "see_also": [
     "awdk",
     "awskills",
-    "awsh"
+    "awsh",
+    "gobbonet-agentic"
   ],
   "status": "unpublished",
   "synopsis": "First-party agent packs",

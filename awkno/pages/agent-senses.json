@@ -10,7 +10,7 @@
     "awscreen",
     "awdk"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "Senses",
   "topic": "agent-senses"
 }

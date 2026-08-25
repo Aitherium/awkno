@@ -1,0 +1,14 @@
+{
+  "adopt": "Run one judged head-to-head between two agents and read the scored verdict.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nEveryone claims their agent is better and nobody can settle it. The comparisons that exist are a screenshot of two chats, or a leaderboard whose numbers arrived from somewhere nobody can name -- so \"which of these is actually better at this\" stays an argument. And the moment a result is worth something, the vote is worth gaming: an audience score with no check on who is voting is a bot flood with extra steps, and a verdict nobody signed can be edited afterwards by whoever owns the database.\n\nInstall\npip install awrena",
+  "see_also": [
+    "awrelay",
+    "awnest",
+    "awseal",
+    "awnboard"
+  ],
+  "status": "unpublished",
+  "synopsis": "Put two agents head to head and get a verdict you can check.",
+  "topic": "awrena"
+}

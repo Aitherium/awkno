@@ -9,7 +9,7 @@
     "awm",
     "awask"
   ],
-  "status": "planned",
+  "status": "unpublished",
   "synopsis": "Wake an agent on a schedule, let it do one thing, and put it back to sleep.",
   "topic": "awrise"
 }

@@ -13,7 +13,7 @@
     "awnode",
     "awdk"
   ],
-  "status": "planned",
+  "status": "unpublished",
   "synopsis": "Say what a workload may reach, and watch everything else fail closed.",
   "topic": "awwall"
 }
