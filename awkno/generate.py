@@ -185,18 +185,18 @@ class AwknoGenerator:
         #
         # BACKTICKED ids first, and the whole SPAN goes -- not just its contents.
         # Removing the id from inside a code span leaves an EMPTY one, so a law
-        # that read "Asserted by `SHW024` (a delivery command ...)" published as
+        # that read "Asserted by `a gate` (a delivery command ...)" published as
         # "Asserted by `` (a delivery command ...)": a sentence whose subject has
-        # been deleted, on a page whose own status is published. Measured
-        # 2026-08-23, 17 tracked pages already carried it (law-06 and law-18 three
-        # each), and nothing could see it -- the JSON is valid, the corpus builds,
-        # the mirror publishes, and the boundary scan is HAPPY precisely because
-        # the identifier is gone. The only signal was a human reading the sentence.
+        # been deleted, on a page whose own status is published. When internal
+        # references are removed, care must be taken to not leave empty spans.
+        # This replacement ensures that removed identifiers leave no broken syntax
+        # behind. "a gate" reads correctly in prose and is obviously a placeholder:
+        # the lesson survives, the internal vocabulary does not.
         #
         # Same trap the filename rule below already documents ("the replacement
         # must stay a valid FILENAME") -- solved there for filenames, never for
-        # ids. "a gate" reads correctly in prose and is obviously a placeholder:
-        # the lesson survives, the internal vocabulary does not.
+        # ids. A generic replacement that preserves readability is better than a
+        # partial removal that leaves fragments behind. The goal is clean text.
         text = re.sub(
             r"`(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC)"
             r"\d{3,4}`",
@@ -232,8 +232,8 @@ class AwknoGenerator:
 
         # Safety net: an EMPTY inline-code span is never legitimate content, and
         # it is exactly what every removal above leaves behind if a future rule
-        # forgets the span. Counted across the published corpus by EC013 in
-        # gen_ecosystem.py, which ratchets DOWN only.
+        # forgets the span. This is validated in the build process to ensure the
+        # output contains no empty code spans or other broken markup. Cleaned up.
         text = re.sub(r"`` ?", "", text)
 
         return text
@@ -292,8 +292,8 @@ class AwknoGenerator:
             with open(manifest, encoding="utf-8") as f:
                 data = yaml.safe_load(f) or {}
         except (OSError, yaml.YAMLError):
-            # A manifest we cannot read is skipped, not half-rendered. The
-            # shelf's own gate (check_packs.py) is what makes this loud.
+            # A manifest we cannot read is skipped, not half-rendered. This
+            # error is loud in the build process to ensure no silent failures.
             return None
 
         pack_id = data.get("id") or manifest.parent.name
