@@ -6,7 +6,8 @@
     "awdk",
     "awrelay",
     "awevolve",
-    "awrise"
+    "awrise",
+    "awpool"
   ],
   "status": "public",
   "synopsis": "A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds. It also judges whether the runner pool is big enough for the queue it is draining, and can ask a host to grow it -- reserving capacity is zero-sum, so a saturated pool needs more of it, not a different share of it.",

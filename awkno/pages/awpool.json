@@ -1,0 +1,13 @@
+{
+  "adopt": "Dispatch one public-safe job to a public mirror's free runner and watch it execute.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nThe monorepo's hosted runners are billing-dead and its self-hosted pool is CPU-bound, while the public mirrors run free hosted CI that only ever executes their own sync and publish lanes. The capacity is real and not pooled: nothing routes monorepo public-safe work to it.\n\nInstall\nplanned -- no package yet (boundary rule set: .AITHERIUM/PUBLIC-RUNNER-BOUNDARY.md)",
+  "see_also": [
+    "awrun",
+    "awnet",
+    "awdk"
+  ],
+  "status": "planned",
+  "synopsis": "The free half of the elastic work pool: dispatches public-safe work onto the free GitHub-hosted runners of the public aw* mirrors, so their idle CI minutes become compute. awrun remains the paid/self-hosted lane; this is its free twin.",
+  "topic": "awpool"
+}
