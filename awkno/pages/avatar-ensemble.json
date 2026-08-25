@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Spawn more than one Persona-driven avatar at once, bind each to a distinct awdk agent persona (its own Library/pack, its own model), render them together in one shared scene, and let them hold a live concurrent conversation with each other and the owner -- steered from awsh as the cockpit. Registered 2026-08-24 per: \"give an avatar a face and a mind, then let several of them talk\" cannot be said without naming the companion, the agent runtime and the shell that steers it, so this is a stack over existing bricks, not a new brick (same reasoning as `awsprite`, which this stack composes with directly).\n\nIncludes: awdk, awsh, awvoice, awvision, awsprite",
+  "see_also": [
+    "awdk",
+    "awsh",
+    "awvoice",
+    "awvision",
+    "awsprite"
+  ],
+  "status": "planned",
+  "synopsis": "Avatar ensemble",
+  "topic": "avatar-ensemble"
+}

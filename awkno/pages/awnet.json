@@ -6,7 +6,8 @@
     "awnode",
     "awdk",
     "awrelay",
-    "awwall"
+    "awwall",
+    "awswarm"
   ],
   "status": "public",
   "synopsis": "The agentic web",
