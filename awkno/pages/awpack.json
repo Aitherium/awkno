@@ -8,7 +8,7 @@
     "awsh",
     "gobbonet-agentic"
   ],
-  "status": "unpublished",
+  "status": "public",
   "synopsis": "First-party agent packs",
   "topic": "awpack"
 }
