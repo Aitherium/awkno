@@ -4,7 +4,8 @@
   "description": "Kind: tool\n\nProblem\nOne agent's transcript is invisible to every other agent, so a conclusion reached once gets re-derived by the next session that hits the same symptom.\n\nInstall\npip install awrelay",
   "see_also": [
     "awgit",
-    "awdk"
+    "awdk",
+    "awdelphi"
   ],
   "status": "public",
   "synopsis": "Portable agent messaging",

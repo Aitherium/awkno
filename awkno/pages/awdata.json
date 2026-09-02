@@ -1,0 +1,15 @@
+{
+  "adopt": "Clone it, run one rehydrate command, and score your model on real labelled text today.",
+  "category": "brick",
+  "description": "Kind: corpus\n\nProblem\nEvery embedding and classifier claim needs a corpus, and the corpus is the part that never ships. Papers cite datasets behind logins, repos carry a loader for data nobody has, and a result measured on the wrong domain looks identical to one measured on the right domain until somebody re-runs it. Measured 2026-09-02: a compression result that held on source files (-0.006 macro-F1, within noise) cost -0.10 on real Reddit comments -- same metric, same code, opposite decision.\n\nInstall\ngit clone https://github.com/Aitherium/awdata",
+  "see_also": [
+    "awembed",
+    "awgraph",
+    "awfind",
+    "awgym",
+    "awknowledge"
+  ],
+  "status": "planned",
+  "synopsis": "Open labelled corpora you can train and measure against, with the code that built them.",
+  "topic": "awdata"
+}

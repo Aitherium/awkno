@@ -1,0 +1,13 @@
+{
+  "adopt": "Run it on one file and read what it is, who may see it and what it is about.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA corpus nobody has classified cannot be published safely or retrieved well: the one internal page in a public mirror is found by a stranger, and the question that needed a design note gets a changelog. Classification must be a standalone step any pipeline can call, not a judgement buried in a model prompt.\n\nInstall\npip install git+https://github.com/Aitherium/awclassify.git",
+  "see_also": [
+    "awknowledge",
+    "awkno",
+    "awdk"
+  ],
+  "status": "unpublished",
+  "synopsis": "Classify any document -- what it is, who may read it, who it is for, what it is about.",
+  "topic": "awclassify"
+}

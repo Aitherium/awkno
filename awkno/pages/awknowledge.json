@@ -4,7 +4,8 @@
   "description": "Kind: corpus\n\nProblem\nEveryone learns the same lessons about agent-written code the same expensive way, and writes none of them down where the next person looks.\n\nInstall\nread it — https://aitherium.github.io/awknowledge/",
   "see_also": [
     "awskills",
-    "awkno"
+    "awkno",
+    "awclassify"
   ],
   "status": "public",
   "synopsis": "How to run a coding agent so the result survives",
