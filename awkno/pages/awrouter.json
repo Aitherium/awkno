@@ -1,0 +1,13 @@
+{
+  "adopt": "Point it at your backends (vLLM / llama.cpp / any OpenAI-compatible endpoint); ask it which backend should serve model X right now, or to stream a completion with failover and context fitting.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nEvery LLM call in the platform routes through MicroScheduler (:8150) -- but the routing logic (backend discovery, failover, tier maps, context fitting, streaming) is buried inside a 19,535-line service with 107 monorepo imports. A stranger cannot run it: it demands the internal CA, services.yaml discovery, secrets at:8111, the fleet's model inventory. The routing plane is valuable standalone and entangled by accident of packaging, not by design.\n\nInstall\nnot on PyPI yet; extraction from AitherMicroScheduler.py + LLMGateway.py planned",
+  "see_also": [
+    "awdk",
+    "awsh",
+    "awnode"
+  ],
+  "status": "planned",
+  "synopsis": "OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable.",
+  "topic": "awrouter"
+}

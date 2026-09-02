@@ -1,0 +1,17 @@
+{
+  "adopt": "Store one artifact as a versioned GitHub release and fetch it back byte-verified — `awrtifact mirror <URL|FILE> --release TAG`.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nBig artifacts (model weights, datasets, builds) exceed GitHub's 2 GiB release-asset cap, so mirrors end up as bespoke scripts with hardcoded manifests that go stale — the fleet's orchestrator served a pre-v18 build for days while the v18 file sat in a release the worker did not know.\n\nInstall\npip install awrtifact",
+  "see_also": [
+    "awdk",
+    "awnode",
+    "aitherkvcache",
+    "awgit",
+    "awseal",
+    "awshare",
+    "awrecover"
+  ],
+  "status": "public",
+  "synopsis": "Deliberately chunk artifacts into GitHub release assets",
+  "topic": "awrtifact"
+}

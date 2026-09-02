@@ -1,0 +1,12 @@
+{
+  "adopt": "Run a multi-round anonymous expert panel on a question and get a converged answer with a trace.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA single expert opinion is one opinion; a panel that reads each other's names converges on the loudest voice, not the best argument. Delphi panels need anonymous rounds, aggregate feedback, and an honest stop rule.\n\nInstall\npip install git+https://github.com/Aitherium/awdelphi.git",
+  "see_also": [
+    "awrelay",
+    "awdk"
+  ],
+  "status": "public",
+  "synopsis": "Anonymous multi-round expert panels",
+  "topic": "awdelphi"
+}

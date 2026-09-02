@@ -1,0 +1,17 @@
+{
+  "adopt": "Point it at a folder of notes or sessions; ask a question your context never held.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nEvery AI memory system sells you a black box: sessions vanish into a vendor cloud, and \"it remembers\" means \"the vendor's model was prompted with a blob\". Memory should be files you can read, claims you can check against the session or file that produced them, and retrieval that never dumps your whole history into a prompt.\n\nInstall\npip install git+https://github.com/Aitherium/awbrain.git",
+  "see_also": [
+    "awknowledge",
+    "awm",
+    "awseal",
+    "awkno",
+    "awnix",
+    "awnode",
+    "awdk"
+  ],
+  "status": "unpublished",
+  "synopsis": "Your history as a wiki of linked markdown",
+  "topic": "awbrain"
+}

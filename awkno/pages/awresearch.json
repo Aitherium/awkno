@@ -6,7 +6,8 @@
     "awfind",
     "awbrowse",
     "awreason",
-    "awgraph"
+    "awgraph",
+    "awgym"
   ],
   "status": "public",
   "synopsis": "Ask a research question, get a cited report you can check.",

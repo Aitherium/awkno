@@ -1,0 +1,20 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Owner directive 2026-09-01: decentralise storage and inference across the aw* stack so anyone's node can join the mesh, share models and resources, and pool inference -- including cross-model KV-cache sharing across nodes. Registered because each plane is real INSIDE the fleet and absent at the public boundary: the overlay (AitherMesh + Conductor onboarding) is deployed and `awnet` fronts it; `awnode` routes to a warm peer; same-model warm-prefix sharing exists as llamacpp_connector + kv_catalog (Nexus) + Strata as the cold tier; cross-model maps exist as lib/gpu/kvtransfer; `awswarm` holds the sub-layer placement math; `aitherkvcache` quantises the cache; `awrtifact` ships the packs; `awnix` is the box a contributor boots. What no brick does yet is let a STRANGER'S node discover a warm prefix, receive a mapper pack, or get settled for serving -- `awcache` is the first of those three; settlement is the external OmniNode plane described in.AITHEROS/35-OPEN-WEIGHT-FRONTIER-MOE-SERVING.md (Phase 4). Phasing and the measured numbers:.AITHEROS/36-PLAYGROUND-ROULETTE-AND-COMPUTE-COMMONS.md Part D.\n\nIncludes: awnix, awnode, awnet, awcache, awswarm, awpool, aitherkvcache, awrtifact, awtunnel, awwall",
+  "see_also": [
+    "awnix",
+    "awnode",
+    "awnet",
+    "awcache",
+    "awswarm",
+    "awpool",
+    "aitherkvcache",
+    "awrtifact",
+    "awtunnel",
+    "awwall"
+  ],
+  "status": "partial",
+  "synopsis": "The inference commons -- pool compute, storage and caches across strangers' nodes",
+  "topic": "inference-commons"
+}

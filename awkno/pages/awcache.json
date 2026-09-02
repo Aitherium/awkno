@@ -1,0 +1,15 @@
+{
+  "adopt": "Serve one prompt prefix from one node and have a second node skip its prefill by fetching the cache by content digest.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nTwo nodes serving the same model both pay full prefill for the same document, and two DIFFERENT models cannot share a cache at all. Measured 2026-08-31 on this fleet, KV accumulates at 0.515 Mbps -- a 5,061-token cache moves in 0.42 s over 1 Gbps against 819 s to recompute -- so bandwidth is not the constraint; discovery (who has this prefix warm?) and trust (is this map safe to load?) are. The failure mode of a WRONG cache is the worst one in inference: no error, fluent, confidently-wrong text.\n\nInstall\npip install awcache",
+  "see_also": [
+    "awnet",
+    "awnode",
+    "aitherkvcache",
+    "awrtifact",
+    "awswarm"
+  ],
+  "status": "planned",
+  "synopsis": "Let a second node skip its prefill because a first node already paid for it.",
+  "topic": "awcache"
+}

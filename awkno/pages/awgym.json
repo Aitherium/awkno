@@ -1,0 +1,17 @@
+{
+  "adopt": "Play one ARC game end-to-end with the world model watching every transition, then ask it to predict the next grid and watch the surprise score fall.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nA world model is only as good as the play it watches. Solver runs stream past, checkpoints get trained on whatever happened to be recorded, and nobody can answer \"did the model actually get better at predicting the next grid?\" against transitions it has never seen.\n\nInstall\npip install awgym",
+  "see_also": [
+    "awdk",
+    "awm",
+    "awrelay",
+    "awgit",
+    "awgraph",
+    "awfocus",
+    "awrun"
+  ],
+  "status": "public",
+  "synopsis": "An ARC training gym",
+  "topic": "awgym"
+}
