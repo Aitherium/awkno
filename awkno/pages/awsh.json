@@ -5,7 +5,8 @@
   "see_also": [
     "awdk",
     "awfind",
-    "awbrowse"
+    "awbrowse",
+    "awembed"
   ],
   "status": "public",
   "synopsis": "Your terminal answers you -- type a question where a command would go.",

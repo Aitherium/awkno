@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "The searching tools are only as good as the vectors under them. awembed trains the embedder on your corpus and proves it on held-out directories; awgraph, awfind and awm then search, rank and remember over vectors that know your code instead of someone else's. awdk agents consume all of it as tools.\n\nIncludes: awembed, awgraph, awfind, awm, awdk",
+  "see_also": [
+    "awembed",
+    "awgraph",
+    "awfind",
+    "awm",
+    "awdk"
+  ],
+  "status": "partial",
+  "synopsis": "Retrieval you trained yourself",
+  "topic": "retrieval-you-trained"
+}

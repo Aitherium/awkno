@@ -5,7 +5,8 @@
   "see_also": [
     "awreason",
     "awm",
-    "awfind"
+    "awfind",
+    "awembed"
   ],
   "status": "public",
   "synopsis": "Answer a question over a context far larger than the window",

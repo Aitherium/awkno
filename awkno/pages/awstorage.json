@@ -1,0 +1,15 @@
+{
+  "adopt": "Scan one drive and read a ranked inventory of what fills it, with each tree marked re-fetchable or not.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nStorage sprawls faster than anyone can look at it. Caches, dead builds, duplicate model weights and orphaned volumes accumulate across drives and nodes, and the only tool is an ad-hoc du that answers one question once and is forgotten. Deleting without an inventory destroys the wrong thing; not deleting fills the disk that holds Postgres.\n\nInstall\nplanned -- source at AitherOS/packages/awstorage; publishes as `pip install awstorage` once the mirror lane exists",
+  "see_also": [
+    "awrecover",
+    "awdk",
+    "awnode",
+    "awsh",
+    "awgraph"
+  ],
+  "status": "planned",
+  "synopsis": "Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it.",
+  "topic": "awstorage"
+}

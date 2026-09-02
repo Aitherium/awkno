@@ -5,7 +5,8 @@
   "see_also": [
     "awpredict",
     "awdk",
-    "awgraph"
+    "awgraph",
+    "awembed"
   ],
   "status": "public",
   "synopsis": "A portable, scoped agent memory.",
