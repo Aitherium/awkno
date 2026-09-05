@@ -5,7 +5,8 @@
   "see_also": [
     "awdk",
     "awfind",
-    "awsh"
+    "awsh",
+    "awprove"
   ],
   "status": "public",
   "synopsis": "A portable browser client",
