@@ -1,0 +1,18 @@
+{
+  "adopt": "Mint a Space on this device and open it in the browser -- a page, your files, your companion.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nThe web stopped being a place humans make things in and became feeds that are made at them, and the first thing AI did there was flood it with bots. There is no surface where a person keeps a page, a companion that works for them, and a community they can find on purpose -- with the agent as a tool, never a peer.\n\nInstall\nplanned -- no package yet (plan: .PLANS/aitherspaces-and-the-aitheros-binary-2026-09-03.md)",
+  "see_also": [
+    "awdk",
+    "awnode",
+    "awsprite",
+    "awshare",
+    "awstorage",
+    "awrelay",
+    "awnboard",
+    "awiam"
+  ],
+  "status": "planned",
+  "synopsis": "A place, not a page: every human gets a Space -- a hand-made page, files and a companion agent that is theirs -- and Spaces link to Spaces. Early-2000s internet (Neocities, Newgrounds, Neopets, RuneScape) with local-first AI underneath.",
+  "topic": "awspaces"
+}

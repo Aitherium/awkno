@@ -4,7 +4,8 @@
   "description": "Kind: runtime\n\nProblem\nEvery app hardcodes a different provider SDK, so switching backends means editing every app.\n\nInstall\npip install awnode",
   "see_also": [
     "awdk",
-    "aitherkvcache"
+    "aitherkvcache",
+    "awspaces"
   ],
   "status": "public",
   "synopsis": "A lightweight local gateway",
