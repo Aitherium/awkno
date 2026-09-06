@@ -5,7 +5,9 @@
   "see_also": [
     "awdk",
     "awbrowse",
-    "awscreen"
+    "awscreen",
+    "awtax",
+    "awavatar"
   ],
   "status": "unpublished",
   "synopsis": "See an image",

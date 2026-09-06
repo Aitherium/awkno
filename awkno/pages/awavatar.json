@@ -1,0 +1,13 @@
+{
+  "adopt": "Validate one character spec and see exactly which field is wrong.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA character factory returns a pile of meshes, rigs and clips, and every consumer re-invents its own idea of whether that pile is complete and loadable. The question is the same everywhere and the answer differs everywhere.\n\nInstall\npip install awavatar",
+  "see_also": [
+    "awvision",
+    "awdk",
+    "awseal"
+  ],
+  "status": "unpublished",
+  "synopsis": "One character spec in, a rigged, animated, multi-style asset pack out.",
+  "topic": "awavatar"
+}

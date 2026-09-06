@@ -10,7 +10,13 @@
     "awask",
     "AitherConnect",
     "awpack",
-    "awembed"
+    "awembed",
+    "awflow",
+    "awdaemons",
+    "awgit",
+    "awgraph",
+    "awrelay",
+    "awstorage"
   ],
   "status": "public",
   "synopsis": "Build AI agent fleets",

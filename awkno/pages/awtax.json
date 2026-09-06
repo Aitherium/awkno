@@ -1,0 +1,15 @@
+{
+  "adopt": "Point it at a tax PDF and get every figure out as structured JSON, scanned forms included.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nYour own tax data gets locked inside one vendor's encrypted format, and a filed return or a mailed W-2 is a PDF nobody's code can read -- half of them are scans with no text at all. Getting your own numbers back out means re-typing them or re-buying the app that sealed them.\n\nInstall\ngit clone https://github.com/Aitherium/awtax",
+  "see_also": [
+    "awvision",
+    "awpack",
+    "awskills",
+    "awdk",
+    "awknowledge"
+  ],
+  "status": "public",
+  "synopsis": "Turn any tax PDF -- returns, W-2, 1099, statements, even scans -- into structured data you can check.",
+  "topic": "awtax"
+}
