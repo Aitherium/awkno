@@ -9,7 +9,7 @@
     "awsh",
     "awnest"
   ],
-  "status": "unpublished",
+  "status": "public",
   "synopsis": "Your agent asks you a question",
   "topic": "awask"
 }
