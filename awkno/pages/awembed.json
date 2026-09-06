@@ -12,7 +12,7 @@
     "awsh",
     "awskills"
   ],
-  "status": "public",
+  "status": "unpublished",
   "synopsis": "Train an embedding model that knows your corpus, and prove it beats the big one.",
   "topic": "awembed"
 }
