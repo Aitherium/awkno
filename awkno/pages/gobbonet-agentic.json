@@ -6,7 +6,7 @@
     "awdk",
     "awm"
   ],
-  "status": "public",
+  "status": "no-pages",
   "synopsis": "GobboNet campaigns with a real agent brain",
   "topic": "gobbonet-agentic"
 }

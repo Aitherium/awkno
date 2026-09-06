@@ -1,0 +1,20 @@
+{
+  "adopt": "Point one harness you already use at a fleet you already run, and get its tools inside it.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nEvery agent harness reinvents the same four wires -- tool discovery, a credential, session identity, and memory. The wiring gets written inside whichever repo needed it first, so it is invisible to the next harness and dies when that repo moves on. The integration that works best is usually the one nobody else can install.\n\nInstall\nplanned -- no package yet",
+  "see_also": [
+    "awdk",
+    "awsh",
+    "awnet",
+    "awrelay",
+    "awm",
+    "awgraph",
+    "awembed",
+    "awrepl",
+    "awrecurse",
+    "awpredict"
+  ],
+  "status": "planned",
+  "synopsis": "Wire the agent harness you already use into a fleet you already run.",
+  "topic": "awmod"
+}
