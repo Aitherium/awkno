@@ -61,12 +61,6 @@ class AwknoGenerator:
         # Same brick as the laws, same offline promise -- `awkno guide 2` must
         # answer on a plane with no network, which is why it is COMMITTED here.
         self.guide_dir = self.repo_root.parent / "awknowledge"
-        # The PUBLIC shelf. Deliberately not `AitherOS/config/pack_shelf.yaml`:
-        # that file is the internal backlog and its hold reasons name internal
-        # services and debt ids. A public corpus that reads it and filters is
-        # one unanticipated reason away from publishing one; a public corpus
-        # that never reads it cannot fail that way.
-        self.shelf_dir = self.repo_root.parent / "awpack" / "packs"
         self.output_dir = (Path(output_dir) if output_dir
                            else Path(__file__).parent / "pages")
 
@@ -176,33 +170,25 @@ class AwknoGenerator:
         if not text:
             return text
 
-        # Issue-tracker row ids, bare and bracketed.
+        # Backtick-wrapped forms FIRST: the whole inline-code span goes, not
+        # just the identifier inside it. Stripping only the id left the empty
+        # span "Asserted by ``" on published pages (EC013, measured
+        # 2026-08-23: 17 pages, law-06 and law-18 with three holes each).
+        text = re.sub(r"`\s*D-\d+\s*`", "", text)
+        text = re.sub(
+            r"`\s*(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC)"
+            r"\d{3,4}\s*`",
+            "",
+            text,
+        )
+        text = re.sub(r"`\s*gate\s+\d+[a-z]*\s*`", "", text)
+
+        # Issue-tracker row ids, bare and bracketed (non-backticked residue).
         text = re.sub(r"\(\s*D-\d+\s*\)", "", text)
         text = re.sub(r"\[\s*D-\d+\s*\]", "", text)
         text = re.sub(r"\bD-\d+\b", "", text)
 
-        # Quality-gate rule codes.
-        #
-        # BACKTICKED ids first, and the whole SPAN goes -- not just its contents.
-        # Removing the id from inside a code span leaves an EMPTY one, so a law
-        # that read "Asserted by `a gate` (a delivery command ...)" published as
-        # "Asserted by `` (a delivery command ...)": a sentence whose subject has
-        # been deleted, on a page whose own status is published. When internal
-        # references are removed, care must be taken to not leave empty spans.
-        # This replacement ensures that removed identifiers leave no broken syntax
-        # behind. "a gate" reads correctly in prose and is obviously a placeholder:
-        # the lesson survives, the internal vocabulary does not.
-        #
-        # Same trap the filename rule below already documents ("the replacement
-        # must stay a valid FILENAME") -- solved there for filenames, never for
-        # ids. A generic replacement that preserves readability is better than a
-        # partial removal that leaves fragments behind. The goal is clean text.
-        text = re.sub(
-            r"`(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC)"
-            r"\d{3,4}`",
-            "a gate",
-            text,
-        )
+        # Quality-gate rule codes (non-backticked residue).
         text = re.sub(
             r"\b(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC)"
             r"\d{3,4}\b",

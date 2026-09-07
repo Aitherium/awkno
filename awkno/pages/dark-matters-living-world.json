@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Procedurally generate a playable, multiplayer 3D world -- zones, quests, NPCs, creatures, their bodies, rigs, clips and style renders -- from Saga narrative and Prometheus balance, into a World of ClaudeCraft-derived realm and the CoC story engine at once, with the same character carried into awdesk and a Space.\n\nIncludes: awavatar, awdk, awsprite, awrtifact, awrun",
+  "see_also": [
+    "awavatar",
+    "awdk",
+    "awsprite",
+    "awrtifact",
+    "awrun"
+  ],
+  "status": "planned",
+  "synopsis": "Dark Matters Living World",
+  "topic": "dark-matters-living-world"
+}

@@ -36,11 +36,11 @@ def pager_render(text: str) -> None:
         proc = subprocess.Popen(
             pager, stdin=subprocess.PIPE, text=True, bufsize=1024
         )
-        try:
+        import contextlib
+        with contextlib.suppress(BrokenPipeError):
+            # the reader quit the pager mid-stream — that is the pager working
             proc.stdin.write(text)
             proc.stdin.close()
-        except BrokenPipeError:
-            pass
         proc.wait()
     except (FileNotFoundError, OSError):
         print(text)
@@ -55,6 +55,8 @@ SYNOPSIS
     awkno [TOPIC]
     awkno list
     awkno law <N|SLUG>
+    awkno guide [N]
+    awkno open [TOPIC]
     awkno search TERM
     awkno -k TERM
     awkno --plain
@@ -62,8 +64,10 @@ SYNOPSIS
 
 DESCRIPTION
     awkno is an offline reference for the Aither World ecosystem. Every brick
-    (standalone tool), stack (curated set), and law (learned principle) lives
-    here — no browser, no internet connection needed.
+    (standalone tool), stack (curated set), law (learned principle) and every
+    chapter of the Aither World Guide lives here — no browser, no internet
+    connection needed. `awkno open` renders any page to a local HTML file and
+    opens it in your browser, still offline.
 
     The registry is built from ecosystem.yaml and the laws corpus at build time
     and committed as data files. After install, the pages are always there.
@@ -72,6 +76,9 @@ QUICK START
     awkno awdk                 Show the awdk brick
     awkno awsh                 Show the awsh brick
     awkno law 5                Show law 5
+    awkno guide                The Aither World Guide: the chapters, in order
+    awkno guide 2              Chapter 2 (your first local brain), in the pager
+    awkno open guide 2         The same chapter, in your web browser, offline
     awkno list                 List all topics
     awkno search kubernetes    Search for "kubernetes"
 
@@ -126,6 +133,98 @@ def resolve_law_key(registry: "AwknoRegistry", law_id: str) -> str | None:
     return hits[0] if len(hits) == 1 else None
 
 
+def resolve_topic_key(registry: "AwknoRegistry", text: str) -> str | None:
+    """`guide` / `guide 2` / `law 5` / `awdk` -> the corpus key, or None."""
+    parts = text.strip().split()
+    if not parts:
+        return None
+    head = parts[0].lower()
+    if head == "guide":
+        if len(parts) == 1:
+            return "guide" if "guide" in registry.pages else None
+        n = parts[1]
+        if n.isdigit():
+            key = f"guide-{int(n):02d}"
+            return key if key in registry.pages else None
+        # a chapter slug (02-first-brain / first-brain)
+        for key, page in registry.pages.items():
+            if page.category == "guide" and page.slug and (
+                    page.slug == n or page.slug.endswith("-" + n)):
+                return key
+        return None
+    if head == "law" and len(parts) > 1:
+        return resolve_law_key(registry, parts[1])
+    key = text.strip().lower()
+    return key if key in registry.pages else None
+
+
+_HTML = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title} - awkno</title>
+<style>
+body{{margin:0;background:#0a0f1e;color:#e6ecf5;font:16px/1.6 Inter,system-ui,sans-serif}}
+main{{max-width:880px;margin:0 auto;padding:2rem 1.25rem 4rem}}
+h1{{font-size:1.8rem;margin:.2rem 0 .4rem}}
+.syn{{opacity:.8;margin:0 0 1.5rem;white-space:pre-wrap}}
+pre{{white-space:pre-wrap;background:#111a33;border:1px solid #22305a;
+  border-radius:10px;padding:1rem;line-height:1.5}}
+nav a{{color:#7fdbea;margin-right:1rem}}
+.k{{font:13px JetBrains Mono,monospace;letter-spacing:.08em;text-transform:uppercase;opacity:.6}}
+footer{{opacity:.6;font-size:.85rem;margin-top:2rem}}
+</style></head><body><main>
+<nav>{nav}</nav>
+<p class="k">{category} &middot; awkno, offline</p>
+<h1>{title}</h1>
+<p class="syn">{synopsis}</p>
+<pre>{body}</pre>
+<footer>Rendered by <code>awkno open</code> from the committed corpus. The same page online:
+<a href="{online}">{online}</a></footer>
+</main></body></html>
+"""
+
+
+def write_html(registry: "AwknoRegistry", key: str):
+    """Render one page to ~/.aither/awkno/<key>.html and return the path."""
+    import html as _html
+    from pathlib import Path
+
+    page = registry.get(key)
+    out_dir = Path.home() / ".aither" / "awkno"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    nav = []
+    if page.category == "guide":
+        nav.append('<a href="guide.html">The Guide</a>')
+        for sib in page.see_also or []:
+            if sib.startswith("guide-"):
+                nav.append(f'<a href="{sib}.html">next: {sib}</a>')
+    if page.category == "guide":
+        online = "https://aitherium.github.io/awknowledge/" + (
+            f"path/{page.slug}.html" if page.slug else "")
+    else:
+        online = "https://aitherium.github.io/awknowledge/man/" + (
+            f"{page.topic}.html" if page.category == "brick" else "index.html")
+    body = page.render(plain=True)
+    text = _HTML.format(
+        title=_html.escape(page.synopsis or page.topic),
+        synopsis=_html.escape(page.description or ""),
+        category=_html.escape(page.category),
+        body=_html.escape(body),
+        nav=" ".join(nav),
+        online=online,
+    )
+    path = out_dir / f"{key}.html"
+    path.write_text(text, encoding="utf-8")
+    # Sibling pages the nav links to, so "next" works offline too.
+    if page.category == "guide":
+        for sib in page.see_also or []:
+            if sib.startswith("guide-") and not (out_dir / f"{sib}.html").exists():
+                write_html(registry, sib)
+        if key != "guide" and not (out_dir / "guide.html").exists():
+            write_html(registry, "guide")
+    return path
+
+
 def _build_parser() -> argparse.ArgumentParser:
     """Build the CLI parser.
 
@@ -168,6 +267,15 @@ def main() -> None:
     if (_dv if _dv is not None else __import__("sys").argv[1:])[:1] == ["doctor"]:
         from ._doctor import report
         return report()
+    # GENERATED repo-state intercept (gen_aw_doctor.py) -- do not edit
+    try:
+        from awgit import state as _aw_state
+    except Exception:
+        _aw_state = None
+    if _aw_state is not None:
+        _sv = locals().get("argv")
+        if _aw_state.cli_banner(_sv if _sv is not None else __import__("sys").argv[1:]):
+            return 0
     parser = _build_parser()
     args = parser.parse_args()
     topic = " ".join(args.topic).strip()
@@ -204,6 +312,7 @@ def main() -> None:
     if topic_lower == "list":
         topics = registry.list_topics()
         categories = {
+            "guide": [],
             "brick": [],
             "stack": [],
             "law": [],
@@ -216,13 +325,41 @@ def main() -> None:
             categories[page.category].append(t)
 
         print()
-        for cat in ["brick", "stack", "law", "topic"]:
+        for cat in ["guide", "brick", "stack", "law", "topic"]:
             if categories[cat]:
                 print(f"{cat.upper()}S ({len(categories[cat])})")
                 for name in sorted(categories[cat]):
                     page = registry.pages[name]
                     print(f"    {name:<20} {page.synopsis}")
                 print()
+        return
+
+    # `awkno open [TOPIC]` -- the same page, rendered to a local HTML file and
+    # opened in the default browser. Offline: nothing is fetched.
+    if topic_lower == "open" or topic_lower.startswith("open "):
+        rest = topic[4:].strip() or "guide"
+        key = resolve_topic_key(registry, rest)
+        if key is None:
+            print(f"Topic '{rest}' not found. Try: awkno open guide, awkno open guide 2")
+            return
+        path = write_html(registry, key)
+        print(f"wrote {path}")
+        import webbrowser
+
+        if not webbrowser.open(path.as_uri()):
+            print("(could not launch a browser - open the file above by hand)")
+        return
+
+    if topic_lower == "guide" or topic_lower.startswith("guide "):
+        key = resolve_topic_key(registry, topic)
+        if key is None:
+            print("Usage: awkno guide [N]    (N = chapter number, e.g. awkno guide 2)")
+            return
+        page = registry.get(key)
+        if args.json:
+            print(json.dumps(page.to_dict()))
+        else:
+            pager_render(page.render(plain=args.plain))
         return
 
     if topic_lower.startswith("law"):
@@ -286,7 +423,8 @@ def _self_test() -> None:
     # perform is a broken tool that reads as an authoritative one.
     parser = _build_parser()
 
-    for argv in (["law", "5"], ["search", "silence"], ["list"], ["awdk"]):
+    for argv in (["law", "5"], ["search", "silence"], ["list"], ["awdk"],
+                 ["guide"], ["guide", "2"], ["open", "guide", "2"]):
         try:
             parsed = parser.parse_args(argv)
         except SystemExit:  # argparse exits rather than raising
@@ -298,6 +436,19 @@ def _self_test() -> None:
 
     # the quoted form callers may already be using must keep working
     assert " ".join(parser.parse_args(["law 5"]).topic).strip() == "law 5"
+
+    # --- the guide is in the corpus and resolvable every way the SYNOPSIS says
+    reg = AwknoRegistry()
+    assert "guide" in reg.pages, "corpus has no `guide` index page - regenerate"
+    assert resolve_topic_key(reg, "guide") == "guide"
+    assert resolve_topic_key(reg, "guide 2") == "guide-02", "guide N must resolve"
+    assert resolve_topic_key(reg, "guide first-brain") == "guide-02", "slug must resolve"
+    assert resolve_topic_key(reg, "guide 99") is None
+    chapters = reg.list_by_category("guide")
+    assert len(chapters) >= 10, f"expected the full journey, got {len(chapters)}"
+    two = reg.get("guide-02")
+    assert "adk quickstart-local" in (two.body or ""), "chapter 2 lost its DO steps"
+    assert "D-" not in (two.body or ""), "internal ref leaked into the guide corpus"
 
     registry = AwknoRegistry()
 

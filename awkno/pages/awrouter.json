@@ -7,7 +7,7 @@
     "awsh",
     "awnode"
   ],
-  "status": "no-pages",
+  "status": "planned",
   "synopsis": "OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable.",
   "topic": "awrouter"
 }

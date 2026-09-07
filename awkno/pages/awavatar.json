@@ -1,13 +1,14 @@
 {
-  "adopt": "Validate one character spec and see exactly which field is wrong.",
+  "adopt": "Validate one character_spec.json and one character_pack/ against their schemas and refuse the pack if any file's hash, licence or rig audit is missing.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA character factory returns a pile of meshes, rigs and clips, and every consumer re-invents its own idea of whether that pile is complete and loadable. The question is the same everywhere and the answer differs everywhere.\n\nInstall\npip install awavatar",
+  "description": "Kind: tool\n\nProblem\nA generated 3D character is five artifacts from five tools (mesh, rig, clips, VRM, style renders) with no shared contract, so every host re-derives what it may load, and the bakes end up.gitignored with no canonical home -- measured 2026-09-05 on the CoC engine, where every Anny body and every clip pack is absent from disk while the code that drives them is committed.\n\nInstall\npip install awavatar",
   "see_also": [
-    "awvision",
+    "awrtifact",
     "awdk",
-    "awseal"
+    "awsprite",
+    "awrun"
   ],
-  "status": "unpublished",
-  "synopsis": "One character spec in, a rigged, animated, multi-style asset pack out.",
+  "status": "planned",
+  "synopsis": "One character spec in, a rigged, animated, multi-style avatar pack out.",
   "topic": "awavatar"
 }

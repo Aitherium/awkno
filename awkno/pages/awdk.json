@@ -12,11 +12,7 @@
     "awpack",
     "awembed",
     "awflow",
-    "awdaemons",
-    "awgit",
-    "awgraph",
-    "awrelay",
-    "awstorage"
+    "awdaemons"
   ],
   "status": "public",
   "synopsis": "Build AI agent fleets",

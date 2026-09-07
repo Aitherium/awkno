@@ -6,7 +6,8 @@
     "awdk",
     "awfind",
     "awbrowse",
-    "awembed"
+    "awembed",
+    "awdesk"
   ],
   "status": "public",
   "synopsis": "Your terminal answers you -- type a question where a command would go.",

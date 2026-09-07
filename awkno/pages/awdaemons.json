@@ -5,7 +5,8 @@
   "see_also": [
     "awdk",
     "awnode",
-    "awsh"
+    "awsh",
+    "awdesk"
   ],
   "status": "unpublished",
   "synopsis": "The AitherOS daemons as one file",

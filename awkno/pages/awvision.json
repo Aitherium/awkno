@@ -6,10 +6,9 @@
     "awdk",
     "awbrowse",
     "awscreen",
-    "awtax",
-    "awavatar"
+    "awtax"
   ],
-  "status": "public",
+  "status": "unpublished",
   "synopsis": "See an image",
   "topic": "awvision"
 }

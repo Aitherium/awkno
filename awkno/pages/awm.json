@@ -6,8 +6,7 @@
     "awpredict",
     "awdk",
     "awgraph",
-    "awembed",
-    "gawbbonet"
+    "awembed"
   ],
   "status": "public",
   "synopsis": "A portable, scoped agent memory.",

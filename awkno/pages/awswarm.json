@@ -7,7 +7,7 @@
     "awrun",
     "awdk"
   ],
-  "status": "no-pages",
+  "status": "planned",
   "synopsis": "Run one model too big for any single GPU across a pool of small ones.",
   "topic": "awswarm"
 }
