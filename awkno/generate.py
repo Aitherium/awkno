@@ -61,6 +61,14 @@ class AwknoGenerator:
         # Same brick as the laws, same offline promise -- `awkno guide 2` must
         # answer on a plane with no network, which is why it is COMMITTED here.
         self.guide_dir = self.repo_root.parent / "awknowledge"
+        # The pack shelf. `generate()` has globbed `self.shelf_dir` for pack
+        # manifests since the pack-page block was added, and this line was
+        # never written with it -- so every run died on
+        # `AttributeError: 'AwknoGenerator' object has no attribute
+        # 'shelf_dir'`, which made `gen_ecosystem.py --check` exit 2 (DEAD)
+        # rather than give a verdict. A gate that cannot judge is not a gate,
+        # and this one guards whether a brick is reachable at all.
+        self.shelf_dir = self.repo_root.parent / "awpack" / "packs"
         self.output_dir = (Path(output_dir) if output_dir
                            else Path(__file__).parent / "pages")
 

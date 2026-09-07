@@ -1,7 +1,7 @@
 {
   "adopt": "Point it at a directory of log files and ask what is failing most.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nLog data is almost never missing. It is written diligently, durably, in structured form -- and then nothing indexes it, so the only way to ask a question is to grep gigabytes by hand and hope you guess the right string. A directory past a few hundred megabytes is functionally write-only: every producer works, every file is current, and nobody can answer \"what broke on Tuesday\". The failure has no error and no alert, because nothing failed -- something merely never got read.\n\nInstall\npython your_tool.py --help",
+  "description": "Kind: tool\n\nProblem\nLog data is almost never missing. It is written diligently, durably, in structured form -- and then nothing indexes it, so the only way to ask a question is to grep gigabytes by hand and hope you guess the right string. A directory past a few hundred megabytes is functionally write-only: every producer works, every file is current, and nobody can answer \"what broke on Tuesday\". The failure has no error and no alert, because nothing failed -- something merely never got read.\n\nInstall\npython AitherOS/dev/tools/awlog.py --help",
   "see_also": [
     "awgraph",
     "awm",

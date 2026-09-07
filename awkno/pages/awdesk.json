@@ -1,7 +1,7 @@
 {
   "adopt": "Run it, and the next decision card an agent raises pops on your desktop instead of scrolling past in a log.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nEvery surface an agent has on a laptop lives in a browser tab that can be closed, minimized or forgotten. The desk is the one that stays: an always-on presence that can interrupt you with a decision card, embody an agent as an avatar, and hold the Living Desktop over your real desktop.\n\nInstall\nsee the repo -- Electron app (npm install && npx electron.)",
+  "description": "Kind: runtime\n\nProblem\nEvery surface an agent has on a laptop lives in a browser tab that can be closed, minimized or forgotten. The desk is the one that stays: an always-on presence that can interrupt you with a decision card, embody an agent as an avatar, and hold the Living Desktop over your real desktop.\n\nInstall\nsee the repo -- Electron app (npm install && npx electron .)",
   "see_also": [
     "awdk",
     "awsh",

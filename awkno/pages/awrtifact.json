@@ -9,7 +9,8 @@
     "awgit",
     "awseal",
     "awshare",
-    "awrecover"
+    "awrecover",
+    "awstorage"
   ],
   "status": "public",
   "synopsis": "Deliberately chunk artifacts into GitHub release assets",
