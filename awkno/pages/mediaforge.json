@@ -1,0 +1,14 @@
+{
+  "adopt": "Pick a roster character and render a reference + expression loop of them, identity-locked.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nCharacter-consistent generation is the hard problem of creative tooling: every image re-describes the subject, and the render that survives is the one that won the seed lottery. Media Forge keeps an identity ROSTER (prompt, face refs, negative, LoRA) and locks renders to it via IPAdapter, so a named character is the same person across reference, expression slides and a crossfade slideshow — measured 2026-08-27: the roster-resolved loop holds identity (dHash 5-15 bits) where the stub-prompt path drifted 23-34 bits between the very same beats.\n\nInstall\nhttps://mediaforge.aitherium.com",
+  "see_also": [
+    "awdk",
+    "AitherConnect",
+    "awkit",
+    "awrelay"
+  ],
+  "status": "unpublished",
+  "synopsis": "The creative studio",
+  "topic": "mediaforge"
+}

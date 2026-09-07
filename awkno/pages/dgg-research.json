@@ -1,5 +1,5 @@
 {
-  "adopt": "pip install \"awdk[memory]\"\nadk dgg-research --onboard      # picks the brain this machine can run\nadk dgg-research",
+  "adopt": "pip install \"awdk[memory]\"\npython -m adk.toolpacks.dgg_research.onboard   # which brain this host runs, and why\nadk chat                                       # the five tools are registered",
   "category": "pack",
   "description": "Kind: pack\n\nWhat it does\nA research agent for a documentary record: resolve people to actors before asserting anything about them, quote verbatim before interpreting, and record a null with the corpus it came from.\n\nRuntime\nawdk>=3.7.4 with extras: memory\n\nTools\n  actor_resolve\n  actor_references\n  evidence_push\n  mention_verify\n  corpus_null",
   "see_also": [

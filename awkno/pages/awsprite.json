@@ -1,7 +1,7 @@
 {
   "adopt": "Hatch a companion, teach it something, and watch what it becomes.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA companion that never changes is a toy, and one whose growth you cannot see or edit is a black box. Most \"AI pet\" products are a chat window with a sprite pasted on top -- nothing you taught it persists, and nothing about how it grew is checkable.\n\nInstall\npip install awsprite",
+  "description": "Kind: tool\n\nProblem\nA companion that never changes is a toy, and one whose growth you cannot see or edit is a black box. Most \"AI pet\" products are a chat window with a sprite pasted on top -- nothing you taught it persists, and nothing about how it grew is checkable.\n\nInstall\nbuilds in-tree (AitherOS/lib/companion) -- not on PyPI yet",
   "see_also": [
     "awdk",
     "awm",
