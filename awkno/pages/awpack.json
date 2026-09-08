@@ -6,9 +6,9 @@
     "awdk",
     "awskills",
     "awsh",
-    "gobbonet-agentic"
+    "gawbbonet"
   ],
-  "status": "no-pages",
+  "status": "public",
   "synopsis": "First-party agent packs",
   "topic": "awpack"
 }

@@ -9,7 +9,7 @@
     "awsh",
     "awgraph"
   ],
-  "status": "no-pages",
+  "status": "public",
   "synopsis": "Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it.",
   "topic": "awstorage"
 }
