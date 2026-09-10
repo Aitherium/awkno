@@ -1,0 +1,20 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "One world that runs, not a text box that continues — with a story graph, typed mechanics, a continuity checker, MCTS branch explorer, simulation backend, and persistent memory. One creative studio with 357 routes and 137 named ops — character rigs, animation, LoRA, comics, VN, production loops with human gates — all agent-callable. One visual artist that plans, enhances, calls the studio in a real loop, evaluates and refines. Run it all on your box with awdk + awnode + Bonsai, or on the cloud with the same key. Sold as credits and subscriptions; created work published to the marketplace with revenue share.\n\nIncludes: awsaga, mediaforge, awiris, awsprite, awdesk, awbonsai, awdk, awnode, AitherConnect, awrtifact",
+  "see_also": [
+    "awsaga",
+    "mediaforge",
+    "awiris",
+    "awsprite",
+    "awdesk",
+    "awbonsai",
+    "awdk",
+    "awnode",
+    "AitherConnect",
+    "awrtifact"
+  ],
+  "status": "partial",
+  "synopsis": "The Creator Stack — Saga + Media Forge + Iris on your own machine",
+  "topic": "creator-stack"
+}

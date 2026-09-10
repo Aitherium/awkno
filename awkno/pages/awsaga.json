@@ -1,0 +1,15 @@
+{
+  "adopt": "Start a world from a pack and take one turn that the continuity checker can refuse.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA narrative engine that writes forward forever is cheap; one that catches when the story breaks is the part nobody builds. Character deaths contradict later scenes, NPCs appear in two places, relationships quantify as impossible, and the reader never hears about it until they notice.\n\nInstall\nbuilds in-tree (.PRODUCTS/.SAGA/saga_engine) -- not on PyPI yet",
+  "see_also": [
+    "awdk",
+    "awnode",
+    "awsprite",
+    "mediaforge",
+    "gawbbonet"
+  ],
+  "status": "planned",
+  "synopsis": "Start a world from a pack and take one turn the continuity checker can refuse.",
+  "topic": "awsaga"
+}

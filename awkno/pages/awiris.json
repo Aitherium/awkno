@@ -1,0 +1,14 @@
+{
+  "adopt": "Hand it three reference images and get one style card back.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nCharacter-consistent generation loses the character after a few iterations when the render is locked to prompts alone. Style cards + critique let an artist pipeline run unattended and hold identity across a full production.\n\nInstall\nbuilds in-tree (AitherOS/agents/Iris) -- not on PyPI yet",
+  "see_also": [
+    "mediaforge",
+    "awdk",
+    "awsprite",
+    "awkit"
+  ],
+  "status": "planned",
+  "synopsis": "Hand it three reference images and get one style card and one critique back.",
+  "topic": "awiris"
+}
