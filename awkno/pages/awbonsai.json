@@ -1,7 +1,7 @@
 {
   "adopt": "Load one page and get an answer from a model that never left the tab.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nEvery in-browser LLM demo either phones home for the real answer or downloads a few hundred MB unasked. Getting BOTH right -- genuinely local inference, and a consent gate that runs BEFORE the fetch instead of after -- is the part nobody ships, so most \"runs in your browser\" claims are marketing for a server call.\n\nInstall\nbuilds in-tree (AitherOS/apps/packages/portal-kit) -- not on npm yet",
+  "description": "Kind: runtime\n\nProblem\nEvery in-browser LLM demo either phones home for the real answer or downloads a few hundred MB unasked. Getting BOTH right -- genuinely local inference, and a consent gate that runs BEFORE the fetch instead of after -- is the part nobody ships, so most \"runs in your browser\" claims are marketing for a server call.\n\nInstall\nbuilds in-tree (AitherOS/apps/packages/awbonsai) -- not on npm yet; `npm i @aitherium/portal-kit` 404s today",
   "see_also": [
     "awkit",
     "awsprite",

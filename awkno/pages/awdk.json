@@ -3,6 +3,7 @@
   "category": "brick",
   "description": "Kind: runtime\n\nProblem\nRunning one agent is easy and running fifty is a different job: budgets, retries, which model, whose machine. Most frameworks make you adopt their whole world to find out.\n\nInstall\npip install awdk",
   "see_also": [
+    "aitheros",
     "awskills",
     "awm",
     "awnode",

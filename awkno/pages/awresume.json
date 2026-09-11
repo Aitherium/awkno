@@ -1,0 +1,14 @@
+{
+  "adopt": "Snapshot the coding sessions open on this machine, then reopen exactly those after a reboot, each in its own terminal tab.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nThe set of sessions actually open exists only while they are running. A reboot, a crash or a closed window takes it with them, and what you get back is a list of every session you have ever had, sorted by a timestamp that does not tell you which were live. Guessing wrong opens a second view of one conversation.\n\nInstall\nin-tree at .PRODUCTS/.AITHERRESUME (no public repo yet; pending publish)",
+  "see_also": [
+    "awsettings",
+    "awsh",
+    "awrecover",
+    "awdk"
+  ],
+  "status": "planned",
+  "synopsis": "The coding sessions you had open, reopened after the reboot.",
+  "topic": "awresume"
+}

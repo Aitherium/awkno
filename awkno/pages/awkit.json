@@ -6,8 +6,7 @@
     "awdk",
     "awnode",
     "awiam",
-    "awbeads",
-    "mediaforge"
+    "awbeads"
   ],
   "status": "unpublished",
   "synopsis": "Render an agent panel from a tool result",

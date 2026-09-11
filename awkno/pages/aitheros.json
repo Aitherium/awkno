@@ -1,0 +1,17 @@
+{
+  "adopt": "Run one file on a fresh box and open the URL it prints.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nEvery part of the stack ships on its own lane -- a shell on npm, two runtimes on PyPI, a desktop app on GitHub Releases, an extension in a browser store -- so a person who wants the STACK has to find six things, install them in the right order and make them agree on ports and models. Measured 2026-09-10: every one of those lanes was live and the thing that joins them was published nowhere.\n\nInstall\nsee the repo — tag `aitheros-v*` builds three binaries",
+  "see_also": [
+    "awdaemons",
+    "awnode",
+    "awdesk",
+    "awgym",
+    "awsh",
+    "awdk",
+    "AitherConnect"
+  ],
+  "status": "unpublished",
+  "synopsis": "One file you run, and the machine has a local AI stack.",
+  "topic": "aitheros"
+}

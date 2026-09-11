@@ -9,7 +9,8 @@
     "awiam",
     "awm",
     "awseal",
-    "awshare"
+    "awshare",
+    "awresume"
   ],
   "status": "public",
   "synopsis": "Your agent's permissions and config, following you to the next machine.",
