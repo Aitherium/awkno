@@ -1,0 +1,14 @@
+{
+  "adopt": "Grade one clip on your own GPU and get the master back, without opening an app.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nCreative work is the last thing most people will hand to somebody else's machine, and the first thing every creative SaaS requires. The pipeline is not the hard part -- grading, mastering, avatar export and LoRA training are all solved -- the hard part is that reaching them means a GUI a human sits in front of, so an agent cannot help and the footage has to travel.\n\nInstall\nbuilds in-tree (AitherOS/packages/awforge) -- no PyPI package yet; published when it is",
+  "see_also": [
+    "awdk",
+    "awsh",
+    "awnode",
+    "awkit"
+  ],
+  "status": "planned",
+  "synopsis": "A render pipeline you drive from an agent",
+  "topic": "awforge"
+}

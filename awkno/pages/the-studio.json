@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "What a creative turn needs, on hardware the operator already owns: a way to find things, a way to read a page, a way to research with citations, and a way to actually render and master the result. Named because these kept being proposed as ONE product, and the measurement said they are three INPUT surfaces and one OUTPUT surface -- which composes and does not merge. Every member is adoptable alone; the stack is a suggestion.\n\nIncludes: awforge, awfind, awbrowse, awresearch, awm",
+  "see_also": [
+    "awforge",
+    "awfind",
+    "awbrowse",
+    "awresearch",
+    "awm"
+  ],
+  "status": "partial",
+  "synopsis": "The studio",
+  "topic": "the-studio"
+}

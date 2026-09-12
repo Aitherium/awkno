@@ -6,7 +6,8 @@
     "awrtifact",
     "awdk",
     "awsprite",
-    "awrun"
+    "awrun",
+    "awdesk"
   ],
   "status": "planned",
   "synopsis": "One character spec in, a rigged, animated, multi-style avatar pack out.",
