@@ -10,7 +10,7 @@
     "awm",
     "awgraph"
   ],
-  "status": "unpublished",
+  "status": "public",
   "synopsis": "A deterministic workflow runtime",
   "topic": "awflow"
 }
