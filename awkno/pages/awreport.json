@@ -1,13 +1,9 @@
 {
   "adopt": "Turn a failure into a filed, redacted GitHub issue that collapses into the duplicate when one exists.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA bug report is the artifact most likely to carry a credential -- logs, a config dump, an env var someone exported to reproduce the fault -- and the person writing it is already frustrated and will not read it twice. So the secret ships, or the report never gets filed at all.\n\nInstall\nbuilds in-tree (AitherOS/packages/awreport) -- not on PyPI yet; `pip install awreport` 404s today",
-  "see_also": [
-    "awdk",
-    "awsh",
-    "awgit"
-  ],
-  "status": "unpublished",
+  "description": "Kind: tool\n\nProblem\nA bug report is the artifact most likely to carry a credential -- logs, a config dump, an env var someone exported to reproduce the fault -- and the person writing it is already frustrated and will not read it twice. So the secret ships, or the report never gets filed at all.",
+  "see_also": null,
+  "status": "public",
   "synopsis": "File a bug report that has already scrubbed your secrets and collapsed the duplicate.",
   "topic": "awreport"
 }

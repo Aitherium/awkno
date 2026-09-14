@@ -1,0 +1,13 @@
+{
+  "adopt": "Stream one GGUF from any Range+CORS URL into a bounded buffer, resumable from the device's own cache.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nGetting weights into a browser is a PEAK MEMORY problem wearing a download's clothes. Every loader materialises a whole tensor before it uploads it, so the largest tensor -- not the model -- decides which devices can run it, and the device finds out only after it has spent the bytes. The limits are knowable first: the GPU adapter publishes them, and a side-car manifest can publish the largest tensor a file contains.\n\nInstall\nbuilds in-tree",
+  "see_also": [
+    "awbonsai",
+    "awrtifact",
+    "awkit"
+  ],
+  "status": "planned",
+  "synopsis": "Stream a multi-gigabyte model onto a device that cannot hold it all at once.",
+  "topic": "awasp"
+}

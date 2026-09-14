@@ -5,9 +5,10 @@
   "see_also": [
     "awkit",
     "awsprite",
-    "AitherConnect"
+    "AitherConnect",
+    "awasp"
   ],
-  "status": "no-pages",
+  "status": "public",
   "synopsis": "Run a real model in the visitor's own browser",
   "topic": "awbonsai"
 }
