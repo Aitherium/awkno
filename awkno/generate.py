@@ -228,7 +228,15 @@ class AwknoGenerator:
         # it is exactly what every removal above leaves behind if a future rule
         # forgets the span. This is validated in the build process to ensure the
         # output contains no empty code spans or other broken markup. Cleaned up.
-        text = re.sub(r"`` ?", "", text)
+        #
+        # ANCHORED on both sides, and the anchors are load-bearing. The unanchored
+        # form (`` ?) also matched the first two backticks of every ``` code FENCE,
+        # so a fresh run turned "```bash" into "`bash" and every runnable block in
+        # the law pages into a broken inline span. Measured 2026-09-13: 20 law and
+        # guide pages differed from the committed corpus for that reason alone,
+        # which read as "stale" rather than as "the generator regressed". A pair
+        # of backticks that touches a third is a fence, never an empty span.
+        text = re.sub(r"(?<!`)`` ?(?!`)", "", text)
 
         return text
 

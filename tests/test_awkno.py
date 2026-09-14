@@ -3,7 +3,17 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
+
+# Test the package that lives NEXT TO this file, never whichever `awkno` the
+# interpreter finds first. An editable install of another checkout shadows the
+# worktree silently, and a test that passes against the wrong copy proves nothing.
+_PKG_DIR = str(Path(__file__).resolve().parents[1])
+if sys.path[:1] != [_PKG_DIR]:
+    sys.path.insert(0, _PKG_DIR)
+    for _m in [m for m in list(sys.modules) if m == 'awkno' or m.startswith('awkno.')]:
+        del sys.modules[_m]
 
 import pytest
 from awkno import AwknoPage, AwknoRegistry, NotFoundError
@@ -237,6 +247,35 @@ class TestAwknoRegistry:
             data2_str = json.dumps(pages2[key], sort_keys=True)
             assert data1_str == data2_str, f"Page {key} differs between runs"
 
+    def test_scrub_removes_empty_span_and_keeps_code_fences(self):
+        """The empty-span safety net must not eat two-thirds of a ``` fence.
+
+        The unanchored form of that regex turned "```bash" into "`bash" on every
+        law page, so the offline corpus shipped runnable blocks as broken inline
+        spans while the generator reported success. Both halves are asserted:
+        an empty span goes, a fence stays byte-for-byte.
+        """
+        from awkno.generate import AwknoGenerator
+
+        current = Path(__file__).parent
+        repo_root = None
+        while current != current.parent:
+            if (current / "AitherOS" / "config" / "ecosystem.yaml").exists():
+                repo_root = str(current / "AitherOS")
+                break
+            current = current.parent
+        assert repo_root, "this test runs from inside the monorepo checkout"
+
+        gen = AwknoGenerator(repo_root)
+        fence = "```bash" + chr(10) + "python your_checker.py --all" + chr(10) + "```"
+        out = gen._scrub_internal_refs(
+            "Asserted by `` here." + chr(10) * 2 + fence + chr(10))
+
+        assert "Asserted by here." in out, out
+        assert fence in out, out
+        # No empty span survives once the fences are set aside.
+        assert "``" not in out.replace("```", ""), out
+
     def test_no_internal_identifiers(self):
         """Test that no obvious internal identifiers leak into public corpus."""
         registry = AwknoRegistry()
@@ -265,7 +304,13 @@ class TestAwknoRegistry:
                 # publish-time scan of the sdist — a detector's fixture becoming
                 # the thing it detects.
                 needle = "aitheros" + "-"
-                assert needle not in content.lower(), f"Internal hostname prefix in {topic}"
+                # The public release tag `aitheros-v<semver>` shares the prefix
+                # with fleet hostnames (`aitheros-genesis`) and is the one shape a
+                # public install line is REQUIRED to name. Strip that shape, then
+                # anything left is a hostname and a leak.
+                import re as _re
+                stripped = _re.sub(needle + r"v[0-9*][0-9a-z.*-]*", "", content.lower())
+                assert needle not in stripped, f"Internal hostname prefix in {topic}"
 
     def test_plain_output_no_ansi(self):
         """Test that --plain mode produces no ANSI codes."""

@@ -1,12 +1,12 @@
 {
   "adopt": "Run one GobboNet campaign where the harness, not the human, keeps the notes.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nLong roleplay campaigns decay: the model loops, forgets what each character knows, and the only fix is a human curating notes by hand. Per-NPC knowledge scoping is exactly the memory-boundary problem agents already have.\n\nInstall\npip install awdk",
+  "description": "Kind: tool\n\nProblem\nLong roleplay campaigns decay: the model loops, forgets what each character knows, and the only fix is a human curating notes by hand. Per-NPC knowledge scoping is exactly the memory-boundary problem agents already have.\n\nInstall\npip install git+https://github.com/Aitherium/gawbbonet",
   "see_also": [
     "awdk",
     "awm"
   ],
-  "status": "no-pages",
+  "status": "public",
   "synopsis": "GobboNet campaigns with a real agent brain",
   "topic": "gawbbonet"
 }
