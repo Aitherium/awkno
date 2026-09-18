@@ -1,7 +1,7 @@
 {
   "adopt": "Ask one typed question of one state and read back a decision, a probability, and decided=False when nothing earned it.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nSoftware makes the same bounded decision millions of times and asks a text model each time, then parses prose. Hosted \"decision models\" fix the shape but send the program state off-box, emit a probability that is never resolved against what happened, and cannot say what happens next if you act on it. A decision is a function; the loop it sits in is the product.\n\nInstall\nplanned -- no package yet (contract + ratchet: .PLANS/system-one-vs-aither-world-2026-09-18.md R1-R2)",
+  "description": "Kind: tool\n\nProblem\nSoftware makes the same bounded decision millions of times and asks a text model each time, then parses prose. Hosted \"decision models\" fix the shape but send the program state off-box, emit a probability that is never resolved against what happened, and cannot say what happens next if you act on it. A decision is a function; the loop it sits in is the product.\n\nInstall\nplanned -- in the monorepo: pip install -e AitherOS/packages/awdecide (no public mirror or sync lane yet; ratchet R1-R2 in .PLANS/system-one-vs-aither-world-2026-09-18.md)",
   "see_also": [
     "awclassify",
     "awpredict",
