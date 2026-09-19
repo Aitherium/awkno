@@ -1,7 +1,7 @@
 {
   "adopt": "Point it at your backends (vLLM / llama.cpp / any OpenAI-compatible endpoint); ask it which backend should serve model X right now, or to stream a completion with failover and context fitting.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nEvery LLM call in the platform routes through MicroScheduler (:8150) -- but the routing logic (backend discovery, failover, tier maps, context fitting, streaming) is buried inside a 19,535-line service with 107 monorepo imports. A stranger cannot run it: it demands the internal CA, services.yaml discovery, secrets at:8111, the fleet's model inventory. The routing plane is valuable standalone and entangled by accident of packaging, not by design.\n\nInstall\ngit clone https://github.com/Aitherium/awrouter",
+  "description": "Kind: runtime\n\nProblem\nEvery LLM call in the platform routes through MicroScheduler (:8150) -- but the routing logic (backend discovery, failover, tier maps, context fitting, streaming) is buried inside a 19,535-line service with 107 monorepo imports. A stranger cannot run it: it demands the internal CA, services.yaml discovery, secrets at:8111, the fleet's model inventory. The routing plane is valuable standalone and entangled by accident of packaging, not by design.\n\nInstall\npip install awrouter",
   "see_also": [
     "awdk",
     "awsh",
