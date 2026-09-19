@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "MicroScheduler for someone else's agents, as three bricks a stranger adopts alone: awrouter decides which backend serves model X right now (the STATELESS routing plane extracted from AitherMicroScheduler.py -- 19,535 lines / 107 imports, never lifted), awrun is the durable priority queue, awrise is the clock that wakes work and records what happened. awnode is the local gateway an app points at instead of a vendor URL; awdk is the loop that runs on top. The stateful platform half (budgets, heartbeats, throttling, agents) stays inside the fleet and CONSUMES these. Registered 2026-09-19 because the owner asked 'how are we open-sourcing MicroScheduler' and the answer was already three registered bricks that no stack named together.\n\nIncludes: awrouter, awrun, awrise, awnode, awdk",
+  "see_also": [
+    "awrouter",
+    "awrun",
+    "awrise",
+    "awnode",
+    "awdk"
+  ],
+  "status": "partial",
+  "synopsis": "The scheduler, open -- route, queue, clock",
+  "topic": "open-scheduler"
+}
