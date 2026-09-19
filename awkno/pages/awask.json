@@ -7,7 +7,8 @@
     "awrelay",
     "awmail",
     "awsh",
-    "awnest"
+    "awnest",
+    "awrise"
   ],
   "status": "public",
   "synopsis": "Your agent asks you a question",
