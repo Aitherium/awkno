@@ -1,11 +1,13 @@
 {
   "adopt": null,
   "category": "stack",
-  "description": "Every wake becomes evidence: on start, awm recall hands the job its own history (what failed last, what fixed it); before an expensive wake fires, awpredict reads the ledger as an environment and says whether it will time out again; on finish, the row is remembered, and awevolve may tune interval/timeout under AVO006 (the scorer is never the mutable file). Registered 2026-09-19 at planned: fleet-gates timed out twice in its first day and both were predictable from row one; nothing was watching.\n\nIncludes: awrise, awm, awpredict, awevolve, awdk",
+  "description": "Every wake becomes evidence: on start, awm recall hands the job its own history (what failed last, what fixed it); before an expensive wake fires, awpredict reads the ledger as an environment and says whether it will time out again; on finish, the row is remembered, and awevolve may tune interval/timeout under AVO006 (the scorer is never the mutable file). Registered 2026-09-19 at planned: fleet-gates timed out twice in its first day and both were predictable from row one; nothing was watching.\n\nIncludes: awrise, awm, awpredict, awdecide, awembed, awevolve, awdk",
   "see_also": [
     "awrise",
     "awm",
     "awpredict",
+    "awdecide",
+    "awembed",
     "awevolve",
     "awdk"
   ],
