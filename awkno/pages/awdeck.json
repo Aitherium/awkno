@@ -1,0 +1,15 @@
+{
+  "adopt": "Turn a JSON outline into a narrated MP4, and read back which voice actually spoke it.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nA rendered video looks identical whether a neural voice plane narrated it or a 2010-era desktop speech synthesiser did, so the artifact cannot be audited by looking at it. Measured 2026-09-19: one long-job transport failure was read as \"the fleet is down\", the render silently fell back to Windows SAPI, and the only thing that caught it was the owner listening to six minutes of it. Separately, the voice service accepts a `voice` parameter and serves en-GB-SoniaNeural whatever you ask for, so even the non-degraded path was not the voice chosen.\n\nInstall\nbuilds in-tree from AitherOS/packages/awdeck (pip install -e .); not on PyPI yet",
+  "see_also": [
+    "awvoice",
+    "awsh",
+    "awdk",
+    "mediaforge",
+    "awrtifact"
+  ],
+  "status": "planned",
+  "synopsis": "An outline becomes a narrated video -- and the file says which voice really spoke it.",
+  "topic": "awdeck"
+}
