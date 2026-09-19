@@ -1,0 +1,16 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "The closed learning loop (pillar 6) scheduled by the thing it improves. Every utterance->intent->tool->outcome and every ledger row (prediction vs what happened) is harvested (AitherHarvest /import/batch -- 5,151 lines / 32 imports, so a SINK on awrise, never a brick); the trainer fine-tunes the intent router and the decide door on it (AitherTrainer, 4,902 / 56, a consumer whose training routines become wakes); awlab scores it on a leaderboard the loop cannot edit; awevolve keeps or reverts (AitherEvolution's client) under AVO006; the result lands back in awdk intent.py and awrise's timeouts and intervals. Registered 2026-09-19, partial: every seam exists in-fleet, none is wired to a wake, and awlab is not yet a package.\n\nIncludes: awrise, awdata, awlab, awevolve, awdecide, awdk",
+  "see_also": [
+    "awrise",
+    "awdata",
+    "awlab",
+    "awevolve",
+    "awdecide",
+    "awdk"
+  ],
+  "status": "partial",
+  "synopsis": "Train what you run -- harvest, train, score, keep-or-revert, on a wake",
+  "topic": "train-what-you-run"
+}

@@ -1,0 +1,14 @@
+{
+  "adopt": "Register one experiment with one scoring command, run it twice, and read the leaderboard.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nEvery self-improving loop needs a number it cannot edit. Without a scorer that lives apart from the thing being changed, the cheapest way to win is to change the report -- and every downstream signal agrees it improved.\n\nInstall\npip install awlab",
+  "see_also": [
+    "awevolve",
+    "awrise",
+    "awdk",
+    "awdata"
+  ],
+  "status": "planned",
+  "synopsis": "Run one experiment, keep the score, and let a loop decide against it.",
+  "topic": "awlab"
+}
