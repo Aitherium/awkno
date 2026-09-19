@@ -5,7 +5,10 @@
   "see_also": [
     "awdk",
     "awbrowse",
-    "awrelay"
+    "awrelay",
+    "awdesk",
+    "awask",
+    "awsh"
   ],
   "status": "public",
   "synopsis": "Hear and speak",
