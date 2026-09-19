@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "What a scheduled agent needs so that \"it ran\" is a fact and not a hope: a host clock that wakes it (awrise), a durable queue it hands work to (awrun), a line a human can read when a wake goes wrong (awrelay), a card when a wake needs a decision (awask), and the agent that gets woken (awdk). Named 2026-09-18 (plan.AITHEROS/39) because every member exists and every one was proposed as the place the schedule should live; the measurement said the clock is the OS's and the brick's job is the memory.\n\nIncludes: awrise, awrun, awrelay, awask, awdk",
+  "see_also": [
+    "awrise",
+    "awrun",
+    "awrelay",
+    "awask",
+    "awdk"
+  ],
+  "status": "partial",
+  "synopsis": "Set and forget -- the clock, the queue, and the record",
+  "topic": "set-and-forget"
+}
