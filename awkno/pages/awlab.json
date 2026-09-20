@@ -1,7 +1,7 @@
 {
   "adopt": "Register one experiment with one scoring command, run it twice, and read the leaderboard.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nEvery self-improving loop needs a number it cannot edit. Without a scorer that lives apart from the thing being changed, the cheapest way to win is to change the report -- and every downstream signal agrees it improved.\n\nInstall\npip install awlab",
+  "description": "Kind: tool\n\nProblem\nEvery self-improving loop needs a number it cannot edit. Without a scorer that lives apart from the thing being changed, the cheapest way to win is to change the report -- and every downstream signal agrees it improved.\n\nInstall\nplanned -- no package yet (AitherLab.py is 751 lines / 6 imports; the lift is the build)",
   "see_also": [
     "awevolve",
     "awrise",

@@ -1,0 +1,18 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "The owner's ask, 2026-09-20: mine Claude Code and other agent terminal sessions automatically and turn what they contain into agent packs, skill packs, tool packs, RL outcomes, world-model and awpredict training, AitherCNS state and ARC-solver evidence. awmine reads the transcripts (it is the miner AitherHarvest never had for this source -- measured that day: 954 transcripts changed, zero mined); awtoll prices them; awm keeps the lessons; awdata holds the labelled corpora; awdecide is taught every tool outcome; awskills and the awdk toolpacks are where a repeated procedure becomes a pack; awrise is the wake that runs it on a schedule and records that it ran. The fleet's AitherHarvest, Trainer, Evolution and CNS are CONSUMERS of what awmine emits, never the miner.\n\nIncludes: awmine, awtoll, awm, awdata, awdecide, awskills, awdk, awrise",
+  "see_also": [
+    "awmine",
+    "awtoll",
+    "awm",
+    "awdata",
+    "awdecide",
+    "awskills",
+    "awdk",
+    "awrise"
+  ],
+  "status": "partial",
+  "synopsis": "Mine what you ran -- transcripts in, packs and outcomes out",
+  "topic": "mine-what-you-ran"
+}
