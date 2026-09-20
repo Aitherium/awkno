@@ -10,7 +10,8 @@
     "awsprite",
     "awavatar",
     "AitherConnect",
-    "awdaemons"
+    "awdaemons",
+    "awsettings"
   ],
   "status": "public",
   "synopsis": "Aither World Desk -- the desktop body of AitherOS Online: tray, avatars, decision cards, the Living Desktop as an overlay.",

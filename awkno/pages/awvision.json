@@ -6,7 +6,9 @@
     "awdk",
     "awbrowse",
     "awscreen",
-    "awtax"
+    "awtax",
+    "awdesk",
+    "awnode"
   ],
   "status": "public",
   "synopsis": "See an image",

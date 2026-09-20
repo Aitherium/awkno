@@ -8,7 +8,8 @@
     "awrelay",
     "awdesk",
     "awask",
-    "awsh"
+    "awsh",
+    "awdeck"
   ],
   "status": "public",
   "synopsis": "Hear and speak",

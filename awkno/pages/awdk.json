@@ -13,7 +13,8 @@
     "awpack",
     "awembed",
     "awflow",
-    "awdaemons"
+    "awdaemons",
+    "awreport"
   ],
   "status": "public",
   "synopsis": "Build AI agent fleets",

@@ -7,7 +7,9 @@
     "awfind",
     "awbrowse",
     "awembed",
-    "awdesk"
+    "awdesk",
+    "awvoice",
+    "awrelay"
   ],
   "status": "public",
   "synopsis": "Your terminal answers you -- type a question where a command would go.",
