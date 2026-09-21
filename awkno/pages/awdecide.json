@@ -1,7 +1,7 @@
 {
   "adopt": "Ask one typed question of one state and read back a decision, a probability, and decided=False when nothing earned it.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nSoftware makes the same bounded decision millions of times and asks a text model each time, then parses prose. Hosted \"decision models\" fix the shape but send the program state off-box, emit a probability that is never resolved against what happened, and cannot say what happens next if you act on it. A decision is a function; the loop it sits in is the product.\n\nInstall\nplanned -- built in-tree today; no public package or mirror yet",
+  "description": "Kind: tool\n\nProblem\nSoftware makes the same bounded decision millions of times and asks a text model each time, then parses prose. Hosted \"decision models\" fix the shape but send the program state off-box, emit a probability that is never resolved against what happened, and cannot say what happens next if you act on it. A decision is a function; the loop it sits in is the product.\n\nInstall\npip install awdecide",
   "see_also": [
     "awclassify",
     "awpredict",
