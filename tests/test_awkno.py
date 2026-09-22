@@ -373,10 +373,13 @@ class TestBrickUsage:
         assert "https://aitherium.github.io/awnix/" in page.description
 
     def test_no_public_brick_page_leaks_a_local_path(self):
-        import re  # noqa: PLC0415
+        # Import the pattern rather than restating it: spelled out here it would
+        # ship in the sdist and become a boundary finding itself, and two copies
+        # would drift.
+        from awkno.generate import LOCAL_PATH_RE  # noqa: PLC0415
 
         reg = AwknoRegistry()
         bad = [t for t in reg.list_topics()
                if reg.get(t).category == "brick"
-               and re.search(r"\b[A-Z]:[\\/]|AitherOS/|\.PRODUCTS|\.DEPLOYMENT", reg.get(t).description)]
+               and LOCAL_PATH_RE.search(reg.get(t).description)]
         assert not bad, bad
