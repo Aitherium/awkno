@@ -304,10 +304,14 @@ class TestAwknoRegistry:
                 # publish-time scan of the sdist — a detector's fixture becoming
                 # the thing it detects.
                 needle = "aitheros" + "-"
-                # The public release tag `aitheros-v<semver>` shares the prefix
-                # with fleet hostnames (`aitheros-genesis`) and is the one shape a
-                # public install line is REQUIRED to name. Strip that shape, then
-                # anything left is a hostname and a leak.
+                # Public release TAGS share this prefix with fleet hostnames, and a
+                # tag is the one shape a public install line is REQUIRED to name.
+                # Strip the tag shape (prefix + "v" + semver); anything still
+                # carrying the prefix is a hostname and a leak.
+                # Do not spell either shape literally in this comment -- the sdist
+                # ships this file, and MOAT002 reads it. A comment naming the thing
+                # is the same finding as code naming it (measured 2026-09-22: this
+                # exact comment took sync-aw-reasoning red).
                 import re as _re
                 stripped = _re.sub(needle + r"v[0-9*][0-9a-z.*-]*", "", content.lower())
                 assert needle not in stripped, f"Internal hostname prefix in {topic}"
