@@ -308,10 +308,11 @@ class TestAwknoRegistry:
                 # tag is the one shape a public install line is REQUIRED to name.
                 # Strip the tag shape (prefix + "v" + semver); anything still
                 # carrying the prefix is a hostname and a leak.
-                # Do not spell either shape literally in this comment -- the sdist
-                # ships this file, and MOAT002 reads it. A comment naming the thing
-                # is the same finding as code naming it (measured 2026-09-22: this
-                # exact comment took sync-aw-reasoning red).
+                # Keep this comment free of literals: the sdist ships this file and
+                # the publish-time scanners read raw lines, so a comment naming the
+                # thing is the same finding as code naming it. Do not name a
+                # hostname, a tracker id, or a scanner's own rule id here -- each of
+                # those took this lane red in turn on 2026-09-22.
                 import re as _re
                 stripped = _re.sub(needle + r"v[0-9*][0-9a-z.*-]*", "", content.lower())
                 assert needle not in stripped, f"Internal hostname prefix in {topic}"
