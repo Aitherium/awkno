@@ -1,7 +1,7 @@
 {
   "adopt": "Queue two runs at different priorities and watch the urgent one overtake.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nA shared runner pool serves whoever asked first, so an urgent one-line fix waits behind a queue of speculative work — and the only lever anyone has is asking people to stop pushing.\n\nInstall\npip install awrun",
+  "description": "Kind: runtime\n\nProblem\nA shared runner pool serves whoever asked first, so an urgent one-line fix waits behind a queue of speculative work — and the only lever anyone has is asking people to stop pushing.\n\nInstall\npip install awrun\n\nCommands\n  awrun\n\nQuick start\n  pip install awrun\n\nDocs\nhttps://aitherium.github.io/awrun/",
   "see_also": [
     "awdk",
     "awrelay",

@@ -1,7 +1,7 @@
 {
   "adopt": "Wrap an environment you already have and ask it what happens next.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nAn agent that cannot anticipate its environment can only react. Every framework that offers this makes you adopt its whole training stack to find out whether a learned model beats the lookup table you already have.\n\nInstall\npip install git+https://github.com/Aitherium/awpredict.git",
+  "description": "Kind: tool\n\nProblem\nAn agent that cannot anticipate its environment can only react. Every framework that offers this makes you adopt its whole training stack to find out whether a learned model beats the lookup table you already have.\n\nInstall\npip install git+https://github.com/Aitherium/awpredict.git\n\nCommands\n  awpredict\n\nQuick start\n  pip install -e \".[torch]\" # torch + numpy are optional; engines degrade loudly without them\n\nDocs\nhttps://aitherium.github.io/awpredict/",
   "see_also": [
     "awm"
   ],

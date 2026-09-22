@@ -240,6 +240,68 @@ class AwknoGenerator:
 
         return text
 
+
+    # ------------------------------------------------------------------ usage
+    def _brick_source_dir(self, brick: dict) -> Path | None:
+        """The brick's source tree, from the registry's `source` (monorepo-relative)."""
+        src = brick.get("source")
+        if not src:
+            return None
+        d = self.repo_root.parent / src
+        return d if d.is_dir() else None
+
+    def _brick_commands(self, brick: dict) -> list[str]:
+        """Console scripts the brick installs, read from `[project.scripts]`.
+
+        Static parse on purpose: the corpus is built on a runner that has not
+        installed the brick, and `--help` output would make the page depend on
+        the machine that rendered it.
+        """
+        d = self._brick_source_dir(brick)
+        if d is None or not (d / "pyproject.toml").is_file():
+            return []
+        try:
+            import tomllib  # noqa: PLC0415
+        except ModuleNotFoundError:  # CI floor is 3.10
+            try:
+                import tomli as tomllib  # type: ignore[no-redef]  # noqa: PLC0415
+            except ModuleNotFoundError:
+                return []
+        try:
+            data = tomllib.loads((d / "pyproject.toml").read_text(encoding="utf-8"))
+        except Exception:
+            return []
+        scripts = (data.get("project") or {}).get("scripts") or {}
+        return sorted(k for k in scripts if not k.startswith("_"))
+
+    def _brick_quick_start(self, brick: dict) -> str:
+        """The first fenced shell block a stranger can type, from the brick's README.
+
+        Chosen by position, not by heading name: the family's READMEs put the
+        one-line install and first run in the first fenced `bash`/`sh`/`console`
+        block after the title. Internal refs are scrubbed like every other field.
+        """
+        import re  # noqa: PLC0415
+        d = self._brick_source_dir(brick)
+        if d is None or not (d / "README.md").is_file():
+            return ""
+        text = (d / "README.md").read_text(encoding="utf-8", errors="replace")
+        for m in re.finditer(r"```(?:bash|sh|shell|console)?\n(.*?)```", text, re.S):
+            block = m.group(1).strip()
+            if not block or len(block) > 600:
+                continue
+            if re.search(r"\b[A-Z]:[\\/]|AitherOS/|\.PRODUCTS|\.DEPLOYMENT", block):
+                continue
+            return self._scrub_internal_refs(block)
+        return ""
+
+    @staticmethod
+    def _brick_docs_url(brick: dict) -> str:
+        """The brick's Pages site. Public bricks publish at aitherium.github.io/<id>/."""
+        if brick.get("status") != "public":
+            return ""
+        return f"https://aitherium.github.io/{brick.get('id')}/"
+
     def _make_brick_page(self, brick: dict) -> dict[str, Any]:
         """Create a page for a brick.
 
@@ -263,7 +325,18 @@ class AwknoGenerator:
         if problem:
             description += f"\nProblem\n{problem}\n"
         if install:
-            description += f"\nInstall\n{install}"
+            description += f"\nInstall\n{install}\n"
+        # The part that makes a man page a man page: what to TYPE. Derived from
+        # the brick's own pyproject and README so it cannot drift from the code.
+        commands = self._brick_commands(brick)
+        if commands:
+            description += "\nCommands\n" + "\n".join(f"  {c}" for c in commands) + "\n"
+        quick = self._brick_quick_start(brick)
+        if quick:
+            description += "\nQuick start\n" + "\n".join(f"  {ln}" for ln in quick.splitlines()) + "\n"
+        docs = self._brick_docs_url(brick)
+        if docs:
+            description += f"\nDocs\n{docs}\n"
 
         see_also = []
         if brick.get("pairs_with"):

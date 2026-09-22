@@ -1,7 +1,7 @@
 {
   "adopt": "Run one numbered script and read what it says it did.",
   "category": "brick",
-  "description": "Kind: corpus\n\nProblem\nOps knowledge lives in people's shell history, so the same recovery gets improvised differently every time it is needed.\n\nInstall\ngit clone https://github.com/Aitherium/AitherZero",
+  "description": "Kind: corpus\n\nProblem\nOps knowledge lives in people's shell history, so the same recovery gets improvised differently every time it is needed.\n\nInstall\ngit clone https://github.com/Aitherium/AitherZero\n\nQuick start\n  git clone https://github.com/Aitherium/AitherZero.git\n  cd AitherZero\n\nDocs\nhttps://aitherium.github.io/AitherZero/",
   "see_also": [
     "awrecover"
   ],

@@ -347,3 +347,31 @@ class TestNotFoundError:
         """Test that NotFoundError has a clear message."""
         error = NotFoundError("test not found")
         assert "test not found" in str(error)
+
+
+class TestBrickUsage:
+    """A man page that cannot tell you what to type is a tagline (owner, 2026-09-22)."""
+
+    def _page(self, topic):
+        return AwknoRegistry().get(topic)
+
+    def test_awdk_page_names_its_commands_and_docs(self):
+        page = self._page("awdk")
+        assert "Commands" in page.description
+        assert "\n  adk\n" in page.description or "  adk" in page.description
+        assert "https://aitherium.github.io/awdk/" in page.description
+
+    def test_awnix_page_carries_the_real_install_and_quick_start(self):
+        page = self._page("awnix")
+        assert "podman build -t awnix:latest -f Containerfile ." in page.description
+        assert "Quick start" in page.description
+        assert "https://aitherium.github.io/awnix/" in page.description
+
+    def test_no_public_brick_page_leaks_a_local_path(self):
+        import re  # noqa: PLC0415
+
+        reg = AwknoRegistry()
+        bad = [t for t in reg.list_topics()
+               if reg.get(t).category == "brick"
+               and re.search(r"\b[A-Z]:[\\/]|AitherOS/|\.PRODUCTS|\.DEPLOYMENT", reg.get(t).description)]
+        assert not bad, bad

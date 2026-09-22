@@ -1,7 +1,7 @@
 {
   "adopt": "Ask a question about a document far bigger than your model's context, and get an answer that names which parts it actually read.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA context window that overflows does not raise. The middle is dropped, the model answers fluently from the ends, and the reply looks exactly like one drawn from the whole document. The failure is a SILENCE — no error, no truncation warning, no shorter answer — and the only signal is that it is quietly wrong about the part nobody checked.\n\nInstall\npip install awrecurse",
+  "description": "Kind: tool\n\nProblem\nA context window that overflows does not raise. The middle is dropped, the model answers fluently from the ends, and the reply looks exactly like one drawn from the whole document. The failure is a SILENCE — no error, no truncation warning, no shorter answer — and the only signal is that it is quietly wrong about the part nobody checked.\n\nInstall\npip install awrecurse\n\nCommands\n  awrecurse\n\nQuick start\n  pip install awrecurse\n\nDocs\nhttps://aitherium.github.io/awrecurse/",
   "see_also": [
     "awreason",
     "awm",

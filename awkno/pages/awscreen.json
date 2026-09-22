@@ -1,7 +1,7 @@
 {
   "adopt": "Find the thing you want to click by describing what it looks like.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nAutomating a desktop means naming things that have no names. Coordinates rot on the next resize, selectors do not exist outside a browser, and the one thing that does not change is what a human would see and point at.\n\nInstall\npip install awscreen",
+  "description": "Kind: tool\n\nProblem\nAutomating a desktop means naming things that have no names. Coordinates rot on the next resize, selectors do not exist outside a browser, and the one thing that does not change is what a human would see and point at.\n\nInstall\npip install awscreen\n\nCommands\n  awscreen\n\nQuick start\n  pip install awscreen\n\nDocs\nhttps://aitherium.github.io/awscreen/",
   "see_also": [
     "awdk",
     "awvision",

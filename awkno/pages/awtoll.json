@@ -1,7 +1,7 @@
 {
   "adopt": "Point it at your agent transcripts and see what your ten most-used commands cost.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nEvery agent stack claims its search/graph/memory tool is cheaper than grepping and re-reading files. Nobody measures it. The claim lives in a README or a code comment, measured once during development and gated by nothing — so a tool can regress into costing MORE than what it replaced and every signal stays green, because a tool that returns less looks identical to a tool that saves you something.\n\nInstall\npip install awtoll",
+  "description": "Kind: tool\n\nProblem\nEvery agent stack claims its search/graph/memory tool is cheaper than grepping and re-reading files. Nobody measures it. The claim lives in a README or a code comment, measured once during development and gated by nothing — so a tool can regress into costing MORE than what it replaced and every signal stays green, because a tool that returns less looks identical to a tool that saves you something.\n\nInstall\npip install awtoll\n\nCommands\n  awtoll\n\nQuick start\n  pip install awtoll # zero dependencies\n  pip install 'awtoll[exact]' # + tiktoken, for exact counts instead of estimates\n  \n  awtoll scan # toll table: what each tool shape cost\n  awtoll repeats # toll you paid more than once\n  awtoll versus 'awgraph callers foo' 'grep -rn foo.'\n  awtoll check # gate: expensive shapes decided, waste ratcheting down\n\nDocs\nhttps://aitherium.github.io/awtoll/",
   "see_also": [
     "awgraph",
     "awgit",

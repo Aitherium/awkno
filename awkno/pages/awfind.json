@@ -1,7 +1,7 @@
 {
   "adopt": "Ask one question and get ranked answers back instead of a page of results.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nAn agent with no search guesses from training data; an agent handed a raw web API gets ten blue links and burns its context reading them.\n\nInstall\npip install awfind",
+  "description": "Kind: tool\n\nProblem\nAn agent with no search guesses from training data; an agent handed a raw web API gets ten blue links and burns its context reading them.\n\nInstall\npip install awfind\n\nCommands\n  awfind\n\nQuick start\n  pip install awfind\n\nDocs\nhttps://aitherium.github.io/awfind/",
   "see_also": [
     "awdk",
     "awbrowse",

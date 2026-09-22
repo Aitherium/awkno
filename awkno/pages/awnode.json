@@ -1,7 +1,7 @@
 {
   "adopt": "Run it once and point one app at it instead of a vendor URL.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nEvery app hardcodes a different provider SDK, so switching backends means editing every app.\n\nInstall\npip install awnode",
+  "description": "Kind: runtime\n\nProblem\nEvery app hardcodes a different provider SDK, so switching backends means editing every app.\n\nInstall\npip install awnode\n\nCommands\n  awnode\n  awnode-mcp\n\nQuick start\n  pip install awnode\n  # container image:\n  docker pull ghcr.io/aitherium/awnode:latest\n  \n  # or full stack:\n  curl -fsSL https://launch.aitherium.com | bash\n\nDocs\nhttps://aitherium.github.io/awnode/",
   "see_also": [
     "awdk",
     "aitherkvcache",

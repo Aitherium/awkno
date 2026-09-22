@@ -1,7 +1,7 @@
 {
   "adopt": "Give one agent a memory scoped to one project and watch it stop re-asking.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nAn agent that forgets everything between sessions re-derives the same facts forever; one that remembers everything globally leaks context across projects.\n\nInstall\npip install awm",
+  "description": "Kind: tool\n\nProblem\nAn agent that forgets everything between sessions re-derives the same facts forever; one that remembers everything globally leaks context across projects.\n\nInstall\npip install awm\n\nCommands\n  awm\n\nQuick start\n  pip install awm\n  \n  awm remember --scope acme:alice:orchestrator --key recipe --value \"rank 16, lr 2e-5\"\n  awm recall --scope acme:alice:orchestrator\n\nDocs\nhttps://aitherium.github.io/awm/",
   "see_also": [
     "awpredict",
     "awdk",

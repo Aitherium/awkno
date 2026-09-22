@@ -1,7 +1,7 @@
 {
   "adopt": "Install it and ask an agent about the tab you are on.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nYour agent cannot see the page you are looking at, so you paste it in by hand.\n\nInstall\nload unpacked — see the repo",
+  "description": "Kind: tool\n\nProblem\nYour agent cannot see the page you are looking at, so you paste it in by hand.\n\nInstall\nload unpacked — see the repo\n\nDocs\nhttps://aitherium.github.io/AitherConnect/",
   "see_also": [
     "awdk"
   ],

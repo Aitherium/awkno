@@ -1,7 +1,7 @@
 {
   "adopt": "Point it at one repo and get a 0.6B embedder that ranks your directories better than the 7B one it learned from, with the eval that proves it.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nEvery agent stack searches your code with an embedding model trained on someone else's. It is right about two thirds of the time on a corpus it never saw, and nothing in the stack measures that. Distilling a small student on your own corpus -- the big model's margins plus your labels -- beats the big model, and the eval that proves it is the part people skip.\n\nInstall\npip install awembed",
+  "description": "Kind: tool\n\nProblem\nEvery agent stack searches your code with an embedding model trained on someone else's. It is right about two thirds of the time on a corpus it never saw, and nothing in the stack measures that. Distilling a small student on your own corpus -- the big model's margins plus your labels -- beats the big model, and the eval that proves it is the part people skip.\n\nInstall\npip install awembed\n\nCommands\n  awembed\n\nQuick start\n  pip install awembed # the student side: torch + transformers\n  pip install \"awembed[teacher]\" # also the teacher server (fastapi, einops,...)\n\nDocs\nhttps://aitherium.github.io/awembed/",
   "see_also": [
     "awdk",
     "awgraph",

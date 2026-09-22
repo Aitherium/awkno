@@ -1,7 +1,7 @@
 {
   "adopt": "Play one ARC game end-to-end with the world model watching every transition, then ask it to predict the next grid and watch the surprise score fall.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nA world model is only as good as the play it watches. Solver runs stream past, checkpoints get trained on whatever happened to be recorded, and nobody can answer \"did the model actually get better at predicting the next grid?\" against transitions it has never seen.\n\nInstall\npip install awgym",
+  "description": "Kind: runtime\n\nProblem\nA world model is only as good as the play it watches. Solver runs stream past, checkpoints get trained on whatever happened to be recorded, and nobody can answer \"did the model actually get better at predicting the next grid?\" against transitions it has never seen.\n\nInstall\npip install awgym\n\nCommands\n  awgym\n\nQuick start\n  awgym --help # the CLI\n  awgym serve # the gym server (FastAPI)\n\nDocs\nhttps://aitherium.github.io/awgym/",
   "see_also": [
     "awdk",
     "awm",

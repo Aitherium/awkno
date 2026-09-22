@@ -1,7 +1,7 @@
 {
   "adopt": "Run one file on a fresh box and open the URL it prints.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nEvery part of the stack ships on its own lane -- a shell on npm, two runtimes on PyPI, a desktop app on GitHub Releases, an extension in a browser store -- so a person who wants the STACK has to find six things, install them in the right order and make them agree on ports and models. Measured 2026-09-10: every one of those lanes was live and the thing that joins them was published nowhere.\n\nInstall\nsee the repo — one binary per OS from the `aitheros-v*` release",
+  "description": "Kind: runtime\n\nProblem\nEvery part of the stack ships on its own lane -- a shell on npm, two runtimes on PyPI, a desktop app on GitHub Releases, an extension in a browser store -- so a person who wants the STACK has to find six things, install them in the right order and make them agree on ports and models. Measured 2026-09-10: every one of those lanes was live and the thing that joins them was published nowhere.\n\nInstall\nsee the repo — one binary per OS from the `aitheros-v*` release\n\nCommands\n  aitheros\n  gen\n  genesis\n\nQuick start\n  cd AitherOS\n  \n  # Create virtual environment\n  python -m venv.venv\n  source.venv/bin/activate # Linux/macOS\n  .venv\\Scripts\\activate # Windows\n  \n  # Install dependencies\n  pip install -e \".[dev]\"\n  \n  # Set testing flag (required for tests)\n  export AITHER_TESTING=1",
   "see_also": [
     "awdaemons",
     "awnode",

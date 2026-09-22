@@ -1,7 +1,7 @@
 {
   "adopt": "Run one hard question as a session you can open up afterwards — the phases, the thoughts, the tool calls — instead of a paragraph you have to take on faith.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nAn agent that reasoned well and an agent that reasoned badly return the same shape: one paragraph. So a wrong answer is indistinguishable from a right one until it has been acted on, and the only available debugging tool is asking again. The structure exists inside the model turn and is discarded at the boundary, which is why nothing downstream can ever check it.\n\nInstall\npip install awreason",
+  "description": "Kind: tool\n\nProblem\nAn agent that reasoned well and an agent that reasoned badly return the same shape: one paragraph. So a wrong answer is indistinguishable from a right one until it has been acted on, and the only available debugging tool is asking again. The structure exists inside the model turn and is discarded at the boundary, which is why nothing downstream can ever check it.\n\nInstall\npip install awreason\n\nCommands\n  awreason\n\nQuick start\n  pip install awreason\n\nDocs\nhttps://aitherium.github.io/awreason/",
   "see_also": [
     "awdk",
     "awfind",

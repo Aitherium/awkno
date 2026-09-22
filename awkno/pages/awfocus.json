@@ -1,7 +1,7 @@
 {
   "adopt": "List your live sessions, search their transcripts, and focus or message the one you want.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nEvery session is a tab; nothing answers \"which session is doing what, where did I say X, how do I tell that session to do Y\" without hunting.\n\nInstall\npip install awfocus",
+  "description": "Kind: tool\n\nProblem\nEvery session is a tab; nothing answers \"which session is doing what, where did I say X, how do I tell that session to do Y\" without hunting.\n\nInstall\npip install awfocus\n\nCommands\n  awfocus\n\nQuick start\n  awfocus # list what is running right now\n  awfocus what did we decide about the tunnel\n   # search every transcript, ranked\n  awfocus open 8d191d35 # open that session in a terminal tab\n  awfocus ask 8d191d35 \"ship it\"\n   # deliver a message into the session\n  awfocus remote # sessions seen on the relay (other machines)\n  awfocus --self-test # prove the contract, offline\n\nDocs\nhttps://aitherium.github.io/awfocus/",
   "see_also": [
     "awrelay",
     "awgit",

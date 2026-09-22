@@ -1,7 +1,7 @@
 {
   "adopt": "Snapshot the coding sessions open on this machine, then reopen exactly those after a reboot, each in its own terminal tab.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nThe set of sessions actually open exists only while they are running. A reboot, a crash or a closed window takes it with them, and what you get back is a list of every session you have ever had, sorted by a timestamp that does not tell you which were live. Guessing wrong opens a second view of one conversation.\n\nInstall\nin-tree at .PRODUCTS/.AITHERRESUME (no public repo yet; pending publish)",
+  "description": "Kind: tool\n\nProblem\nThe set of sessions actually open exists only while they are running. A reboot, a crash or a closed window takes it with them, and what you get back is a list of every session you have ever had, sorted by a timestamp that does not tell you which were live. Guessing wrong opens a second view of one conversation.\n\nInstall\nnot published yet (pending a public repo)\n\nQuick start\n  This installs:\n  1. `~/.aither/bin/aither-resume.cmd` and adds `~/.aither/bin` to your user PATH.\n  2. A PowerShell profile function + `claude-resume` / `aresume` aliases\n   *(best-effort — skipped if Defender Controlled-Folder-Access locks your profile).*\n  3. The `/resume-all` Claude Code command in `~/.claude/commands/`.\n  \n  Uninstall: `pwsh -File.\\install.ps1 -Uninstall`.\n  \n  ## Usage",
   "see_also": [
     "awsettings",
     "awsh",

@@ -1,7 +1,7 @@
 {
   "adopt": "Snapshot one directory, break it, restore it, diff it.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA restore that half-succeeds is worse than one that fails, because you now have a state that never existed.\n\nInstall\npip install awrecover",
+  "description": "Kind: tool\n\nProblem\nA restore that half-succeeds is worse than one that fails, because you now have a state that never existed.\n\nInstall\npip install awrecover\n\nCommands\n  awrecover\n\nQuick start\n  pip install awrecover\n  \n  awrecover snapshot./run --store.snaps --label pre-finetune\n  awrecover verify --store.snaps --label pre-finetune # RESTORES it, to a scratch dir\n  awrecover restore --store.snaps --label pre-finetune --dest./run\n\nDocs\nhttps://aitherium.github.io/awrecover/",
   "see_also": [
     "awnix",
     "awshare",

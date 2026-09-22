@@ -1,7 +1,7 @@
 {
   "adopt": "Point it at one transcript directory and read back what those sessions learned, with the line each lesson came from.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nEvery agent session leaves a transcript, and almost every transcript is thrown away. The correction a human made at turn 40, the retry that finally worked, the six-command sequence three sessions each re-derived -- all of it sits in JSONL nobody reads, while the next session starts from zero.\n\nInstall\npip install git+https://github.com/Aitherium/awmine.git",
+  "description": "Kind: tool\n\nProblem\nEvery agent session leaves a transcript, and almost every transcript is thrown away. The correction a human made at turn 40, the retry that finally worked, the six-command sequence three sessions each re-derived -- all of it sits in JSONL nobody reads, while the next session starts from zero.\n\nInstall\npip install git+https://github.com/Aitherium/awmine.git\n\nCommands\n  awmine\n\nQuick start\n  pip install awmine",
   "see_also": [
     "awtoll",
     "awm",

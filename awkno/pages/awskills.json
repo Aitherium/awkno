@@ -1,7 +1,7 @@
 {
   "adopt": "Copy one.md into your agent's skills dir and tell it to use that skill.",
   "category": "brick",
-  "description": "Kind: corpus\n\nProblem\nPrompt knowledge dies in a transcript. A skill is a procedure written once, in a file, that any agent can load when the situation calls for it.\n\nInstall\ngit clone https://github.com/Aitherium/awskills",
+  "description": "Kind: corpus\n\nProblem\nPrompt knowledge dies in a transcript. A skill is a procedure written once, in a file, that any agent can load when the situation calls for it.\n\nInstall\ngit clone https://github.com/Aitherium/awskills\n\nQuick start\n  git clone https://github.com/Aitherium/awskills\n  cd awskills\n  bash scripts/install-awskills.sh # Windows: pwsh -File scripts/Install-AitherSkills.ps1\n\nDocs\nhttps://aitherium.github.io/awskills/",
   "see_also": [
     "awdk",
     "awknowledge"

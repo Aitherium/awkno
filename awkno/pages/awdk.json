@@ -1,7 +1,7 @@
 {
   "adopt": "Point it at a backend you already pay for and run one agent loop.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nRunning one agent is easy and running fifty is a different job: budgets, retries, which model, whose machine. Most frameworks make you adopt their whole world to find out.\n\nInstall\npip install awdk",
+  "description": "Kind: runtime\n\nProblem\nRunning one agent is easy and running fifty is a different job: budgets, retries, which model, whose machine. Most frameworks make you adopt their whole world to find out.\n\nInstall\npip install awdk\n\nCommands\n  adk\n  adk-bug\n  adk-py\n  adk-serve\n  adk-shell\n  adk-workspace\n  aither-adk\n  awdk\n\nQuick start\n  pip install awdk\n  adk quickstart # auto-detect hardware, set up inference\n  adk init my-agent && cd my-agent && python agent.py\n\nDocs\nhttps://aitherium.github.io/awdk/",
   "see_also": [
     "aitheros",
     "awskills",

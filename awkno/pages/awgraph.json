@@ -1,7 +1,7 @@
 {
   "adopt": "Index one repo and ask it who calls one function.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\n\"Who calls this?\" answered by grep is a guess. Agents burn enormous context re-reading files to rebuild a graph the parser already knows.\n\nInstall\npip install awgraph",
+  "description": "Kind: tool\n\nProblem\n\"Who calls this?\" answered by grep is a guess. Agents burn enormous context re-reading files to rebuild a graph the parser already knows.\n\nInstall\npip install awgraph\n\nCommands\n  awgraph\n\nQuick start\n  pip install awgraph\n\nDocs\nhttps://aitherium.github.io/awgraph/",
   "see_also": [
     "awm",
     "awdk",

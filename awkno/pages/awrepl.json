@@ -1,7 +1,7 @@
 {
   "adopt": "Give an agent a live session it can keep poking at, so the next question is asked of the object instead of of its own memory.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nAn agent given one-shot shell commands rebuilds its whole world on every call, so it guesses instead of looking — and in a transcript a guess is indistinguishable from a reading. Every variable it wanted is gone the moment the command exits, which is why agents describe state rather than inspect it.\n\nInstall\npip install awrepl",
+  "description": "Kind: tool\n\nProblem\nAn agent given one-shot shell commands rebuilds its whole world on every call, so it guesses instead of looking — and in a transcript a guess is indistinguishable from a reading. Every variable it wanted is gone the moment the command exits, which is why agents describe state rather than inspect it.\n\nInstall\npip install awrepl\n\nCommands\n  awrepl\n\nQuick start\n  pip install awrepl\n\nDocs\nhttps://aitherium.github.io/awrepl/",
   "see_also": [
     "awprism",
     "awdk",

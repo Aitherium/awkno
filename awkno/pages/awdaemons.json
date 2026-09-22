@@ -1,7 +1,7 @@
 {
   "adopt": "Run it on a box with no Python and curl its /health.",
   "category": "brick",
-  "description": "Kind: runtime\n\nProblem\nShipping the agent loop and the shell harness means shipping a Python environment, and freezing the whole CLI to get them drags in the entire ML stack: 694 MiB and 164+ PyInstaller hooks to obtain two subcommands.\n\nInstall\nsee the repo — built by awdk/packaging/build_executable.py --narrow",
+  "description": "Kind: runtime\n\nProblem\nShipping the agent loop and the shell harness means shipping a Python environment, and freezing the whole CLI to get them drags in the entire ML stack: 694 MiB and 164+ PyInstaller hooks to obtain two subcommands.\n\nInstall\nsee the repo — built by awdk/packaging/build_executable.py --narrow\n\nCommands\n  adk\n  adk-bug\n  adk-py\n  adk-serve\n  adk-shell\n  adk-workspace\n  aither-adk\n  awdk\n\nQuick start\n  pip install awdk\n  adk quickstart # auto-detect hardware, set up inference\n  adk init my-agent && cd my-agent && python agent.py",
   "see_also": [
     "awdk",
     "awnode",
