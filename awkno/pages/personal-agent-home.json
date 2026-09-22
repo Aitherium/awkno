@@ -1,0 +1,24 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Owner directive 2026-09-21, the day Meta announced Muse: the same journey has to compose HERE from bricks a stranger can install -- a desk body (awdesk) that hosts the aitherium.com Living Desktop over the real desktop and embodies an agent as an avatar; the browser body (AitherConnect) that puts the same overlay over any page; a companion (awsprite) that grows a knowledge base from what its owner teaches it, remembered in awm, built and grown with awdk packs; self-service self-hosting (awnix / awnode / awsh) so the whole thing runs on the owner's own box; device registration through a front gate (awnboard + awiam); and tunnels between those devices that the PLATFORM cannot read. Every seam was measured, not assumed: awdesk already loads aitherium.com/?mode=overlay and reuses AitherConnect's overlay-mode protocol; awdesk registers a local MCP server so awsh/adk can drive it; device enrolment lives in a tenant backend (`devices.py`) and the tenant node table (`/tunnel/tenant/{t}/nodes`). What did NOT hold on 2026-09-21: every tunnel enrolment path minted the device's WireGuard private key SERVER-SIDE and `_save_peers` persisted it to the vault, so the platform could read any device's tunnel -- fixed the same day (bring-your-own public key on every enrolment endpoint, device private keys never persisted; `test_tunnel_key_custody.py`). Owner-blind device-to-device tunnels already exist and are the DEFAULT: `adk join` (awdk/adk/commands/join.py) brings the node up on the headscale tailnet (`hs.aitherium.com`, /health 200 on 2026-09-21) with a mesh key minted by Identity -- node keys are generated on the device, traffic is peer-to-peer WireGuard, and the control plane sees public keys only. The AitherTunnel hub VPN is the lane for reaching platform services and dev workspaces; it terminates at the hub by design. Still `partial` because awsprite is `planned` and mobile chat is Discord-only.\n\nIncludes: awdesk, AitherConnect, awsprite, awdk, awm, awkno, awknowledge, awnboard, awiam, awtunnel, awnet, awnode, awnix, awsh",
+  "see_also": [
+    "awdesk",
+    "AitherConnect",
+    "awsprite",
+    "awdk",
+    "awm",
+    "awkno",
+    "awknowledge",
+    "awnboard",
+    "awiam",
+    "awtunnel",
+    "awnet",
+    "awnode",
+    "awnix",
+    "awsh"
+  ],
+  "status": "partial",
+  "synopsis": "A personal agent that lives with you -- desk, browser, site, devices, tunnels",
+  "topic": "personal-agent-home"
+}

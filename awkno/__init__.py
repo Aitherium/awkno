@@ -15,7 +15,7 @@ from __future__ import annotations
 
 from awkno.corpus import AwknoPage, AwknoRegistry, NotFoundError
 
-__version__ = "0.2.1"
+__version__ = "0.2.3"
 
 __all__ = [
     "AwknoRegistry",

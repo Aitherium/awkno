@@ -1,0 +1,23 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "The substrate a cluster orchestrator gives agent workloads, as bricks a stranger adopts one at a time on one machine: awrun is the unit of work (priority, suspend, resume, declarative apply, limits and egress that FAIL CLOSED); awflow is why a resumed run continues instead of restarting (the journal is the checkpoint, finished model calls replay); awrise is the clock; awrouter and awnode decide which model answers; awdk is the agent loop and awrepl its live session; awnix is the machine. Governance is not a later phase: awiam says who, awbac says whether, awdit records it before it happens, awseal signs a run that leaves the machine and awshare verifies the one that arrives. Registered 2026-09-21 when a cluster-native agent orchestrator was announced and the question \"did we already build this\" had no single place to be answered from.\n\nIncludes: awrun, awflow, awrise, awrouter, awnode, awdk, awrepl, awnix, awiam, awbac, awdit, awseal, awshare",
+  "see_also": [
+    "awrun",
+    "awflow",
+    "awrise",
+    "awrouter",
+    "awnode",
+    "awdk",
+    "awrepl",
+    "awnix",
+    "awiam",
+    "awbac",
+    "awdit",
+    "awseal",
+    "awshare"
+  ],
+  "status": "partial",
+  "synopsis": "An orchestrator for agent workloads -- stateful, governed, no cluster",
+  "topic": "agentic-orchestrator"
+}

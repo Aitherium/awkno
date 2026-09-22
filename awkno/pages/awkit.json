@@ -8,7 +8,7 @@
     "awiam",
     "awbeads"
   ],
-  "status": "public",
+  "status": "no-pages",
   "synopsis": "Render an agent panel from a tool result",
   "topic": "awkit"
 }

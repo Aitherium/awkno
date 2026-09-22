@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Using every agent, skill and fleet tool from a terminal without Claude Code. awsh is the door, the awdk harness daemon (:8362) is what it opens onto, awnode is the fleet behind it, awdesk's Console is the same door with a face, and the skills are read where they already live. Done when: `adk harness new --harness awdk --agent saga --skill gauntlet` answers as Saga following the protocol (LIVE 2026-09-21, 26 agents generated from config/identities); saga/vera/iris appear in awsh and the desk menu with no hand patch (LIVE); `awsh> /skills` prints host N | genesis N | gateway N | drift 0 (code landed, deploy pending); the desk Command pane routes @agent /skill through the daemon (not started).\n\nIncludes: awsh, awdk, awnode, awdesk, awskills",
+  "see_also": [
+    "awsh",
+    "awdk",
+    "awnode",
+    "awdesk",
+    "awskills"
+  ],
+  "status": "partial",
+  "synopsis": "The daily driver",
+  "topic": "the-daily-driver"
+}
