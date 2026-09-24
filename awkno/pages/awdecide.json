@@ -11,7 +11,7 @@
     "awtoll",
     "awrepl"
   ],
-  "status": "planned",
+  "status": "no-pages",
   "synopsis": "One typed-decision contract -- choice / score / bool with a probability -- over a ladder of backends you already run (rules, tiny local models, an LLM's logprobs), fail-closed, with a Brier ledger that resolves every decision against its outcome.",
   "topic": "awdecide"
 }
