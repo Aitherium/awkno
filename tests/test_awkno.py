@@ -383,3 +383,17 @@ class TestBrickUsage:
                if reg.get(t).category == "brick"
                and LOCAL_PATH_RE.search(reg.get(t).description)]
         assert not bad, bad
+
+
+class TestHelpFlag:
+    """`awkno --help` / `-h` print usage and exit 0 (was exit 2, add_help=False)."""
+
+    @pytest.mark.parametrize("flag", ["--help", "-h"])
+    def test_help_exits_zero(self, flag, capsys):
+        from awkno.cli import _build_parser
+
+        with pytest.raises(SystemExit) as exc:
+            _build_parser().parse_args([flag])
+        assert exc.value.code == 0
+        out = capsys.readouterr().out
+        assert "awkno [TOPIC]" in out and "--apropos" in out

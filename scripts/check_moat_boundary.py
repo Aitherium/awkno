@@ -54,7 +54,8 @@ _INTERNAL = (
     (re.compile(rb"\bD-\d{3,4}\b"), "debt-ledger row id"),
     (re.compile(rb"\b(?:AWG|HYG|PQ|ADK|MCP|NAV|TP|DC|MOAT)\d{3}\b"), "internal checker rule id"),
     (re.compile(rb"[A-Za-z]:[\\/]AitherOS-Fresh"), "absolute monorepo path"),
-    (re.compile(rb"aitheros-|aither-vllm|aither-worker"), "internal hostname"),
+    # `aitheros-v*` is the public RELEASE TAG glob the install line must name, not a host.
+    (re.compile(rb"aitheros-(?!v[\d*])|aither-vllm|aither-worker"), "internal hostname"),
 )
 
 #: Modules whose ABSENCE means the artifact is broken regardless of how clean it

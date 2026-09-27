@@ -256,6 +256,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--self-test", action="store_true", help="Run self-test"
     )
+    # add_help=False above keeps argparse from printing its own "-h" line in
+    # the custom usage, but it also made `awkno --help` exit 2 with
+    # "unrecognized arguments" -- the one flag every agent tries first.
+    parser.add_argument(
+        "-h", "--help", action="help", help="Show this help and exit"
+    )
 
     return parser
 
