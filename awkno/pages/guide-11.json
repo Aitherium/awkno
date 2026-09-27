@@ -1,0 +1,14 @@
+{
+  "adopt": null,
+  "body": "### One command instead of an afternoon of settings\n\nClaude Code can use every aw* brick you already have: as MCP servers it calls, as skills it\nloads when the task matches, and as hooks that run around each turn. Wiring that by hand\nmeans editing several settings files and getting each one's scope right. `adk claude setup`\ndoes it in one step, and `adk claude doctor` tells you whether it is still true next week.\n\n### Which file a setting lives in matters\n\nClaude Code reads settings from several layers: your user folder, the project, and a\nmachine-local file next to it. A setting written to a layer that does not honour it is\nignored without an error — it just does not exist\n([law 25](https://github.com/Aitherium/awknowledge/blob/main/laws/25-a-setting-in-a-scope-nobody-reads-does-not-exist.md)). Setup writes\nthe permission mode to your *user* settings only, never to a repository other people clone.\n\n### What travels and what stays\n\nPresets and files travel between your machines; credentials never do\n([law 29](https://github.com/Aitherium/awknowledge/blob/main/laws/29-portable-is-files-and-presets-never-credentials.md)). Setup keeps the\ntwo apart, so syncing your settings to a second machine never copies a token.\n\n### Hooks cost time on every call\n\nA hook runs on every tool call, so a slow one slows everything\n([law 26](https://github.com/Aitherium/awknowledge/blob/main/laws/26-a-hook-on-every-call-spends-a-latency-budget.md)). The hooks setup\ninstalls check cheaply first and only do real work when the call is one they care about.\n\nDO\n\n1.  $ adk claude setup\n     you should see: the awsh plugin installed and the awsettings preset applied, each line OK\n     if not: If it says Claude Code is not found, install Claude Code first and open a new terminal. If `adk claude` is unknown, run `pip install -U awdk`.\n2.  $ adk claude doctor\n     you should see: no CCD findings - exit 0\n     if not: Each CCD code names the file and the setting that drifted; run `adk claude setup` again, then doctor.\n\ndone when:  $ adk claude doctor\n     you should see: no CCD findings\n\nWHAT YOU LEARNED\n\n- Claude Code reads settings from several layers; a setting in a layer that does not honour it silently does not exist.\n- Permission mode belongs in your user settings, never in a repository other people clone.\n- Presets and files travel between machines; credentials never do.",
+  "category": "guide",
+  "description": "Chapter 11 of 11 -- Put every aw* brick in Claude Code as tools, skills and hooks with one command, then check it stays that way.\n\nAbout 10 minutes. Read online: https://aitherium.github.io/awknowledge/path/11-claude-code.html",
+  "see_also": [
+    "awdk",
+    "awsettings"
+  ],
+  "slug": "11-claude-code",
+  "status": "published",
+  "synopsis": "Set up Claude Code the Aither way",
+  "topic": "guide-11"
+}
