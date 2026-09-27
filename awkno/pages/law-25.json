@@ -1,0 +1,11 @@
+{
+  "adopt": null,
+  "body": "*Part VI · Configuration*\n\n**Fires when:** you grant an agent a permission, a sanction or a mode by writing a key into\na settings file; when a harness offers several settings layers (managed, user, project,\nlocal) and you pick the one closest to the work.\n\n## The law\n\nLayered settings are not one namespace. Each key is read from the layers the harness\nchooses for it, and a key written anywhere else is **silently ignored** — no warning, no\nerror, the file still parses, and the agent behaves exactly as if you had never written it.\n\nThe keys that matter most are the ones most likely to be scoped away: anything that widens\nwhat an agent may do. Claude Code reads its `autoMode` block **only** from user or managed\nsettings. The same block in project or local settings is dead, and it looks alive because\nit sits next to keys (permissions, hooks) that the project layer *does* honour.\n\n## The check\n\n- For every sanction-shaped key, record which layers the harness reads it from, and assert\n that the key lives in one of them. A check that parses the file is not enough — it must\n know the layer.\n- Prove it from behaviour, once: set the key, start a fresh session, and observe the\n change. A key you cannot observe taking effect is a key you have not set.\n- When a key moves layers, delete the dead copy. Two copies, one live and one ignored,\n is how the next reader edits the wrong one.",
+  "category": "law",
+  "description": "Law #25",
+  "see_also": null,
+  "slug": "a-setting-in-a-scope-nobody-reads-does-not-exist",
+  "status": "published",
+  "synopsis": "A setting in a scope nobody reads does not exist — know which layer the harness honours",
+  "topic": "law-25"
+}

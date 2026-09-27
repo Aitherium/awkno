@@ -1,0 +1,11 @@
+{
+  "adopt": null,
+  "body": "*Part VI · Configuration*\n\n**Fires when:** you package an agent setup for another machine or another person — a\nplugin, a settings preset, a dotfiles sync, a \"set it up the way I have it\" command.\n\n## The law\n\nAn agent setup is three different things that only look like one file:\n\n| kind | what it is | how it travels |\n|---|---|---|\n| **content** | skills, rules, hooks, commands, agents | a plugin or package — files, versioned |\n| **preferences** | model, voice, notifications, UI keys | a settings preset — merged into the user layer, never overwriting |\n| **machine-local** | credentials, tokens, absolute paths, and the environment an owner's sanctions describe | **never travels** |\n\nMixing them is how a shared preset ships a token, or an owner's description of their own\nenvironment becomes every recipient's standing grant. The sanction itself is trust the\nowner gave for one machine; copying it is granting it to a stranger.\n\n## The check\n\n- The export path has a denylist for machine-local keys and a scan for secret-shaped values\n and absolute paths; it fails on a hit rather than redacting silently.\n- The import path refuses the same keys (law 28).\n- A setup command applies content and preferences, then **asks** for anything machine-local\n instead of copying it.",
+  "category": "law",
+  "description": "Law #29",
+  "see_also": null,
+  "slug": "portable-is-files-and-presets-never-credentials",
+  "status": "published",
+  "synopsis": "Portable is files and presets, never credentials — split what travels from what stays",
+  "topic": "law-29"
+}

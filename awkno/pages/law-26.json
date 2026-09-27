@@ -1,0 +1,11 @@
+{
+  "adopt": null,
+  "body": "*Part VII · Scaling*\n\n**Fires when:** you wire a hook that runs before or after every tool call, every shell\ncommand or every prompt; when an agent session \"feels slow\" and nothing is obviously busy.\n\n## The law\n\nA hook that fires on every call is paid on every call, serially, for the life of every\nsession. Its cost is not \"small\" — it is its median latency multiplied by the number of\ncalls, and a busy agent makes thousands. Interpreter start-up and module imports dominate\nthat cost long before the hook's own logic runs.\n\nSo the shape is fixed: **decide whether the call concerns you before you import anything.**\nRead the event, match it against a cheap string or pattern test, and exit immediately on\nthe common case. Only the rare call that matches pays for the heavy path.\n\n## The check\n\n- Measure the median and the tail (p95) in milliseconds for the no-match path and the match\n path separately, on real events, and write both numbers down beside the hook.\n- Give the no-match path a budget and a test that fails when a new top-level import\n pushes it over. Imports creep; a budget nobody asserts creeps with them.\n- Several hooks on the same event are one budget, not several. Merge them behind one\n prefilter rather than paying start-up once per hook.",
+  "category": "law",
+  "description": "Law #26",
+  "see_also": null,
+  "slug": "a-hook-on-every-call-spends-a-latency-budget",
+  "status": "published",
+  "synopsis": "A hook on every call spends a latency budget — prefilter before you import",
+  "topic": "law-26"
+}
