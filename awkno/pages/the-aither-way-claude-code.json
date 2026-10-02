@@ -1,0 +1,25 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "Claude Code with the family wired in, each piece taken on its own: a plugin that makes any harness a native subagent, scoped memory recalled at session start, peer findings delivered in-turn, a code graph and a finder as MCP servers, a shared-worktree git that commits only your paths, a spoken reply on Stop, a settings preset that keeps portable and machine-local settings apart, and the doctrine and skills an agent loads on demand. Every surface is listed per brick under `In Claude Code` and is generated from this registry.\n\nIncludes: awdk, awsh, awsettings, awskills, awknowledge, awkno, awgit, awrelay, awm, awgraph, awfind, awfocus, awprism, awdecide, awvoice",
+  "see_also": [
+    "awdk",
+    "awsh",
+    "awsettings",
+    "awskills",
+    "awknowledge",
+    "awkno",
+    "awgit",
+    "awrelay",
+    "awm",
+    "awgraph",
+    "awfind",
+    "awfocus",
+    "awprism",
+    "awdecide",
+    "awvoice"
+  ],
+  "status": "partial",
+  "synopsis": "The Aither way to run Claude Code",
+  "topic": "the-aither-way-claude-code"
+}

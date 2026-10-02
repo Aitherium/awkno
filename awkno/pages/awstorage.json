@@ -1,13 +1,18 @@
 {
   "adopt": "Scan one drive and read a ranked inventory of what fills it, with each tree marked re-fetchable or not.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nStorage sprawls faster than anyone can look at it. Caches, dead builds, duplicate model weights and orphaned volumes accumulate across drives and nodes, and the only tool is an ad-hoc du that answers one question once and is forgotten. Deleting without an inventory destroys the wrong thing; not deleting fills the disk that holds Postgres.\n\nInstall\npip install awstorage\n\nCommands\n  awstorage\n\nDocs\nhttps://aitherium.github.io/awstorage/",
+  "description": "Kind: tool\n\nProblem\nStorage sprawls faster than anyone can look at it. Caches, dead builds, duplicate model weights and orphaned volumes accumulate across drives and nodes, and the only tool is an ad-hoc du that answers one question once and is forgotten. Deleting without an inventory destroys the wrong thing; not deleting fills the disk that holds Postgres.\n\nInstall\npip install awstorage\n\nCommands\n  awstorage\n\nQuick start\n  ## Sweep agent scratch automatically\n  \n  `scan -> propose -> apply` wants a person between the steps. The thing that filled\n  drive C: on 2026-09-27 (122 MB free, a WSL root fs corrupted mid-boot) did not: 173 GB\n  of per-session agent scratchpads under `%LOCALAPPDATA%\\Temp\\claude\\<project>\\<session>\\`\n  that nothing reaped -- one dead session held 106 GB -- plus ~19k stale Temp entries.\n  `sweep` is the unattended half:\n\nDocs\nhttps://aitherium.github.io/awstorage/",
   "see_also": [
     "awrecover",
     "awdk",
     "awnode",
     "awsh",
-    "awgraph"
+    "awgraph",
+    "awdit",
+    "awseal",
+    "awshare",
+    "awm",
+    "awrise"
   ],
   "status": "public",
   "synopsis": "Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it.",

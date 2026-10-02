@@ -24,7 +24,8 @@
     "awbrowse",
     "awnet",
     "awnode",
-    "awtunnel"
+    "awtunnel",
+    "awdit"
   ],
   "status": "public",
   "synopsis": "A Linux you can hand to an agent",

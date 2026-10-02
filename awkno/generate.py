@@ -305,6 +305,28 @@ class AwknoGenerator:
             return self._scrub_internal_refs(block)
         return ""
 
+    def _brick_harness_surfaces(self, brick: dict) -> list[str]:
+        """How the brick shows up inside an agent harness, one line per surface.
+
+        Declared in the registry's `harness_surfaces:`; a skill is DERIVED from
+        `.claude/skills/<id>/SKILL.md` -- the same rule gen_ecosystem's hub uses,
+        so the offline page and the hub cannot disagree about it.
+        """
+        rows = [s for s in (brick.get("harness_surfaces") or []) if isinstance(s, dict)]
+        if not any(s.get("kind") == "skill" for s in rows):
+            skill = self.repo_root.parent / ".claude" / "skills" / str(brick.get("id")) / "SKILL.md"
+            if skill.is_file():
+                rows.append({"harness": "claude-code", "kind": "skill",
+                             "run": f"/{brick.get('id')}", "state": "live"})
+        out = []
+        for s in rows:
+            kind = str(s.get("kind", ""))
+            if s.get("event"):
+                kind += f" ({s['event']})"
+            tail = "  [planned]" if s.get("state") == "planned" else ""
+            out.append(f"{kind:<22} {self._scrub_internal_refs(str(s.get('run', '')))}{tail}")
+        return out
+
     @staticmethod
     def _brick_docs_url(brick: dict) -> str:
         """The brick's Pages site. Public bricks publish at aitherium.github.io/<id>/."""
@@ -344,6 +366,9 @@ class AwknoGenerator:
         quick = self._brick_quick_start(brick)
         if quick:
             description += "\nQuick start\n" + "\n".join(f"  {ln}" for ln in quick.splitlines()) + "\n"
+        harness = self._brick_harness_surfaces(brick)
+        if harness:
+            description += "\nIn Claude Code\n" + "\n".join(f"  {h}" for h in harness) + "\n"
         docs = self._brick_docs_url(brick)
         if docs:
             description += f"\nDocs\n{docs}\n"
