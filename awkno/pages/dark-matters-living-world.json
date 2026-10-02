@@ -1,15 +1,16 @@
 {
   "adopt": null,
   "category": "stack",
-  "description": "Procedurally generate a playable, multiplayer 3D world -- zones, quests, NPCs, creatures, their bodies, rigs, clips and style renders -- from Saga narrative and Prometheus balance, into a World of ClaudeCraft-derived realm and the CoC story engine at once, with the same character carried into awdesk and a Space.\n\nIncludes: awavatar, awdk, awsprite, awrtifact, awrun",
+  "description": "Procedurally generate a playable, persistent-realm 3D world -- zones, quests, living NPCs on a decide-door mind stack, creatures, their bodies, rigs, clips and style renders -- from Saga narrative and Prometheus balance, hosted by the Dark Matters engine (the CoC story engine grows the world; owner decision 2026-09-21) with the World of ClaudeCraft-derived realm as the PG public world and sim donor, and the same character carried into awdesk and a Space.\n\nIncludes: awavatar, awdk, awdecide, awsprite, awrtifact, awrun",
   "see_also": [
     "awavatar",
     "awdk",
+    "awdecide",
     "awsprite",
     "awrtifact",
     "awrun"
   ],
-  "status": "planned",
+  "status": "partial",
   "synopsis": "Dark Matters Living World",
   "topic": "dark-matters-living-world"
 }
