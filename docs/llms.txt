@@ -1,0 +1,35 @@
+# awkno
+
+> The man page for the Aither World — every brick, stack and law, offline.
+
+The family is only useful if you can find it. Its registry lives in one yaml in one monorepo and the laws live in a public skills pack, so a stranger with a terminal and no browser can reach neither — which makes "what exists and what should this talk to" a question asked of a person instead of a tool.
+
+## Install
+
+```
+pip install awkno
+```
+
+## In Claude Code
+
+- skill: `/awkno`
+
+## Use it in 30 seconds
+
+Ask it what a brick does and get the answer with your network cable out.
+
+## Composes with
+
+- [awskills](https://aitherium.github.io/awskills/) — Portable agent skills — self-contained procedures an agent loads on demand.
+- [awfind](https://aitherium.github.io/awfind/) — A portable search client — query, results, ranking.
+- [awm](https://aitherium.github.io/awm/) — A portable, scoped agent memory.
+
+## Where it lives
+
+- Repo: https://github.com/Aitherium/awkno
+- Docs: https://aitherium.github.io/awkno/
+- Manifest (keys + the one-line adoption story): https://aitherium.github.io/awkno/aither-manifest.json
+
+This repository is mirrored from the AitherOS monorepo by `.github/workflows/sync-awkno.yml`; hand edits made here are overwritten on the next sync — change the source instead.
+
+Everything Aitherium, in one file for agents: https://aitherium.com/llms.txt
