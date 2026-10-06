@@ -1,7 +1,7 @@
 {
   "adopt": "Give one household read access to one person's calendar, check it, then revoke it.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nWork and home context end up in one tenant with a flag per record, so leaving the company takes your household with it, \"share with my family\" is a toggle nobody can expire or revoke alone, and an unknown scope reads as no restriction at all.\n\nInstall\nnot yet published; builds in-tree (pip install AitherOS/packages/awscope)\n\nCommands\n  awscope\n\nQuick start\n  pip install \".[dev]\"\n  awscope --self-test",
+  "description": "Kind: tool\n\nProblem\nWork and home context end up in one tenant with a flag per record, so leaving the company takes your household with it, \"share with my family\" is a toggle nobody can expire or revoke alone, and an unknown scope reads as no restriction at all.\n\nInstall\nnot yet published; builds in-tree\n\nCommands\n  awscope\n\nQuick start\n  pip install \".[dev]\"\n  awscope --self-test",
   "see_also": [
     "awbac",
     "awnboard",
