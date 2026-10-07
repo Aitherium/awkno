@@ -1,0 +1,12 @@
+{
+  "adopt": "Point it at one RTSP camera, enable it, and read back a one-line description of each event.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nHome cameras record to someone else's servers, keep footage on their terms, and tell you \"motion detected\" forty times a day without saying what moved.\n\nInstall\nbuilds in-tree -- not on PyPI yet; `pip install awcams` 404s today\n\nCommands\n  awcams\n\nQuick start\n  pip install -e. # recording, events, API\n  pip install -e \".[vision]\" # + one-line summaries through a local vision model",
+  "see_also": [
+    "awvision",
+    "awnode"
+  ],
+  "status": "unpublished",
+  "synopsis": "Private camera recording and one-line event summaries, on storage you own.",
+  "topic": "awcams"
+}
