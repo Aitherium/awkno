@@ -1,0 +1,15 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "One integration, every surface. awsuite holds the Google Workspace client and one tool table; awdk loads it as a toolpack, awsh and Claude Code reach it as an MCP server, awskills carries the playbooks, and awpack ships the bundle to a tenant. Swapping the harness keeps the tools and the confirm gate.\n\nIncludes: awsuite, awdk, awsh, awskills, awpack",
+  "see_also": [
+    "awsuite",
+    "awdk",
+    "awsh",
+    "awskills",
+    "awpack"
+  ],
+  "status": "partial",
+  "synopsis": "The workspace bridge",
+  "topic": "workspace-bridge"
+}
