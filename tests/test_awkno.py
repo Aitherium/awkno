@@ -264,7 +264,13 @@ class TestAwknoRegistry:
                 repo_root = str(current / "AitherOS")
                 break
             current = current.parent
-        assert repo_root, "this test runs from inside the monorepo checkout"
+        if not repo_root:
+            # A published awkno has no registry or law files to generate from
+            # -- the corpus ships pre-built -- so this generator test can only
+            # run where its inputs live. Inside the monorepo the walk always
+            # finds them, so the skip never hides a real failure there.
+            pytest.skip("standalone awkno checkout: the generator's inputs live "
+                        "in the monorepo")
 
         gen = AwknoGenerator(repo_root)
         fence = "```bash" + chr(10) + "python your_checker.py --all" + chr(10) + "```"
