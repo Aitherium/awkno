@@ -1,14 +1,14 @@
 {
   "adopt": "Sign in with your own Google OAuth client and search your inbox from the CLI.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nGiving an agent your mail, files and calendar is one OAuth consent away, and after that nothing distinguishes \"read my inbox\" from \"reply to everyone\". The agent also needs the same tools in every harness it runs in, not a different integration per surface.\n\nInstall\npip install awsuite\n\nCommands\n  awsuite\n\nQuick start\n  pip install awsuite\n  \n  # 1. Create an OAuth client of type \"Desktop app\" in Google Cloud Console and\n  # download its client_secret.json. Then:\n  awsuite auth login --client-secret client_secret.json --scopes mail,drive,calendar\n  \n  # 2. Use it.\n  awsuite mail search \"is:unread newer_than:2d\"\n  awsuite cal events\n  awsuite drive search \"quarterly plan\"\n  awsuite docs read <document-id>\n  \n  # 3. Give it to your agent.\n  claude mcp add awsuite -- awsuite mcp\n\nDocs\nhttps://aitherium.github.io/awsuite/",
+  "description": "Kind: tool\n\nProblem\nGiving an agent your mail, files and calendar is one OAuth consent away, and after that nothing distinguishes \"read my inbox\" from \"reply to everyone\". The agent also needs the same tools in every harness it runs in, not a different integration per surface.\n\nInstall\npip install awsuite\n\nCommands\n  awsuite\n\nQuick start\n  pip install awsuite\n  \n  # 1. Create an OAuth client of type \"Desktop app\" in Google Cloud Console and\n  # download its client_secret.json. Then:\n  awsuite auth login --client-secret client_secret.json --scopes mail,drive,calendar\n  \n  # 2. Use it.\n  awsuite mail search \"is:unread newer_than:2d\"\n  awsuite cal events\n  awsuite drive search \"quarterly plan\"\n  awsuite docs read <document-id>\n  \n  # 3. Give it to your agent.\n  claude mcp add awsuite -- awsuite mcp",
   "see_also": [
     "awdk",
     "awsh",
     "awpack",
     "awskills"
   ],
-  "status": "public",
+  "status": "no-pages",
   "synopsis": "Your Google Workspace as agent tools, and no write happens without a yes.",
   "topic": "awsuite"
 }
