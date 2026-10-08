@@ -1,0 +1,12 @@
+{
+  "adopt": "pip install awdk\nadk pack install ./awpack/packs/ps5-bridge\n# then start the relinked title with APS5_AGENT_BRIDGE=47500",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nLet an agent play a relinked PS5 title: watch its frames and hold buttons on its pad through the AnyPS5 Aither bridge.\n\nRuntime\nawdk>=3.7.0\n\nTools\n  ps5_connect\n  ps5_frame\n  ps5_press\n  ps5_fps\n  ps5_disconnect",
+  "see_also": [
+    "awdk",
+    "awpack"
+  ],
+  "status": "preview",
+  "synopsis": "Let an agent play a relinked PS5 title: watch its frames and hold buttons on its pad through the AnyPS5 Aither bridge.",
+  "topic": "ps5-bridge"
+}
