@@ -1,0 +1,13 @@
+{
+  "adopt": "Pair a phone with a Steam Deck and start a stream, then read back which route it used.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nStreaming a game from a Steam Deck to a phone means pairing two apps by hand, guessing which address the Deck is on today, and finding out it routed through the internet only when it stutters.\n\nInstall\nnot yet published; builds in-tree",
+  "see_also": [
+    "awnet",
+    "awtunnel",
+    "awnix"
+  ],
+  "status": "planned",
+  "synopsis": "Stream a game from your own handheld or PC to your phone, over your own network.",
+  "topic": "awplay"
+}
