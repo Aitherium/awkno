@@ -1,7 +1,7 @@
 {
   "adopt": "Pair a phone with a Steam Deck and start a stream, then read back which route it used.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nStreaming a game from a Steam Deck to a phone means pairing two apps by hand, guessing which address the Deck is on today, and finding out it routed through the internet only when it stutters.\n\nInstall\nnot yet published; builds in-tree",
+  "description": "Kind: tool\n\nProblem\nStreaming a game from a Steam Deck to a phone means pairing two apps by hand, guessing which address the Deck is on today, and finding out it routed through the internet only when it stutters.\n\nInstall\nnot yet published; builds in-tree\n\nCommands\n  awplay\n\nQuick start\n  pip install -e.\n  awplay probe steamdeck # is Sunshine / Steam Remote Play there? mesh, lan or internet?\n  AWPLAY_SUNSHINE_PASSWORD=... awplay pair steamdeck --pin 1234 --cert-sha256 <from probe>\n  awplay phone state # a phone-local Steam session, over adb\n  awplay phone launch 1145360\n  awplay --self-test",
   "see_also": [
     "awnet",
     "awtunnel",
