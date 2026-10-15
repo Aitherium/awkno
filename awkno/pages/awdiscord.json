@@ -1,0 +1,15 @@
+{
+  "adopt": "Put an agent you already run into your Discord server as a bot with /ask.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nPutting an agent in a Discord server usually means one of two bad shapes: a script driving a person's account, which breaks Discord's terms and gets the account banned, or a bot that answers anyone as fast as they can type and acts on its own judgement. What is missing is the boring middle: an install link that asks for almost nothing, per-user and per-server limits, and a way for the agent to ask a human before it does something, with an answer it can trust.\n\nInstall\npip install git+https://github.com/Aitherium/awdiscord.git\n\nCommands\n  awdiscord\n\nQuick start\n  pip install \"awdiscord[gateway]\"\n  awdiscord setup # paste the bot token once; it does the rest\n  awdiscord run\n\nDocs\nhttps://aitherium.github.io/awdiscord/",
+  "see_also": [
+    "awdk",
+    "awask",
+    "awrelay",
+    "awmail",
+    "awiam"
+  ],
+  "status": "public",
+  "synopsis": "Put any agent on Discord as a real bot, with an operator in the loop.",
+  "topic": "awdiscord"
+}
