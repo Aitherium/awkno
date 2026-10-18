@@ -1,0 +1,14 @@
+{
+  "adopt": "Mint a permit with a spend cap and watch the platform refuse the purchase over it.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nPlatforms block agents even when they identify themselves, because an admitted agent is unbounded: nothing says what it may do, for whom, or who pays when a web page talks it into something.\n\nInstall\npip install git+https://github.com/Aitherium/awpermit\n\nCommands\n  awpermit\n\nQuick start\n  pip install awpermit",
+  "see_also": [
+    "awnest",
+    "awdit",
+    "awbac",
+    "awseal"
+  ],
+  "status": "unpublished",
+  "synopsis": "Let an agent through your door with a scope, a spend cap, and someone accountable.",
+  "topic": "awpermit"
+}
