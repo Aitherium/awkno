@@ -11,7 +11,8 @@
     "awgit",
     "awnet",
     "awtunnel",
-    "awdk"
+    "awdk",
+    "awpermit"
   ],
   "status": "public",
   "synopsis": "Prove there is a human before you let them into the nest.",
