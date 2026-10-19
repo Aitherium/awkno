@@ -1,0 +1,12 @@
+{
+  "adopt": "pip install \"awdk>=3.8.74\"\nadk free-cloud up            # pinned FreeLLMAPI image on 127.0.0.1:3001 (docker or podman)\n# open http://127.0.0.1:3001, add YOUR provider keys, copy the unified key\nadk keys set freellmapi      # stays on this machine\nadk free-cloud enable        # or: adk free-cloud enable --url http://host:3001\n# Desktop app user? skip `up`: awdk finds it on :31415.",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nFree cloud (your own free-tier keys): run FreeLLMAPI locally and make it awdk's non-local route -- local model first, your free tiers next, paid API last. Bring your own provider keys; their terms apply.\n\nRuntime\nawdk>=3.8.74",
+  "see_also": [
+    "awdk",
+    "awpack"
+  ],
+  "status": "preview",
+  "synopsis": "Free cloud (your own free-tier keys): run FreeLLMAPI locally and make it awdk's non-local route -- local model first, your free tiers next, paid API last",
+  "topic": "free-cloud"
+}
