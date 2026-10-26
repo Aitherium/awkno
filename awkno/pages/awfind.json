@@ -6,7 +6,10 @@
     "awdk",
     "awbrowse",
     "awsh",
-    "awembed"
+    "awembed",
+    "awgraph",
+    "awm",
+    "awgit"
   ],
   "status": "public",
   "synopsis": "A portable search client",
