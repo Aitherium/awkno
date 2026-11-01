@@ -1,0 +1,13 @@
+{
+  "adopt": null,
+  "category": "stack",
+  "description": "What lets you hand the platform to an agent, and where to check it rather than take our word: who the caller is (awiam), what an admitted agent may do and spend (awpermit), and how a service with no public address is reached (awtunnel). The public page is https://aitherium.com/trust/ -- DNSSEC, TLS, HSTS, OIDC, auth.md, the vault, tenant scoping, the tunnel, the mesh, the agent-readiness scan and the honest list of third parties, each linked to live evidence and re-verified by a checker every four hours.\n\nIncludes: awiam, awpermit, awtunnel",
+  "see_also": [
+    "awiam",
+    "awpermit",
+    "awtunnel"
+  ],
+  "status": "partial",
+  "synopsis": "Trust, with the proof",
+  "topic": "trust"
+}
