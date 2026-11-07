@@ -1,0 +1,12 @@
+{
+  "adopt": "# Chrome Web Store:\n#   https://chromewebstore.google.com/detail/awconnect/peeojgjhjficedkncdejbfnacooodbak\n#\n# Source (MIT): https://github.com/Aitherium/AitherConnect\n# Load unpacked from a checkout of `awconnect/` if you want your own build.\n#\n# Start a local daemon BEFORE expecting it to pair — `awnode mcp`, or the awsh\n# harness on :8362. With no daemon listening it reports\n#   \"No awdk daemon answered ...; using Cloud\"\n# and the page goes through the cloud instead of your machine. That fallback\n# is deliberate; it is also the thing to check first when it \"feels remote\".",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nAdd the awconnect browser extension: it hands an agent the page you are looking at, pairs over loopback to a local daemon, and falls back to the cloud only when no daemon answers.\n\nRuntime\nawdk>=3.8.0",
+  "see_also": [
+    "awdk",
+    "awpack"
+  ],
+  "status": "preview",
+  "synopsis": "Add the awconnect browser extension: it hands an agent the page you are looking at, pairs over loopback to a local daemon, and falls back to the cloud only when no daemon answers.",
+  "topic": "awconnect"
+}

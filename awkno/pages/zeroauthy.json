@@ -1,0 +1,12 @@
+{
+  "adopt": "# Source, docs and the compatibility matrix (Apache-2.0):\n#   https://github.com/occupysaas/zeroauthy\ngit clone https://github.com/occupysaas/zeroauthy\ncd zeroauthy\n\n# Their quickstart (docs/quickstart.md) covers the TLS certificate pair and\n# master.key that the server requires before it will start.\n# Put cert.pem, key.pem and master.key where the run command below expects.\n\n# Run the published image. Tag 1.0.0-rc.1 is the current public release.\ndocker run -d --name zeroauthy -p 8443:8443 -v zeroauthy-data:/data \\\n  -v \"$PWD/certs:/certs:ro\" \\\n  -e ZEROAUTHY_SERVER__LISTEN=:8443 \\\n  -e ZEROAUTHY_SERVER__SYSTEM_HOST=system.localhost:8443 \\\n  -e ZEROAUTHY_SERVER__TLS_CERT_FILE=/certs/cert.pem \\\n  -e ZEROAUTHY_SERVER__TLS_KEY_FILE=/certs/key.pem \\\n  -e ZEROAUTHY_SECURITY__MASTER_KEY=\"$(cat master.key)\" \\\n  ghcr.io/occupysaas/zeroauthy:1.0.0-rc.1\n\n# First admin, then sign in at https://system.localhost:8443/\ndocker exec zeroauthy zeroauthy admin create --email you@example.com\n\n# No Docker? Release binaries for linux/amd64, linux/arm64 and darwin/arm64\n# are on their releases page, with a SHA256SUMS file.",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nStand up zeroauthy — the Apache-2.0 Go identity provider from the OccupySaaS community — from its published container image or its release binaries. This pack installs and documents it; it never vendors or hosts it.\n\nRuntime\nawdk>=3.8.0",
+  "see_also": [
+    "awdk",
+    "awpack"
+  ],
+  "status": "preview",
+  "synopsis": "Stand up zeroauthy — the Apache-2.0 Go identity provider from the OccupySaaS community — from its published container image or its release binaries",
+  "topic": "zeroauthy"
+}

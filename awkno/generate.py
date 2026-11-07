@@ -118,11 +118,22 @@ class AwknoGenerator:
 
         # Generate a page per pack ON THE SHELF. Held packs are absent by
         # design — see _make_pack_page.
+        # A pack that shares an id with a registry brick or stack (awnode and awdesk
+        # each ship a shelf pack of the same name) must NOT overwrite that page: the
+        # registry owns the id, and the overwrite made EC012 report the brick as
+        # absent from the corpus after every regen.
+        registry_ids = set(pages)
         if self.shelf_dir.exists():
             for manifest in sorted(self.shelf_dir.glob("*/pack.yaml")):
                 page = self._make_pack_page(manifest)
-                if page is not None:
-                    pages[page["topic"].lower()] = page
+                if page is None:
+                    continue
+                key = page["topic"].lower()
+                if key in registry_ids:
+                    print(f"[SKIP] pack {key!r}: the id is a registry brick or "
+                          f"stack; the registry page wins")
+                    continue
+                pages[key] = page
 
         # Generate law pages
         if self.laws_dir.exists():

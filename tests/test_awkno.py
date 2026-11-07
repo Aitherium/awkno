@@ -247,6 +247,43 @@ class TestAwknoRegistry:
             data2_str = json.dumps(pages2[key], sort_keys=True)
             assert data1_str == data2_str, f"Page {key} differs between runs"
 
+    def test_shelf_pack_never_overwrites_a_registry_brick(self, tmp_path):
+        """A pack named like a brick (awnode, awdesk) must not replace the brick page.
+
+        It did: packs were written after bricks into the same dict key, so every
+        regen turned the `awnode` brick page into a pack page and EC012 then
+        reported the brick as absent from the offline corpus.
+        """
+        from awkno.generate import AwknoGenerator
+
+        root = tmp_path / "AitherOS"
+        (root / "config").mkdir(parents=True)
+        (root / "config" / "ecosystem.yaml").write_text(
+            "bricks:\n"
+            "  - id: awzed\n    name: awzed\n    kind: runtime\n    status: public\n"
+            "    problem: p\n    adopt: a\n",
+            encoding="utf-8")
+        shelf = tmp_path / "awpack" / "packs"
+        shelf.mkdir(parents=True)
+        real = Path(__file__).resolve()
+        while real != real.parent and not (real / "awpack" / "packs" / "awnode").is_dir():
+            real = real.parent
+        src = real / "awpack" / "packs" / "awnode" / "pack.yaml"
+        if not src.is_file():
+            pytest.skip("standalone awkno checkout: no shelf pack to copy")
+        (shelf / "awzed").mkdir()
+        text = src.read_text(encoding="utf-8").replace("awnode", "awzed")
+        (shelf / "awzed" / "pack.yaml").write_text(text, encoding="utf-8")
+        out = tmp_path / "pages"
+        out.mkdir()
+
+        gen = AwknoGenerator(str(root), output_dir=str(out))
+        assert gen._make_pack_page(shelf / "awzed" / "pack.yaml") is not None, \
+            "fixture pack must be a real shelf page or the test proves nothing"
+        pages = gen.generate()
+
+        assert pages["awzed"]["category"] == "brick", pages["awzed"]
+
     def test_scrub_removes_empty_span_and_keeps_code_fences(self):
         """The empty-span safety net must not eat two-thirds of a ``` fence.
 

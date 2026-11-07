@@ -1,0 +1,12 @@
+{
+  "adopt": "# Only inside a checkout of this repository, or where the addon manifest has\n# been installed to ~/.aither/components. From PyPI alone this raises\n# \"Unknown addon: aitherbrowser\".\npip install awdk\n\n# Start the browser here (port 8132) and\n# register what it finds:\nadk addon enable aitherbrowser\n\n# Confirm it is serving. The image answers TLS when configured and plain\n# HTTP on a bare node, so probe the one you actually started.\ncurl -fsS http://127.0.0.1:8132/health\n\n# Status, and the container's own log when something is wrong:\nadk addon status aitherbrowser\nadk addon logs aitherbrowser",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nRun AitherBrowser on your own machine: an untethered Chromium an agent drives with the pilot_* tools — sessions, screenshots, extraction, taught recipes and saved logins that stay on your disk and never touch anyone else's hardware.\n\nRuntime\nawdk>=3.8.0\n\nTools\n  pilot_open\n  pilot_navigate\n  pilot_observe\n  pilot_parse_ui\n  pilot_look\n  pilot_click\n  pilot_fill\n  pilot_scroll\n  pilot_extract\n  pilot_save_login\n  pilot_done\n  pilot_close",
+  "see_also": [
+    "awdk",
+    "awpack"
+  ],
+  "status": "preview",
+  "synopsis": "Run AitherBrowser on your own machine: an untethered Chromium an agent drives with the pilot_* tools — sessions, screenshots, extraction, taught recipes and saved logins that stay on your disk and never touch anyone else's hardware.",
+  "topic": "aitherbrowser"
+}
