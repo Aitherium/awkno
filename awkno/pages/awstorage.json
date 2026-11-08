@@ -12,7 +12,9 @@
     "awseal",
     "awshare",
     "awm",
-    "awrise"
+    "awrise",
+    "awrtifact",
+    "awrelay"
   ],
   "status": "public",
   "synopsis": "Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it.",
