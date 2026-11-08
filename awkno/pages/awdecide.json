@@ -1,7 +1,7 @@
 {
   "adopt": "Ask one typed question of one state and read back a decision, a probability, and decided=False when nothing earned it.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nSoftware makes the same bounded decision millions of times and asks a text model each time, then parses prose. Hosted \"decision models\" fix the shape but send the program state off-box, emit a probability that is never resolved against what happened, and cannot say what happens next if you act on it. A decision is a function; the loop it sits in is the product.\n\nInstall\npip install awdecide\n\nCommands\n  awdecide\n\nQuick start\n  ## The loop: a decision you resolved is never paid for twice\n  \n  `Ladder` answers a question. `Loop` remembers how the answer turned out. Ask, act,\n  resolve -- the next identical decision is answered from that evidence with no model\n  call, and an answer that was resolved wrong is never given again.\n  \n  Add it to the agent harness you already use:\n\nIn Claude Code\n  mcp                    awdecide mcp",
+  "description": "Kind: tool\n\nProblem\nSoftware makes the same bounded decision millions of times and asks a text model each time, then parses prose. Hosted \"decision models\" fix the shape but send the program state off-box, emit a probability that is never resolved against what happened, and cannot say what happens next if you act on it. A decision is a function; the loop it sits in is the product.\n\nInstall\npip install awdecide\n\nCommands\n  awdecide\n\nQuick start\n  ## The loop: a decision you resolved is never paid for twice\n  \n  `Ladder` answers a question. `Loop` remembers how the answer turned out. Ask, act,\n  resolve -- the next identical decision is answered from that evidence with no model\n  call, and an answer that was resolved wrong is never given again.\n  \n  Add it to the agent harness you already use:\n\nIn Claude Code\n  mcp                    awdecide mcp\n\nDocs\nhttps://aitherium.github.io/awdecide/",
   "see_also": [
     "awclassify",
     "awpredict",
@@ -11,7 +11,7 @@
     "awtoll",
     "awrepl"
   ],
-  "status": "no-pages",
+  "status": "public",
   "synopsis": "One typed-decision contract -- choice / score / bool with a probability -- over a ladder of backends you already run (rules, tiny local models, an LLM's logprobs), fail-closed, with a Brier ledger that resolves every decision against its outcome.",
   "topic": "awdecide"
 }
