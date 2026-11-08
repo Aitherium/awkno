@@ -10,10 +10,6 @@ The family is only useful if you can find it. Its registry lives in one yaml in 
 pip install awkno
 ```
 
-## In Claude Code
-
-- skill: `/awkno`
-
 ## Use it in 30 seconds
 
 Ask it what a brick does and get the answer with your network cable out.
