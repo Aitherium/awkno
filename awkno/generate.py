@@ -240,6 +240,16 @@ class AwknoGenerator:
         # placeholder.
         text = re.sub(r"\bcheck_[a-z0-9_]+\.py\b", "your_checker.py", text)
 
+        # Paths into the private design trees (.AITHEROS/, .AITHERIUM/). They mean
+        # nothing to a reader and the site's deploy leak check refuses to publish
+        # them (2026-11-10: three pages blocked every Veil deploy). A parenthetical
+        # that cites one goes whole; otherwise the sentence citing it goes.
+        internal = r"\.AITHER(?:OS|IUM)\b"
+        text = re.sub(r"\s*\([^()\n]*" + internal + r"[^()\n]*\)", "", text)
+        text = re.sub(r"(?:(?<=^)|(?<=[.!?]\s)|(?<=\n))[^.!?\n]*" + internal
+                      + r"[^\n]*?(?:[.!?]`?(?=\s|$)|$)[ \t]*", "", text)
+        text = re.sub(r"[ \t]+(?=\n|$)", "", text)
+
         # Collapse whitespace left behind by the removals above, so a scrubbed
         # sentence does not read as though a word is missing.
         text = re.sub(r"[ \t]{2,}", " ", text)

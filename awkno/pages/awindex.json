@@ -1,0 +1,14 @@
+{
+  "adopt": "Resolve an.aither keyword, or check an entry's evidence-based trust tier, offline.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAnyone can stand up a polished site, company and pile of reviews in an afternoon; a directory that ranks on looks is gamed first, and an agent has no way to tell.\n\nInstall\npip install awindex\n\nCommands\n  awindex\n\nQuick start\n  pip install awindex\n  awindex resolve neocities # route + trust tier; exit 1 = not indexed\n  awindex search \"digital garden\"\n  awindex show neocities.org\n  awindex --root records check # validate a checkout of the index repo\n\nDocs\nhttps://aitherium.github.io/awindex/",
+  "see_also": [
+    "awfind",
+    "awresearch",
+    "awbrowse",
+    "awdk"
+  ],
+  "status": "public",
+  "synopsis": "A curated, git-backed map of the internet",
+  "topic": "awindex"
+}

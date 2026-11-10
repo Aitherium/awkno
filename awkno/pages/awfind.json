@@ -9,7 +9,8 @@
     "awembed",
     "awgraph",
     "awm",
-    "awgit"
+    "awgit",
+    "awindex"
   ],
   "status": "public",
   "synopsis": "A portable search client",

@@ -1,7 +1,7 @@
 {
   "adopt": null,
   "category": "stack",
-  "description": "An open-source private cloud you run yourself: identity, directory, RBAC, secrets, certificates, object storage, events, metrics, audit, messaging, jobs and tunnels, on an immutable awnix base on hardware you own. The parts a stranger can adopt alone are these bricks. The control plane behind them (Identity, Directory, Secrets, Strata, Flux, Pulse, Watch, Chronicle, Nexus, Relay) is a set of platform services that the sovereign-replica layer set stands up, not bricks. Solutions (CRM, mail, web hosting, MDM, the OccupySaaS packs) ship as optional packs on top and are never baked in. Design and the AWS service map: `.AITHEROS/43-AITHER-WORLD-SERVICES.md`.\n\nIncludes: awnix, awdaemons, awrun, awiam, awbac, awdit, awseal, awrelay, awtunnel, awpack",
+  "description": "An open-source private cloud you run yourself: identity, directory, RBAC, secrets, certificates, object storage, events, metrics, audit, messaging, jobs and tunnels, on an immutable awnix base on hardware you own. The parts a stranger can adopt alone are these bricks. The control plane behind them (Identity, Directory, Secrets, Strata, Flux, Pulse, Watch, Chronicle, Nexus, Relay) is a set of platform services that the sovereign-replica layer set stands up, not bricks. Solutions (CRM, mail, web hosting, MDM, the OccupySaaS packs) ship as optional packs on top and are never baked in.\n\nIncludes: awnix, awdaemons, awrun, awiam, awbac, awdit, awseal, awrelay, awtunnel, awpack",
   "see_also": [
     "awnix",
     "awdaemons",
