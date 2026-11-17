@@ -1,0 +1,21 @@
+{
+  "adopt": "Open a lease with a one-dollar cap and a thirty-minute expiry, run one job under it, and watch the charge that would cross the cap be refused.",
+  "category": "brick",
+  "description": "Kind: runtime\n\nProblem\nSpare compute is everywhere (idle gaming GPUs, free CI minutes, spot boxes, edge workers), but handing a contributor a slice of shared budget means trusting them not to overspend, remembering to switch it off, and finding out later whose bill it silently landed on.\n\nInstall\nnot yet published; builds in-tree\n\nCommands\n  awedgerunner",
+  "see_also": [
+    "awrun",
+    "awpool",
+    "awnet",
+    "awrise",
+    "awwall",
+    "awtunnel",
+    "awnix",
+    "awiam",
+    "awbac",
+    "awdit",
+    "awseal"
+  ],
+  "status": "unpublished",
+  "synopsis": "Run agent and CI work on edge runners nobody has to rack -- a volunteer's idle GPU, a phone on your own mesh, an edge worker, a free or spot CI runner -- under a lease with a hard budget cap, a named payer and an expiry.",
+  "topic": "awedgerunner"
+}

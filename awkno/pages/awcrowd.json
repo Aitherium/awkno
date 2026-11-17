@@ -1,0 +1,17 @@
+{
+  "adopt": "Collect votes, answers and comments into one file and ask it a question with the answers cited.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nFeedback lives in five places at once: a suggestion board, a chat poll, a survey form, a forum thread, a rating with a reason. Each keeps its own counter and its own idea of who voted, so the honest question -- what do the people in this group actually want, and who said so -- needs five exports and a spreadsheet, and a weighted vote on one surface is a raw count on the next.\n\nInstall\nnot yet published; builds in-tree\n\nCommands\n  awcrowd\n\nQuick start\n  pip install -e.\n  awcrowd --self-test\n  awcrowd sources --source discord:/path/to/guilds.db\n  awcrowd query \"should we rename the product?\" --source discord:guilds.db --scope guild=<id> --since 30d\n  awcrowd export --anonymized --out./crowd-corpus --source discord:guilds.db\n  awcrowd consent withdraw --world <guild> --person <member>\n  awcrowd decide --yes 7 --no 2 --eligible 10 # 70% turnout + 65% yes",
+  "see_also": [
+    "awdiscord",
+    "awdata",
+    "awm",
+    "awgraph",
+    "AitherConnect",
+    "awdk",
+    "awask"
+  ],
+  "status": "planned",
+  "synopsis": "Ask your crowd, keep every answer, and ask the answers a question.",
+  "topic": "awcrowd"
+}
