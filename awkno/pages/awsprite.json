@@ -1,7 +1,7 @@
 {
   "adopt": "Hatch a companion, teach it something, and watch what it becomes.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA companion that never changes is a toy, and one whose growth you cannot see or edit is a black box. Most \"AI pet\" products are a chat window with a sprite pasted on top -- nothing you taught it persists, and nothing about how it grew is checkable.\n\nInstall\npip install awsprite\n\nDocs\nhttps://aitherium.github.io/awsprite/",
+  "description": "Kind: tool\n\nProblem\nA companion that never changes is a toy, and one whose growth you cannot see or edit is a black box. Most \"AI pet\" products are a chat window with a sprite pasted on top -- nothing you taught it persists, and nothing about how it grew is checkable.\n\nInstall\npip install awsprite\n\nCommands\n  awsprite\n\nQuick start\n  pip install awsprite\n  \n  awsprite --url https://sprite.example status\n  awsprite --url https://sprite.example talk \"good morning!\"\n  awsprite --url https://sprite.example teach notes.md\n  awsprite --url https://sprite.example list\n\nDocs\nhttps://aitherium.github.io/awsprite/",
   "see_also": [
     "awdk",
     "awm",

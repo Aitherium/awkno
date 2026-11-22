@@ -36,6 +36,11 @@ class AwknoPage:
     # a slug inferred from a title silently stops matching the moment a law is
     # retitled.
     slug: Optional[str] = None
+    # A stack's members. The generator has always written this key; this class did
+    # not carry it, so every stack page failed to load with
+    # "unexpected keyword argument 'bricks'" (measured 2026-11-20: 15 tests red on
+    # develop). A corpus newer than the loader must not take the registry down.
+    bricks: Optional[list[str]] = None
 
     def render(self, plain: bool = False) -> str:
         """Render the page as text.
@@ -112,8 +117,9 @@ class AwknoPage:
 
     @classmethod
     def from_dict(cls, data: dict) -> AwknoPage:
-        """Create from dict (JSON deserialization)."""
-        return cls(**data)
+        """Create from dict (JSON deserialization), ignoring keys this build lacks."""
+        known = set(cls.__dataclass_fields__)
+        return cls(**{k: v for k, v in data.items() if k in known})
 
 
 class AwknoRegistry:
@@ -132,13 +138,19 @@ class AwknoRegistry:
             return
 
         for json_file in pages_dir.glob("*.json"):
+            # `_stats.json` is bookkeeping (the counts the docs state), not a page.
+            if json_file.name.startswith("_"):
+                continue
             try:
                 with open(json_file) as f:
                     data = json.load(f)
                     page = AwknoPage.from_dict(data)
                     self.pages[page.topic.lower()] = page
-            except (json.JSONDecodeError, ValueError):
-                pass
+            except (json.JSONDecodeError, ValueError) as exc:
+                # A page that cannot be read is a corpus defect, not a page to skip
+                # silently: the registry would answer "no such topic" offline.
+                print(f"[SKIP] {json_file.name}: unreadable page ({exc})",
+                      file=__import__("sys").stderr)
 
     def get(self, topic: str) -> AwknoPage:
         """Get a page by topic name.

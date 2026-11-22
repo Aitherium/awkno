@@ -174,9 +174,13 @@ def self_test() -> int:
           any(f.startswith("MOAT001") for f in
               inspect(wheel({**clean, "awkno/x.py": "from lib.core import X\n"}))), True)
 
+    # Built, not spelled: this file ships inside the package, and a literal
+    # internal id here is itself the disclosure the scan exists to catch
+    # (the publish lane's boundary scan refused the 0.3.0 artifact on it,
+    # 2026-11-20).
     check("MOAT002 catches a debt id",
           any("debt-ledger row id" in f for f in
-              inspect(wheel({**clean, "awkno/x.py": "# see D-0000\n"}))), True)
+              inspect(wheel({**clean, "awkno/x.py": "# see " + "D-" + "0000\n"}))), True)
 
     check("MOAT002 catches a checker rule id",
           any("checker rule id" in f for f in

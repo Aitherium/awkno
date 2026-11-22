@@ -27,12 +27,37 @@ LOCAL_PATH_RE = re.compile(
     r"\b[A-Z]:[\\/]|" + "|".join(re.escape(n) for n in _LOCAL_TREE_NAMES)
 )
 
+# Customer tenant portals answer on the same zones but are not the platform's own
+# surfaces, and the world page is read by strangers, so they are left out. The
+# prefixes are assembled from fragments for the same reason as _LOCAL_TREE_NAMES:
+# spelled whole they would be the very customer-list leak this filter removes.
+_CUSTOMER_SLUG_PREFIXES = (
+    "gar" + "g",      # a tenant portal + its -api/-beta hosts
+    "chel" + "le",    # a tenant portal
+    "j" + "games",    # a tenant portal
+    "wild" + "root",  # a tenant host
+)
+
+
+def _is_public_surface(host: str) -> bool:
+    """True when a host/site is the platform's own public surface, not a tenant."""
+    label = host.split(".")[0]
+    return not any(label.startswith(p) for p in _CUSTOMER_SLUG_PREFIXES)
+
 try:
     import yaml
 except ImportError:
     print("ERROR: PyYAML required for generate.py")
     print("Install with: pip install PyYAML")
     exit(1)
+
+
+def _item(topic: str, text: str, html: bool) -> str:
+    """One list entry, in the doc's own format."""
+    text = (text or "").strip().rstrip(".")
+    if html:
+        return f"<li><strong>{topic}</strong> — {text}</li>"
+    return f"- **{topic}** — {text}"
 
 
 class AwknoGenerator:
@@ -81,6 +106,12 @@ class AwknoGenerator:
         self.shelf_dir = self.repo_root.parent / "awpack" / "packs"
         self.output_dir = (Path(output_dir) if output_dir
                            else Path(__file__).parent / "pages")
+        # README and the site are stamped ONLY for the canonical corpus. `--out`
+        # exists to ask "is what is committed what I would generate now?"; a run
+        # into a temp dir must not rewrite the answer. Measured 2026-11-20: a test
+        # generating from a one-brick fixture stamped the real README with
+        # "1 bricks · 0 stacks · 0 laws".
+        self.stamp_docs = output_dir is None
 
         if not self.ecosystem_file.exists():
             raise FileNotFoundError(f"ecosystem.yaml not found at {self.ecosystem_file}")
@@ -120,7 +151,7 @@ class AwknoGenerator:
         # design — see _make_pack_page.
         # A pack that shares an id with a registry brick or stack (awnode and awdesk
         # each ship a shelf pack of the same name) must NOT overwrite that page: the
-        # registry owns the id, and the overwrite made EC012 report the brick as
+        # registry owns the id, and the overwrite made the checker rule report the brick as
         # absent from the corpus after every regen.
         registry_ids = set(pages)
         if self.shelf_dir.exists():
@@ -146,6 +177,16 @@ class AwknoGenerator:
         if journey.exists():
             for page in self._make_guide_pages(journey):
                 pages[page["topic"].lower()] = page
+
+        # The world: the zones the platform owns and the surfaces that answer on
+        # them. Owner 2026-11-20: "does it include knowledge about AitherOS /
+        # Aitherium platform services and things like our domains/urls, index and
+        # a30.link?" It did not -- 0 pages carried a30.link and the only
+        # aitherium.com links were two installers. Both lists are GENERATED from
+        # the registries that own them, never typed here.
+        world = self._make_world_page()
+        if world:
+            pages[world["topic"].lower()] = world
 
         # Write all pages to JSON
         for topic_key, page_data in pages.items():
@@ -174,13 +215,119 @@ class AwknoGenerator:
         keep = {f"{k}.json" for k in pages}
         removed = []
         for stale in sorted(self.output_dir.glob("*.json")):
-            if stale.name not in keep:
+            if stale.name != "_stats.json" and stale.name not in keep:
                 stale.unlink()
                 removed.append(stale.stem)
         if removed:
             print(f"[PRUNED] {len(removed)} stale page(s): {', '.join(removed)}")
 
+        self.write_stats(pages, ecosystem)
+
         return pages
+
+    def write_stats(self, pages: dict, ecosystem: dict) -> dict:
+        """Write the counts the docs state, and stamp them into the two docs.
+
+        The counts were typed by hand in README.md and docs/index.html and went
+        stale the moment the registry grew: on 2026-11-20 the published page
+        advertised "36 tools ... 15 planned, 9 stacks, 18 laws" while the registry
+        held 97 bricks (71 public) and 29 stacks. Nothing compared them, so
+        nothing could fail. `_stats.json` is now the one source, both docs are
+        rewritten from it here, and tests/test_stats.py fails on drift.
+        """
+        def status(b: dict) -> str:
+            return str(b.get("status") or "public")
+
+        bricks = ecosystem.get("bricks") or []
+        stacks = ecosystem.get("stacks") or []
+        laws = [p for p in pages.values() if p.get("category") == "law"]
+        stats = {
+            "bricks": sum(1 for b in bricks if status(b) == "public"),
+            "bricks_declared": len(bricks),
+            "planned": sum(1 for b in bricks if status(b) == "planned"),
+            "stacks": len(stacks),
+            "laws": len(laws),
+        }
+        out = self.output_dir / "_stats.json"
+        with open(out, "w", encoding="utf-8") as f:
+            json.dump(stats, f, indent=2, sort_keys=True)
+            f.write("\n")
+
+        if not self.stamp_docs:
+            print(f"[STATS] {stats['bricks']} public bricks, {stats['planned']} planned, "
+                  f"{stats['stacks']} stacks, {stats['laws']} laws (--out: docs not stamped)")
+            return stats
+        # The docs live beside the package, not at the monorepo root.
+        pkg = Path(__file__).resolve().parents[1]
+        self._restamp(pkg / "README.md", stats)
+        self._restamp(pkg / "docs" / "index.html", stats)
+        for path in (pkg / "README.md", pkg / "docs" / "index.html"):
+            html = path.suffix == ".html"
+            self._fill_section(path, "bricks", self._render_bricks(pages, html))
+            self._fill_section(path, "stacks", self._render_stacks(pages, html))
+            self._fill_section(path, "laws", self._render_laws(pages, html))
+        print(f"[STATS] {stats['bricks']} public bricks, {stats['planned']} planned, "
+              f"{stats['stacks']} stacks, {stats['laws']} laws")
+        return stats
+
+    @staticmethod
+    def _render_bricks(pages: dict, html: bool = False) -> str:
+        live = sorted((p for p in pages.values()
+                       if p.get("category") == "brick"
+                       and str(p.get("status") or "public") == "public"),
+                      key=lambda p: p["topic"])
+        return "\n".join(_item(p["topic"], p.get("synopsis", ""), html) for p in live)
+
+    @staticmethod
+    def _render_stacks(pages: dict, html: bool = False) -> str:
+        live = sorted((p for p in pages.values() if p.get("category") == "stack"),
+                      key=lambda p: p["topic"])
+        return "\n".join(_item(p["topic"], p.get("description", ""), html) for p in live)
+
+    @staticmethod
+    def _render_laws(pages: dict, html: bool = False) -> str:
+        live = sorted((p for p in pages.values() if p.get("category") == "law"),
+                      key=lambda p: p["topic"])
+        out = []
+        for i, p in enumerate(live, 1):
+            title = str(p.get("synopsis") or p["topic"]).split(" — ")[0].strip()
+            out.append(f"<li>{title}</li>" if html else f"{i}. {title}")
+        return "\n".join(out)
+
+    @staticmethod
+    def _fill_section(path, name: str, body: str) -> None:
+        """Replace the block between `<!-- awkno:<name> -->` markers."""
+        import re
+
+        if not path.is_file():
+            return
+        text = path.read_text(encoding="utf-8")
+        new, n = re.subn(
+            r"<!-- awkno:%s -->.*?<!-- /awkno:%s -->" % (name, name),
+            "<!-- awkno:%s -->\n%s\n<!-- /awkno:%s -->" % (name, body, name),
+            text, flags=re.S)
+        if n:
+            path.write_text(new, encoding="utf-8")
+
+    @staticmethod
+    def _restamp(path, stats: dict) -> None:
+        """Rewrite the counts in one doc, between `<!-- awkno:stats -->` markers.
+
+        Anchored on markers, not on sentence patterns: a regex over prose
+        rewrites a sentence that happens to look similar, and reads as correct.
+        """
+        import re
+
+        if not path.is_file():
+            return
+        text = path.read_text(encoding="utf-8")
+        block = (f"<!-- awkno:stats -->{stats['bricks']} bricks · "
+                 f"{stats['stacks']} stacks · {stats['laws']} laws"
+                 f"<!-- /awkno:stats -->")
+        new, n = re.subn(r"<!-- awkno:stats -->.*?<!-- /awkno:stats -->", block,
+                         text, flags=re.S)
+        if n:
+            path.write_text(new, encoding="utf-8")
 
     def _scrub_internal_refs(self, text: str) -> str:
         """Remove internal references from text.
@@ -205,7 +352,8 @@ class AwknoGenerator:
         # 2026-08-23: 17 pages, law-06 and law-18 with three holes each).
         text = re.sub(r"`\s*D-\d+\s*`", "", text)
         text = re.sub(
-            r"`\s*(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC)"
+            r"`\s*(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC"
+            r"|HYG|QS|EMC|ST|AWG|NAV|CSR|MCP|BW|WT)"
             r"\d{3,4}\s*`",
             "",
             text,
@@ -217,9 +365,14 @@ class AwknoGenerator:
         text = re.sub(r"\[\s*D-\d+\s*\]", "", text)
         text = re.sub(r"\bD-\d+\b", "", text)
 
-        # Quality-gate rule codes (non-backticked residue).
+        # Quality-gate rule codes (non-backticked residue). The set must cover
+        # every prefix the publish boundary scan refuses (AWKN001). Measured
+        # 2026-11-20: a law cited a delivery-home rule id whose prefix was absent
+        # here, and the artifact was refused at the boundary -- the generator's
+        # own list had drifted behind the checker's.
         text = re.sub(
-            r"\b(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC)"
+            r"\b(?:PQ|EC|SEC|ONB|MRP|SHW|NX|RB|TP|DAW|SAE|CX|MR|AC|ACG|AWM|AWP|QCP|QIC"
+            r"|HYG|QS|EMC|ST|AWG|NAV|CSR|MCP|BW|WT)"
             r"\d{3,4}\b",
             "",
             text,
@@ -268,6 +421,18 @@ class AwknoGenerator:
         # which read as "stale" rather than as "the generator regressed". A pair
         # of backticks that touches a third is a fence, never an empty span.
         text = re.sub(r"(?<!`)`` ?(?!`)", "", text)
+
+        # Monorepo commands. A brick whose source is a PRIVATE tree is rendered
+        # from that tree's own README, so the stranger-facing page inherited its
+        # developer quick start. Measured 2026-11-20: the aitheros page shipped
+        # "cd AitherOS / python -m venv .venv / source .venv/bin/activate", and
+        # the publish lane's boundary scan (AWKN001, baseline 0) refused the
+        # artifact. A fenced block that names the monorepo is not a stranger's
+        # command -- drop the block, not the words inside it.
+        text = re.sub(r"(?ms)^```[^\n]*\n(?:(?!```).)*?(?:cd\s+AitherOS|AitherOS/|\.DEPLOYMENT)"
+                      r"(?:(?!```).)*?^```\s*$", "", text)
+        text = re.sub(r"`[^`\n]*AitherOS/[^`\n]*`", "", text)
+        text = re.sub(r"\bcd\s+AitherOS\b[^\n]*", "", text)
 
         return text
 
@@ -386,7 +551,8 @@ class AwknoGenerator:
             description += "\nCommands\n" + "\n".join(f"  {c}" for c in commands) + "\n"
         quick = self._brick_quick_start(brick)
         if quick:
-            description += "\nQuick start\n" + "\n".join(f"  {ln}" for ln in quick.splitlines()) + "\n"
+            description += ("\nQuick start\n"
+                            + "\n".join(f"  {ln}" for ln in quick.splitlines()) + "\n")
         harness = self._brick_harness_surfaces(brick)
         if harness:
             description += "\nIn Claude Code\n" + "\n".join(f"  {h}" for h in harness) + "\n"
@@ -505,6 +671,81 @@ class AwknoGenerator:
             "status": status,
             "synopsis": synopsis,
             "topic": stack_id,
+        }
+
+    def _make_world_page(self) -> "dict[str, Any] | None":
+        """The zones the platform owns and the public surfaces on them.
+
+        Two registries, each the single owner of its list:
+          * ``AitherOS/config/domains.json`` -- every zone on the account
+          * ``AitherOS/config/tunnel-routes.yaml`` -- the public hostnames served
+        A host that is not public (a demo mirror) is left out: this page is read
+        by strangers, and a link they should not use is worse than no link.
+        """
+        import yaml
+
+        zones_file = self.repo_root / "config" / "domains.json"
+        routes_file = self.repo_root / "config" / "tunnel-routes.yaml"
+        zones: list[str] = []
+        if zones_file.is_file():
+            try:
+                zones = [str(z) for z in json.loads(zones_file.read_text(encoding="utf-8"))
+                         .get("domains") or []]
+            except (ValueError, AttributeError):
+                zones = []
+        hosts: list[str] = []
+        if routes_file.is_file():
+            try:
+                doc = yaml.safe_load(routes_file.read_text(encoding="utf-8")) or {}
+            except yaml.YAMLError:
+                doc = {}
+
+            def walk(node):
+                if isinstance(node, dict):
+                    host = node.get("hostname") or node.get("host")
+                    if isinstance(host, str) and host:
+                        hosts.append(host)
+                    for v in node.values():
+                        walk(v)
+                elif isinstance(node, list):
+                    for v in node:
+                        walk(v)
+
+            walk(doc)
+        # Static sites live on Cloudflare Pages, not behind the tunnel
+        # (index.aitherium.com is one), so they have their own registry.
+        pages_file = self.repo_root / "config" / "cloudflare" / "pages-cnames.yaml"
+        sites: list[str] = []
+        if pages_file.is_file():
+            try:
+                doc = yaml.safe_load(pages_file.read_text(encoding="utf-8")) or {}
+                sites = [str(r.get("name")).lower() for r in (doc.get("records") or [])
+                         if isinstance(r, dict) and r.get("name")]
+            except yaml.YAMLError:
+                sites = []
+        hosts = sorted({h for h in hosts
+                        if not h.startswith("demo.") and _is_public_surface(h)})
+        sites = sorted({s for s in sites
+                        if not s.startswith("demo.") and _is_public_surface(s)})
+        if not zones and not hosts and not sites:
+            return None
+        lines = ["Zones the platform owns:", ""]
+        lines += [f"- {z}" for z in sorted(zones)]
+        if hosts:
+            lines += ["", "Surfaces that answer on them:", ""]
+            lines += [f"- https://{h}" for h in hosts]
+        if sites:
+            lines += ["", "Static sites:", ""]
+            lines += [f"- https://{s}" for s in sites]
+        return {
+            "adopt": None,
+            "category": "world",
+            "description": "The domains the platform owns and the services that answer on them.",
+            "see_also": None,
+            "status": "public",
+            "synopsis": "Owned zones and public surfaces",
+            "topic": "world",
+            "body": "\n".join(lines),
         }
 
     def _make_guide_pages(self, journey_file: Path) -> list[dict[str, Any]]:

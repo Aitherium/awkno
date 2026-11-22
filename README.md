@@ -18,7 +18,7 @@ awkno is a standalone reference for the Aither World ecosystem — the set of po
 
 Agent systems need documented principles. The Aither World is built on 18 laws derived from real failures on production systems — lessons about gates, silence, atomicity, and delivery that apply to every agent work you build.
 
-The ecosystem itself is ~36 portable tools (bricks) organized into thematic stacks. awkno brings them all into your terminal: any brick's purpose and adoption path, any law's principle and reasoning, any stack's composition and status — all offline, all fast, queryable by keyword, and open to reading and redistribution.
+The ecosystem itself is <!-- awkno:stats -->71 bricks · 29 stacks · 32 laws<!-- /awkno:stats -->. awkno brings them all into your terminal: any brick's purpose and adoption path, any law's principle and reasoning, any stack's composition and status — all offline, all fast, queryable by keyword, and open to reading and redistribution.
 
 ## Quick Start
 
@@ -60,35 +60,185 @@ Shows the overview: command summary, quick start examples, and how to explore fu
 
 ## What's Inside
 
-### Bricks (36 tools)
+### Bricks
 
-Portable, single-purpose tools that do one job well and compose with others:
+<!-- awkno:bricks -->
+- **AitherConnect** — Browser extension
+- **AitherZero** — PowerShell 7+ automation framework
+- **aitherkvcache** — Near-optimal KV cache quantization for LLM inference
+- **awask** — Your agent asks you a question
+- **awavatar** — One character spec in, a rigged, animated, multi-style avatar pack out
+- **awbac** — Role-based access control that fails closed and explains itself
+- **awbeads** — A spatial canvas for a page
+- **awbonsai** — Run a real model in the visitor's own browser
+- **awbrain** — Your history as a wiki of linked markdown
+- **awbrowse** — A portable browser client
+- **awclassify** — Classify any document -- what it is, who may read it, who it is for, what it is about
+- **awdecide** — One typed-decision contract -- choice / score / bool with a probability -- over a ladder of backends you already run (rules, tiny local models, an LLM's logprobs), fail-closed, with a Brier ledger that resolves every decision against its outcome
+- **awdelphi** — Anonymous multi-round expert panels
+- **awdesk** — Aither World Desk -- the desktop body of AitherOS Online: tray, avatars, decision cards, the Living Desktop as an overlay
+- **awdiscord** — Put any agent on Discord as a real bot, with an operator in the loop
+- **awdit** — An append-only audit trail whose gaps are DETECTABLE
+- **awdk** — Build AI agent fleets
+- **awembed** — Train an embedding model that knows your corpus, and prove it beats the big one
+- **awevolve** — Point an agent at a file and a command that scores it, and let it improve
+- **awfind** — A portable search client
+- **awflow** — A deterministic workflow runtime
+- **awfocus** — See, search and steer every Claude session from one command
+- **awgit** — Semantic version control on top of git
+- **awgraph** — A semantic code graph for agents
+- **awgym** — An ARC training gym
+- **awiam** — Who is this caller? A directory and session store that fails honestly
+- **awkit** — Render an agent panel from a tool result
+- **awkno** — The man page for the Aither World
+- **awknowledge** — How to run a coding agent so the result survives
+- **awm** — A portable, scoped agent memory
+- **awmail** — Give an agent an email address
+- **awmine** — Mine what your agents did -- outcomes, lessons and procedures out of the transcripts they left behind
+- **awnboard** — A front gate you can put in front of anything, and hand someone the key to
+- **awnest** — Prove there is a human before you let them into the nest
+- **awnet** — The agentic web
+- **awnix** — A Linux you can hand to an agent
+- **awnode** — A lightweight local gateway
+- **awpack** — First-party agent packs
+- **awpermit** — Let an agent through your door with a scope, a spend cap, and someone accountable
+- **awpool** — The free half of the elastic work pool: dispatches public-safe work onto the free GitHub-hosted runners of the public aw* mirrors, so their idle CI minutes become compute. awrun remains the paid/self-hosted lane; this is its free twin
+- **awpredict** — Predict what your environment does next, and how surprised you were
+- **awprism** — Turn a failure into ranked hypotheses
+- **awreason** — A portable reasoning client
+- **awrecover** — Labelled snapshots with an all-or-nothing restore
+- **awrecurse** — Answer a question over a context far larger than the window
+- **awrelay** — Portable agent messaging
+- **awrena** — Put two agents head to head and get a verdict you can check
+- **awrepl** — A REPL an agent can actually use
+- **awreport** — File a bug report that has already scrubbed your secrets and collapsed the duplicate
+- **awresearch** — Ask a research question, get a cited report you can check
+- **awrise** — Wake an agent on a schedule, let it do one thing, and put it back to sleep
+- **awrouter** — OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable
+- **awrtifact** — Deliberately chunk artifacts into GitHub release assets
+- **awrun** — A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds. It also judges whether the runner pool is big enough for the queue it is draining, and can ask a host to grow it -- reserving capacity is zero-sum, so a saturated pool needs more of it, not a different share of it
+- **awscreen** — See this machine
+- **awseal** — Sign an artifact so a stranger can verify it
+- **awsettings** — Your agent's permissions and config, following you to the next machine
+- **awsh** — Your terminal answers you -- type a question where a command would go
+- **awshare** — Publish an artifact and fetch it back verified
+- **awskills** — Portable agent skills
+- **awsprite** — Hatch a companion that grows only from what you teach it, then take it home
+- **awstorage** — Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it
+- **awsuite** — Your Google Workspace as agent tools, and no write happens without a yes
+- **awswarm** — Run one model too big for any single GPU across a pool of small ones
+- **awtax** — Turn any tax PDF -- returns, W-2, 1099, statements, even scans -- into structured data you can check
+- **awtoll** — What every tool call costs you in context, measured from your own transcripts
+- **awtunnel** — Reach a service that has no public address
+- **awvision** — See an image
+- **awvoice** — Hear and speak
+- **awwall** — Say what a workload may reach, and watch everything else fail closed
+- **gawbbonet** — GobboNet campaigns with a real agent brain
+<!-- /awkno:bricks -->
 
-- **awdk** — Build AI agent fleets (3 lines, any backend)
-- **awskills** — Portable agent skills (self-contained procedures)
-- **awm** — Scoped agent memory (tenant:user:project boundaries)
-- **awgit** — Semantic version control (edit-ops, leases)
-- **awgraph** — Code graph for agents (AST, call graphs)
-- **awrelay** — Agent messaging (findings, alerts, coordination)
-- **awmail** — Email for agents (send and receive)
-- **And 29 more...**
+Portable, single-purpose tools that do one job well and compose with others.
+
 
 Each has an "adopt" sentence: the smallest useful thing you can do with it alone, without adopting anything else.
 
-### Stacks (9 collections)
+### Stacks
 
-Curated sets of bricks that work together:
+<!-- awkno:stacks -->
+- **agent-senses** — What an agent needs to perceive things outside its own process. Search and pages are the two it has; voice, vision and the screen in front of it are the three it does not, and they are named here so they stop being rediscovered as absences.
 
-- **agent-vm** — The bare agent VM
-- **agent-senses** — Perception (search, pages)
-- **shared-worktree** — Many agents, one repo
-- **the-front-door** — Identity, authority, record
-- **And 5 more...**
+Includes: awfind, awbrowse, awvoice, awvision, awscreen, awdk
+- **agent-vm** — awnix already carries the capabilities; adding an agent is three lines in a Dockerfile, and your skills and credentials layer on top of that. The point of the order is that the guarantees live in the base, so swapping the agent keeps them.
 
-### Laws (18 principles)
+Includes: awnix, awdk, awskills, awkno, awsettings
+- **agentic-orchestrator** — The substrate a cluster orchestrator gives agent workloads, as bricks a stranger adopts one at a time on one machine: awrun is the unit of work (priority, suspend, resume, declarative apply, limits and egress that FAIL CLOSED); awflow is why a resumed run continues instead of restarting (the journal is the checkpoint, finished model calls replay); awrise is the clock; awrouter and awnode decide which model answers; awdk is the agent loop and awrepl its live session; awnix is the machine. Governance is not a later phase: awiam says who, awbac says whether, awdit records it before it happens, awseal signs a run that leaves the machine and awshare verifies the one that arrives. Registered 2026-09-21 when a cluster-native agent orchestrator was announced and the question "did we already build this" had no single place to be answered from.
 
-Lessons learned in production, written down so they don't have to be re-derived:
+Includes: awrun, awflow, awrise, awrouter, awnode, awdk, awrepl, awnix, awiam, awbac, awdit, awseal, awshare
+- **avatar-ensemble** — Spawn more than one Persona-driven avatar at once, bind each to a distinct awdk agent persona (its own Library/pack, its own model), render them together in one shared scene, and let them hold a live concurrent conversation with each other and the owner -- steered from awsh as the cockpit. Registered 2026-08-24 per: "give an avatar a face and a mind, then let several of them talk" cannot be said without naming the companion, the agent runtime and the shell that steers it, so this is a stack over existing bricks, not a new brick (same reasoning as `awsprite`, which this stack composes with directly).
 
+Includes: awdk, awsh, awvoice, awvision, awsprite, awdesk
+- **aws** — An open-source private cloud you run yourself: identity, directory, RBAC, secrets, certificates, object storage, events, metrics, audit, messaging, jobs and tunnels, on an immutable awnix base on hardware you own. The parts a stranger can adopt alone are these bricks. The control plane behind them (Identity, Directory, Secrets, Strata, Flux, Pulse, Watch, Chronicle, Nexus, Relay) is a set of platform services that the sovereign-replica layer set stands up, not bricks. Solutions (CRM, mail, web hosting, MDM, the OccupySaaS packs) ship as optional packs on top and are never baked in.
+
+Includes: awnix, awdaemons, awrun, awiam, awbac, awdit, awseal, awrelay, awtunnel, awpack
+- **browser-companion-graduation** — Owner directive 2026-08-24, reinforcing the existing AitherSprite Phase 2/3 roadmap (the product architecture doc and the knowledge-companion program doc): AitherSprite today is playable but shallow -- flat per-sprite knowledge rows, titles-only in the talk prompt, server-side inference only, and "download it" is a paid pack with no guided path to actually WIRE it to real local tools and data. The directive is four upgrades composed together, and none of the four pieces is new -- the gap is that nothing connects them for this product: teaching should build a real personal knowledge GRAPH (`awgraph` is a CODE graph today -- CodeChunk/CodeGraph/CodeGraphStore -- and `awm` is scoped FACTS, not a traversable graph; a per-user knowledge graph does not exist as a brick yet); the companion should run and be TRAINABLE fully in-browser on `awbonsai`, not only through a server round trip; and graduating a companion should walk the owner through a real self-service CONNECT of `awdk` + `awsh` + `awnode` on their own machine -- the same shape as the self-host guide's stranger-to-provider flow, but ending in "your companion can now use your files/tools" instead of "your GPU now serves the mesh". NOT a rewrite of the companion engine -- its deterministic core (needs/mood/evolution, no I/O) is correct and stays the server-authoritative source of truth even for a browser-trained companion, so growth cannot be forged client-side (a fail-closed gate is not optional). What changes is WHERE teach/talk execute (in-tab via `awbonsai` when offline or pre-account, server via MicroScheduler when connected) and how knowledge is stored (a graph, not a flat table).
+
+Includes: awsprite, awbonsai, awdk, awsh, awnode
+- **cited-research** — A research question answered against real sources, where the report names what it read (awresearch), the sources are found and actually opened rather than hallucinated (awfind, awbrowse), and what was learned survives the session (awm). The one failure this set exists for is the plausible document: fluent, well-formed, citing pages nobody fetched.
+
+Includes: awresearch, awfind, awbrowse, awm
+- **creator-stack** — One world that runs, not a text box that continues — with a story graph, typed mechanics, a continuity checker, MCTS branch explorer, simulation backend, and persistent memory. One creative studio with 357 routes and 137 named ops — character rigs, animation, LoRA, comics, VN, production loops with human gates — all agent-callable. One visual artist that plans, enhances, calls the studio in a real loop, evaluates and refines. Run it all on your box with awdk + awnode + Bonsai, or on the cloud with the same key. Sold as credits and subscriptions; created work published to the marketplace with revenue share.
+
+Includes: awsaga, mediaforge, awiris, awsprite, awdesk, awbonsai, awdk, awnode, AitherConnect, awrtifact
+- **dark-matters-living-world** — Procedurally generate a playable, persistent-realm 3D world -- zones, quests, living NPCs on a decide-door mind stack, creatures, their bodies, rigs, clips and style renders -- from Saga narrative and Prometheus balance, hosted by the Dark Matters engine (the CoC story engine grows the world; owner decision 2026-09-21) with the World of ClaudeCraft-derived realm as the PG public world and sim donor, and the same character carried into awdesk and a Space.
+
+Includes: awavatar, awdk, awdecide, awsprite, awrtifact, awrun
+- **inference-commons** — Owner directive 2026-09-01: decentralise storage and inference across the aw* stack so anyone's node can join the mesh, share models and resources, and pool inference -- including cross-model KV-cache sharing across nodes. Registered because each plane is real INSIDE the fleet and absent at the public boundary: the overlay (AitherMesh + Conductor onboarding) is deployed and `awnet` fronts it; `awnode` routes to a warm peer; same-model warm-prefix sharing exists as llamacpp_connector + kv_catalog (Nexus) + Strata as the cold tier; cross-model maps exist as lib/gpu/kvtransfer; `awswarm` holds the sub-layer placement math; `aitherkvcache` quantises the cache; `awrtifact` ships the packs; `awnix` is the box a contributor boots. What no brick does yet is let a STRANGER'S node discover a warm prefix, receive a mapper pack, or get settled for serving -- `awcache` is the first of those three; settlement is the external OmniNode plane.
+
+Includes: awnix, awnode, awnet, awcache, awswarm, awpool, aitherkvcache, awrtifact, awtunnel, awwall, awedgerunner
+- **mine-what-you-ran** — The owner's ask, 2026-09-20: mine Claude Code and other agent terminal sessions automatically and turn what they contain into agent packs, skill packs, tool packs, RL outcomes, world-model and awpredict training, AitherCNS state and ARC-solver evidence. awmine reads the transcripts (it is the miner AitherHarvest never had for this source -- measured that day: 954 transcripts changed, zero mined); awtoll prices them; awm keeps the lessons; awdata holds the labelled corpora; awdecide is taught every tool outcome; awskills and the awdk toolpacks are where a repeated procedure becomes a pack; awrise is the wake that runs it on a schedule and records that it ran. The fleet's AitherHarvest, Trainer, Evolution and CNS are CONSUMERS of what awmine emits, never the miner.
+
+Includes: awmine, awtoll, awm, awdata, awdecide, awskills, awdk, awrise
+- **one-surface** — OWNER DECISION 2026-08-19, recorded because it was made in a transcript and would otherwise be re-litigated: stop hand-maintaining a web UI per app. The Living Desktop is the shell; an "app" is a dynamic agent panel rendered from a tool result (awkit), scoped by the identity plane, driven by intent rather than clicking. veil/portal keep serving pages and APIs where genuinely needed -- the UI, widgets and apps are what collapses, not the hosting. WHY, measured that day on ONE tenant: 18 apps listed and 0 deployed; AitherOne showing "Service Unavailable" while healthy, because all 11 of its GET routes require a body and answer 422 to every caller alive; 189 catalogue routes against 105 registered panels; and 2 of 6 declared panels were ids with NO component -- rendering nothing, with no error, no boundary and no log line. Every one of those is the same shape: declared in one place, not real in another, and nothing comparing the two. THE TRAP THIS MUST NOT INHERIT, stated here so the stack is judged on it: collapsing six surfaces into one does not fix that shape, it reduces how many places it can happen. A panel spec a renderer cannot honour is a stale component one layer up. The parity gate (-'s shape: producer ids == renderer ids, asserted by something that fails) comes FIRST, or this becomes the seventh island. DONE means: one previously-broken app rebuilt as an agent panel end to end with real scope and real data; the entitlement plane answering once instead of a catalogue and a backend disagreeing; and surfaces retired by the ratchet, one at a time, each with its consumers moved in the same commit -- never by decree.
+
+Includes: awkit, awdk, awnode, awiam, awbac
+- **open-scheduler** — MicroScheduler for someone else's agents, as three bricks a stranger adopts alone: awrouter decides which backend serves model X right now (the STATELESS routing plane extracted from AitherMicroScheduler.py -- 19,535 lines / 107 imports, never lifted), awrun is the durable priority queue, awrise is the clock that wakes work and records what happened. awnode is the local gateway an app points at instead of a vendor URL; awdk is the loop that runs on top. The stateful platform half (budgets, heartbeats, throttling, agents) stays inside the fleet and CONSUMES these. Registered 2026-09-19 because the owner asked 'how are we open-sourcing MicroScheduler' and the answer was already three registered bricks that no stack named together.
+
+Includes: awrouter, awrun, awrise, awnode, awdk
+- **personal-agent-home** — Owner directive 2026-09-21, the day Meta announced Muse: the same journey has to compose HERE from bricks a stranger can install -- a desk body (awdesk) that hosts the aitherium.com Living Desktop over the real desktop and embodies an agent as an avatar; the browser body (AitherConnect) that puts the same overlay over any page; a companion (awsprite) that grows a knowledge base from what its owner teaches it, remembered in awm, built and grown with awdk packs; self-service self-hosting (awnix / awnode / awsh) so the whole thing runs on the owner's own box; device registration through a front gate (awnboard + awiam); and tunnels between those devices that the PLATFORM cannot read. Every seam was measured, not assumed: awdesk already loads aitherium.com/?mode=overlay and reuses AitherConnect's overlay-mode protocol; awdesk registers a local MCP server so awsh/adk can drive it; device enrolment lives in a tenant backend (`devices.py`) and the tenant node table (`/tunnel/tenant/{t}/nodes`). What did NOT hold on 2026-09-21: every tunnel enrolment path minted the device's WireGuard private key SERVER-SIDE and `_save_peers` persisted it to the vault, so the platform could read any device's tunnel -- fixed the same day (bring-your-own public key on every enrolment endpoint, device private keys never persisted; `test_tunnel_key_custody.py`). Owner-blind device-to-device tunnels already exist and are the DEFAULT: `adk join` (awdk/adk/commands/join.py) brings the node up on the headscale tailnet (`hs.aitherium.com`, /health 200 on 2026-09-21) with a mesh key minted by Identity -- node keys are generated on the device, traffic is peer-to-peer WireGuard, and the control plane sees public keys only. The AitherTunnel hub VPN is the lane for reaching platform services and dev workspaces; it terminates at the hub by design. Still `partial` because awsprite is `planned` and mobile chat is Discord-only.
+
+Includes: awdesk, AitherConnect, awsprite, awdk, awm, awkno, awknowledge, awnboard, awiam, awtunnel, awnet, awnode, awnix, awsh
+- **personal-mesh-pool** — Owner directive 2026-08-24: someone with a laptop, a desktop and a phone should be able to join their OWN devices into one pool and have a model stay warm and servable across whichever of them is on, without joining the platform's shared AitherNet compute market. Registered here because it does not exist yet, and the three pieces that would compose into it are each individually real: `awnet` is a peer REGISTRY + three-valued TCP reachability check ("is anyone listening") -- explicitly not a VPN and not a placement/pooling primitive, by its own README; `awnode` is the local gateway that would route a request to whichever peer has the model warm; `awdk` is the runtime that would run on each device. None of the three knows about model PLACEMENT or WARM-KEEPING across peers today -- that logic is the actual gap, not the transport (mesh-deploy/WireGuard already exists for that) and not per-node serving (node-bootstrap already detects hardware and stands up a local backend). The closest existing precedent is the platform's own DGX+5090+RTX ggml-RPC pooled-inference stack, run at fleet scale and never packaged as something a customer's own device fleet can stand up for itself. NOT `aithernet-provider` (that joins the PLATFORM's community pool with settlement -- a different shape) and NOT a rename of the fleet's pooled-inference stack (/client-not-lift: that stack is thousands of lines of fleet-specific orchestration; a personal-pool brick would be a small client speaking to whichever peers `awnet` says are reachable, same relationship as `awrelay` to `AitherRelay.py`). SHARPENED 2026-08-24, owner asked to "start serving all of our model stack from the mesh pool for flexibility": the ggml-RPC precedent is NOT a general placement layer and generalising it directly would be the wrong move -- it does TENSOR-LEVEL SPLIT serving for ONE model too large for any single box (DeepSeek-V4-Flash, 97-108 GB, routed experts pinned to the DGX's 121 GB by design), hand-tuned per model (custom RPC server build, per-backend thread counts, a dedicated watchdog/alerting stack -- see `pooled-inference-ops` skill). Bonsai/Qwen3.8/gemma4 do not need splitting, they fit one GPU each; what they need is PLACEMENT (which box, right now) plus WARM/PARK lifecycle across many small models competing for few GPUs -- a different problem the RPC pool was never built to solve. The real placement layer already exists in shape (`AitherCompute`'s `gpu_power_state` -- hot/parked/on_demand, idle-reap) but is currently DEAD fleet-wide (: no docker socket reachable from its container) -- so today NEITHER the platform's own stack nor a customer's personal pool has a working dynamic-placement layer; the gap is the same gap at two scales.
+
+Includes: awnet, awnode, awdk
+- **provenance** — Prove what an artifact is, who acted on it, and that nothing was quietly removed from the record.
+
+Includes: awseal, awshare, awdit, awbac
+- **retrieval-you-trained** — The searching tools are only as good as the vectors under them. awembed trains the embedder on your corpus and proves it on held-out directories; awgraph, awfind and awm then search, rank and remember over vectors that know your code instead of someone else's. awdk agents consume all of it as tools. awdata carries the labelled corpora the proving is done against -- the half that usually never ships, and the half that decides the answer: the same compression measured -0.006 macro-F1 on source files and -0.10 on real Reddit comments.
+
+Includes: awembed, awdata, awgraph, awfind, awm, awdk
+- **set-and-forget** — What a scheduled agent needs so that "it ran" is a fact and not a hope: a host clock that wakes it (awrise), a durable queue it hands work to (awrun), a line a human can read when a wake goes wrong (awrelay), a card when a wake needs a decision (awask), and the agent that gets woken (awdk). Named 2026-09-18 because every member exists and every one was proposed as the place the schedule should live; the measurement said the clock is the OS's and the brick's job is the memory.
+
+Includes: awrise, awrun, awrelay, awask, awdk
+- **shared-worktree** — Several agents editing one codebase without sweeping each other's work or re-deriving what the last one already learned.
+
+Includes: awgit, awgraph, awrelay, awm
+- **the-aither-way-claude-code** — Claude Code with the family wired in, each piece taken on its own: a plugin that makes any harness a native subagent, scoped memory recalled at session start, peer findings delivered in-turn, a code graph and a finder as MCP servers, a shared-worktree git that commits only your paths, a spoken reply on Stop, a settings preset that keeps portable and machine-local settings apart, and the doctrine and skills an agent loads on demand. Every surface is listed per brick under `In Claude Code` and is generated from this registry.
+
+Includes: awdk, awsh, awsettings, awskills, awknowledge, awkno, awgit, awrelay, awm, awgraph, awfind, awfocus, awprism, awdecide, awvoice
+- **the-daily-driver** — Using every agent, skill and fleet tool from a terminal without Claude Code. awsh is the door, the awdk harness daemon (:8362) is what it opens onto, awnode is the fleet behind it, awdesk's Console is the same door with a face, and the skills are read where they already live. Done when: `adk harness new --harness awdk --agent saga --skill gauntlet` answers as Saga following the protocol (LIVE 2026-09-21, 26 agents generated from config/identities); saga/vera/iris appear in awsh and the desk menu with no hand patch (LIVE); `awsh> /skills` prints host N | genesis N | gateway N | drift 0 (code landed, deploy pending); the desk Command pane routes @agent /skill through the daemon (not started).
+
+Includes: awsh, awdk, awnode, awdesk, awskills
+- **the-front-door** — Who may come in at all, before anything asks who they are: a human check whose verdict is bound to one door and one use, the identity it names, the authority it feeds, and a record of every refusal. Named because the four already existed as four separate answers to one question a stranger asks first.
+
+Includes: awnboard, awnest, awiam, awbac, awdit
+- **the-reasoning-loop** — The thinking core, kept apart from the senses and the hands on purpose. A hard question becomes a session with phases you can inspect (awreason); a failure inside it becomes ranked hypotheses with a falsifying check for each (awprism); and the check is actually RUN against live state rather than recalled (awrepl). Those three are the loop. It composes with `agent-senses` for what is outside the process and with `shared-worktree` for what is in the codebase — which is why neither set is repeated here.
+
+Includes: awreason, awprism, awrepl, awrecurse
+- **the-studio** — What a creative turn needs, on hardware the operator already owns: a way to find things, a way to read a page, a way to research with citations, and a way to actually render and master the result. Named because these kept being proposed as ONE product, and the measurement said they are three INPUT surfaces and one OUTPUT surface -- which composes and does not merge. Every member is adoptable alone; the stack is a suggestion.
+
+Includes: awforge, awfind, awbrowse, awresearch, awm
+- **train-what-you-run** — The closed learning loop (pillar 6) scheduled by the thing it improves. Every utterance->intent->tool->outcome and every ledger row (prediction vs what happened) is harvested (AitherHarvest /import/batch -- 5,151 lines / 32 imports, so a SINK on awrise, never a brick); the trainer fine-tunes the intent router and the decide door on it (AitherTrainer, 4,902 / 56, a consumer whose training routines become wakes); awlab scores it on a leaderboard the loop cannot edit; awevolve keeps or reverts (AitherEvolution's client) under AVO006; the result lands back in awdk intent.py and awrise's timeouts and intervals. Registered 2026-09-19, partial: every seam exists in-fleet, none is wired to a wake, and awlab is not yet a package.
+
+Includes: awrise, awdata, awlab, awevolve, awdecide, awdk
+- **trust** — What lets you hand the platform to an agent, and where to check it rather than take our word: who the caller is (awiam), what an admitted agent may do and spend (awpermit), and how a service with no public address is reached (awtunnel). The public page is https://aitherium.com/trust/ -- DNSSEC, TLS, HSTS, OIDC, auth.md, the vault, tenant scoping, the tunnel, the mesh, the agent-readiness scan and the honest list of third parties, each linked to live evidence and re-verified by a checker every four hours.
+
+Includes: awiam, awpermit, awtunnel
+- **wake-learning-loop** — Every wake becomes evidence: on start, awm recall hands the job its own history (what failed last, what fixed it); before an expensive wake fires, awpredict reads the ledger as an environment and says whether it will time out again; on finish, the row is remembered, and awevolve may tune interval/timeout under AVO006 (the scorer is never the mutable file). Registered 2026-09-19 at planned: fleet-gates timed out twice in its first day and both were predictable from row one; nothing was watching.
+
+Includes: awrise, awm, awpredict, awdecide, awembed, awevolve, awdk
+- **who-what-did** — The three questions every access decision needs answered separately: who is this caller, what may they do, and what did they actually do. Kept apart on purpose -- one component that answers all three is one component that can quietly answer all three wrongly.
+
+Includes: awiam, awbac, awdit
+- **workspace-bridge** — One integration, every surface. awsuite holds the Google Workspace client and one tool table; awdk loads it as a toolpack, awsh and Claude Code reach it as an MCP server, awskills carries the playbooks, and awpack ships the bundle to a tenant. Swapping the harness keeps the tools and the confirm gate.
+
+Includes: awsuite, awdk, awsh, awskills, awpack
+<!-- /awkno:stacks -->
+
+Curated sets of bricks that work together.
+
+
+### Laws
+
+<!-- awkno:laws -->
 1. A rule nothing asserts is a suggestion
 2. Make it a check, not a ticket
 3. Watch your gate fail
@@ -99,14 +249,32 @@ Lessons learned in production, written down so they don't have to be re-derived:
 8. A checker in the wrong place found nothing
 9. Detection without delivery is not detection
 10. A gate that floods gets switched off
-11. Open green; ratchet down
+11. Open green, ratchet down
 12. Measure it again
 13. Written is not deployed
 14. You wrote it; that does not mean it ships
 15. Generate, never copy
 16. The defect lives in the union
 17. Fail closed, then prove the happy path
-18. Never trust the caller
+18. Never trust the caller for an authorization decision
+19. Count the closure, not the edge
+20. A platform you cannot ship to is not supported
+21. A cap that does not survive a restart is not a cap
+22. Coordinated decisions need a channel humans can read
+23. A mixture-of-experts model has two budgets, not one
+24. The always-on context is a budget
+25. A setting in a scope nobody reads does not exist
+26. A hook on every call spends a latency budget
+27. One sanction file, never scattered
+28. A guard in one direction is half a guard
+29. Portable is files and presets, never credentials
+30. Lead with the next action
+31. A deploy tree is served, never edited
+32. Use the lane
+<!-- /awkno:laws -->
+
+Lessons learned in production, written down so they don't have to be re-derived.
+
 
 ## Architecture
 
@@ -156,7 +324,7 @@ python awkno/generate.py
 
 The generator reads:
 - `ecosystem.yaml` — The brick and stack registry
-- `awknowledge/laws/*.md` — The 18 laws
+- `awknowledge/laws/*.md` — the laws
 
 And writes JSON to `awkno/pages/`.
 

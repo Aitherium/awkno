@@ -251,7 +251,7 @@ class TestAwknoRegistry:
         """A pack named like a brick (awnode, awdesk) must not replace the brick page.
 
         It did: packs were written after bricks into the same dict key, so every
-        regen turned the `awnode` brick page into a pack page and EC012 then
+        regen turned the `awnode` brick page into a pack page and the checker rule then
         reported the brick as absent from the offline corpus.
         """
         from awkno.generate import AwknoGenerator

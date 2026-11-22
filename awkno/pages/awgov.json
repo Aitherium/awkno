@@ -1,0 +1,17 @@
+{
+  "adopt": "Run one command through the decision point and read back allow, deny with the lane to use instead, or needs-owner with the reason.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nAn agent host's own permission prompt and a platform's governance end up as two authorities, and the weaker one wins: the operator answers a dialog the platform never saw, while the platform's rules sit in a document nothing enforces. What a denial cannot say is WHY, and an approval leaves no signed record that it happened.\n\nInstall\nnot yet published; builds in-tree\n\nCommands\n  awgov\n\nQuick start\n  `load_policy(path=None)` reads `AWGOV_POLICY`, else the repo's\n  the sanction file `agent_policy.yaml`, else a built-in **deny floor** (reads only),\n  and caches by mtime.\n  \n  ## Parsing, not pattern matching\n  \n  A command is split into steps on unquoted separators, `$(...)` substitutions are\n  parsed as their own commands, and every step is resolved through `env`, `sudo`,\n  `wsl -d X -u root --`, `nsenter`, `bash -c`, `pwsh -Command` and `cmd /c` before\n  it is classified on the resolved argv. `rg -n \"rm -rf.git\".claude/hooks` is a\n  read; the text it searches for is data, never a verb.\n  \n  ## CLI",
+  "see_also": [
+    "awbac",
+    "awpermit",
+    "awdit",
+    "awdk",
+    "awdecide",
+    "awrun",
+    "awrise"
+  ],
+  "status": "planned",
+  "synopsis": "One policy decision for every agent tool call -- allow, deny with the lane to use, or needs-owner.",
+  "topic": "awgov"
+}

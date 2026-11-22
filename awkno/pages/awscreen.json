@@ -5,7 +5,9 @@
   "see_also": [
     "awdk",
     "awvision",
-    "awbrowse"
+    "awbrowse",
+    "awpredict",
+    "awrun"
   ],
   "status": "public",
   "synopsis": "See this machine",
