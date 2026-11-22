@@ -18,7 +18,7 @@ awkno is a standalone reference for the Aither World ecosystem — the set of po
 
 Agent systems need documented principles. The Aither World is built on 18 laws derived from real failures on production systems — lessons about gates, silence, atomicity, and delivery that apply to every agent work you build.
 
-The ecosystem itself is <!-- awkno:stats -->71 bricks · 29 stacks · 32 laws<!-- /awkno:stats -->. awkno brings them all into your terminal: any brick's purpose and adoption path, any law's principle and reasoning, any stack's composition and status — all offline, all fast, queryable by keyword, and open to reading and redistribution.
+The ecosystem itself is <!-- awkno:stats -->72 bricks · 29 stacks · 32 laws<!-- /awkno:stats -->. awkno brings them all into your terminal: any brick's purpose and adoption path, any law's principle and reasoning, any stack's composition and status — all offline, all fast, queryable by keyword, and open to reading and redistribution.
 
 ## Quick Start
 
@@ -80,6 +80,7 @@ Shows the overview: command summary, quick start examples, and how to explore fu
 - **awdiscord** — Put any agent on Discord as a real bot, with an operator in the loop
 - **awdit** — An append-only audit trail whose gaps are DETECTABLE
 - **awdk** — Build AI agent fleets
+- **awedgerunner** — Run agent and CI work on edge runners nobody has to rack -- a volunteer's idle GPU, a phone on your own mesh, an edge worker, a free or spot CI runner -- under a lease with a hard budget cap, a named payer and an expiry
 - **awembed** — Train an embedding model that knows your corpus, and prove it beats the big one
 - **awevolve** — Point an agent at a file and a command that scores it, and let it improve
 - **awfind** — A portable search client
