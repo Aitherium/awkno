@@ -1,7 +1,7 @@
 {
   "adopt": "Point it at any OpenAI-compatible endpoint, score one model on items that each have an exact oracle, and compare it with a second run only when both scored the same items.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nGeneral benchmarks measure what a model knows. An agent stack needs to know whether it calibrates effort, orders a plan by dependency, declines instead of confabulating and says \"could not check\" instead of \"fine\" -- and a judge model cannot settle that, because a judge is a model. Two scores are comparable only when they came from the same items: a count match proves nothing, since swapping an item keeps the count.\n\nInstall\nnot on PyPI yet (pending publish); builds in-tree\n\nCommands\n  awbench\n\nQuick start\n  awbench run --model my-model --url http://localhost:8000 --json run.json\n  awbench compare baseline.json run.json",
+  "description": "Kind: tool\n\nProblem\nGeneral benchmarks measure what a model knows. An agent stack needs to know whether it calibrates effort, orders a plan by dependency, declines instead of confabulating and says \"could not check\" instead of \"fine\" -- and a judge model cannot settle that, because a judge is a model. Two scores are comparable only when they came from the same items: a count match proves nothing, since swapping an item keeps the count.\n\nInstall\nnot on PyPI yet (pending publish); builds in-tree",
   "see_also": [
     "awdk",
     "awrun",
