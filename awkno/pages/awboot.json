@@ -1,0 +1,15 @@
+{
+  "adopt": "Enroll one machine by MAC, arm pxe-once or run an in-place bootc preflight, and watch greenboot flip the host back to localboot automatically after first healthy boot.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nReimaging bare-metal boxes across x86_64 and aarch64 usually means walking USB sticks, fighting router DHCP leases, risking PXE boot loops, or running ad-hoc scripts that drop Wi-Fi, Tailscale, SELinux labels, or Secure Boot checks on first boot.\n\nInstall\nnot on PyPI yet (pending publish); builds in-tree\n\nCommands\n  awboot",
+  "see_also": [
+    "awnix",
+    "awnet",
+    "awseal",
+    "awshare",
+    "awsettings"
+  ],
+  "status": "unpublished",
+  "synopsis": "Verifiable PXE, iPXE, UEFI HTTP Boot, and in-place bootc bare-metal provisioning for x86_64 and aarch64 fleets.",
+  "topic": "awboot"
+}
