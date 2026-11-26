@@ -11,7 +11,8 @@
     "awnet",
     "awtunnel",
     "awnode",
-    "awdk"
+    "awdk",
+    "awport"
   ],
   "status": "public",
   "synopsis": "Say what a workload may reach, and watch everything else fail closed.",

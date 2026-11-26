@@ -18,7 +18,7 @@
     "awnix",
     "awsh"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "A personal agent that lives with you -- desk, browser, site, devices, tunnels",
   "topic": "personal-agent-home"
 }

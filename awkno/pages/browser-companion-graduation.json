@@ -9,7 +9,7 @@
     "awsh",
     "awnode"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "Grow a companion in the browser, then take it home",
   "topic": "browser-companion-graduation"
 }

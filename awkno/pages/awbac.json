@@ -3,7 +3,9 @@
   "category": "brick",
   "description": "Kind: tool\n\nProblem\nMost authz answers \"no\" without saying why, so every denial becomes a debugging session — and the ones that fail OPEN never announce themselves at all.\n\nInstall\npip install awbac\n\nCommands\n  awbac\n\nQuick start\n  pip install awbac\n\nDocs\nhttps://aitherium.github.io/awbac/",
   "see_also": [
-    "awdit"
+    "awdit",
+    "awscope",
+    "awgov"
   ],
   "status": "public",
   "synopsis": "Role-based access control that fails closed and explains itself.",

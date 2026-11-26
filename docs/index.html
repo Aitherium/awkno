@@ -411,7 +411,7 @@ li{margin:0 0 4px}
 <p>awkno is a standalone reference for the Aither World ecosystem — the set of portable, composable tools and principles that make agent automation reproducible and auditable. No browser, no internet connection, no external dependencies needed.</p>
 <h2>Why</h2>
 <p>Agent systems need documented principles. The Aither World is built on 18 laws derived from real failures on production systems — lessons about gates, silence, atomicity, and delivery that apply to every agent work you build.</p>
-<p>The ecosystem itself is <!-- awkno:stats -->74 bricks · 29 stacks · 32 laws<!-- /awkno:stats -->. awkno brings them all into your terminal: any brick's purpose and adoption path, any law's principle and reasoning, any stack's composition and status — all offline, all fast, queryable by keyword, and open to reading and redistribution.</p>
+<p>The ecosystem itself is <!-- awkno:stats -->88 bricks · 29 stacks · 32 laws<!-- /awkno:stats -->. awkno brings them all into your terminal: any brick's purpose and adoption path, any law's principle and reasoning, any stack's composition and status — all offline, all fast, queryable by keyword, and open to reading and redistribution.</p>
 <h2>Quick Start</h2>
 <h3>Install</h3>
 
@@ -456,11 +456,16 @@ awkno
 <li><strong>awavatar</strong> — One character spec in, a rigged, animated, multi-style avatar pack out</li>
 <li><strong>awbac</strong> — Role-based access control that fails closed and explains itself</li>
 <li><strong>awbeads</strong> — A spatial canvas for a page</li>
+<li><strong>awbench</strong> — A hard-oracle benchmark for a served model -- no LLM judge, and no comparison across different item sets</li>
 <li><strong>awbonsai</strong> — Run a real model in the visitor's own browser</li>
 <li><strong>awbrain</strong> — Your history as a wiki of linked markdown</li>
 <li><strong>awbrowse</strong> — A portable browser client</li>
+<li><strong>awcams</strong> — Private camera recording and one-line event summaries, on storage you own</li>
+<li><strong>awcap</strong> — Describe a capability once; call it the same way from CLI, Python, MCP and relay</li>
 <li><strong>awclassify</strong> — Classify any document -- what it is, who may read it, who it is for, what it is about</li>
+<li><strong>awcrowd</strong> — Ask your crowd, keep every answer, and ask the answers a question</li>
 <li><strong>awdecide</strong> — One typed-decision contract -- choice / score / bool with a probability -- over a ladder of backends you already run (rules, tiny local models, an LLM's logprobs), fail-closed, with a Brier ledger that resolves every decision against its outcome</li>
+<li><strong>awdeck</strong> — An outline becomes a narrated video -- and the file says which voice really spoke it</li>
 <li><strong>awdelphi</strong> — Anonymous multi-round expert panels</li>
 <li><strong>awdesk</strong> — Aither World Desk -- the desktop body of AitherOS Online: tray, avatars, decision cards, the Living Desktop as an overlay</li>
 <li><strong>awdiscord</strong> — Put any agent on Discord as a real bot, with an operator in the loop</li>
@@ -469,10 +474,13 @@ awkno
 <li><strong>awedgerunner</strong> — Run agent and CI work on edge runners nobody has to rack -- a volunteer's idle GPU, a phone on your own mesh, an edge worker, a free or spot CI runner -- under a lease with a hard budget cap, a named payer and an expiry</li>
 <li><strong>awembed</strong> — Train an embedding model that knows your corpus, and prove it beats the big one</li>
 <li><strong>awevolve</strong> — Point an agent at a file and a command that scores it, and let it improve</li>
+<li><strong>awexpress</strong> — One expression pack of stickers, emoji, captions and sounds, compiled for every app</li>
 <li><strong>awfind</strong> — A portable search client</li>
 <li><strong>awflow</strong> — A deterministic workflow runtime</li>
 <li><strong>awfocus</strong> — See, search and steer every Claude session from one command</li>
+<li><strong>awgather</strong> — Community events that live in your calendar and your Discord at once</li>
 <li><strong>awgit</strong> — Semantic version control on top of git</li>
+<li><strong>awgov</strong> — One policy decision for every agent tool call -- allow, deny with the lane to use, or needs-owner</li>
 <li><strong>awgraph</strong> — A semantic code graph for agents</li>
 <li><strong>awgym</strong> — An ARC training gym</li>
 <li><strong>awiam</strong> — Who is this caller? A directory and session store that fails honestly</li>
@@ -480,6 +488,7 @@ awkno
 <li><strong>awkit</strong> — Render an agent panel from a tool result</li>
 <li><strong>awkno</strong> — The man page for the Aither World</li>
 <li><strong>awknowledge</strong> — How to run a coding agent so the result survives</li>
+<li><strong>awlert</strong> — Tamper-evident, Ed25519-signed and AES-256-GCM encrypted lifecycle alerts for services, container updates and atomic OS transitions</li>
 <li><strong>awm</strong> — A portable, scoped agent memory</li>
 <li><strong>awmail</strong> — Give an agent an email address</li>
 <li><strong>awmine</strong> — Mine what your agents did -- outcomes, lessons and procedures out of the transcripts they left behind</li>
@@ -490,9 +499,12 @@ awkno
 <li><strong>awnode</strong> — A lightweight local gateway</li>
 <li><strong>awpack</strong> — First-party agent packs</li>
 <li><strong>awpermit</strong> — Let an agent through your door with a scope, a spend cap, and someone accountable</li>
+<li><strong>awplay</strong> — Stream a game from your own handheld or PC to your phone, over your own network</li>
 <li><strong>awpool</strong> — The free half of the elastic work pool: dispatches public-safe work onto the free GitHub-hosted runners of the public aw* mirrors, so their idle CI minutes become compute. awrun remains the paid/self-hosted lane; this is its free twin</li>
+<li><strong>awport</strong> — Leased, firewall-gated, forward-secret encrypted TCP/UDP port forwarding across overlay meshes and untrusted hops</li>
 <li><strong>awpredict</strong> — Predict what your environment does next, and how surprised you were</li>
 <li><strong>awprism</strong> — Turn a failure into ranked hypotheses</li>
+<li><strong>awprove</strong> — Drive a page as the real user, check what rendered, and get a test that goes red if it stops being true</li>
 <li><strong>awreason</strong> — A portable reasoning client</li>
 <li><strong>awrecover</strong> — Labelled snapshots with an all-or-nothing restore</li>
 <li><strong>awrecurse</strong> — Answer a question over a context far larger than the window</li>
@@ -505,6 +517,7 @@ awkno
 <li><strong>awrouter</strong> — OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable</li>
 <li><strong>awrtifact</strong> — Deliberately chunk artifacts into GitHub release assets</li>
 <li><strong>awrun</strong> — A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds. It also judges whether the runner pool is big enough for the queue it is draining, and can ask a host to grow it -- reserving capacity is zero-sum, so a saturated pool needs more of it, not a different share of it</li>
+<li><strong>awscope</strong> — One scope graph for work and home, where crossing between them takes consent</li>
 <li><strong>awscreen</strong> — See this machine</li>
 <li><strong>awseal</strong> — Sign an artifact so a stranger can verify it</li>
 <li><strong>awsettings</strong> — Your agent's permissions and config, following you to the next machine</li>
@@ -513,6 +526,7 @@ awkno
 <li><strong>awskills</strong> — Portable agent skills</li>
 <li><strong>awsprite</strong> — Hatch a companion that grows only from what you teach it, then take it home</li>
 <li><strong>awstorage</strong> — Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it</li>
+<li><strong>awstream</strong> — Dual-stream producer for YouTube Live and Discord Voice with OBS control and a live 1080p Browser Source HUD</li>
 <li><strong>awsuite</strong> — Your Google Workspace as agent tools, and no write happens without a yes</li>
 <li><strong>awswarm</strong> — Run one model too big for any single GPU across a pool of small ones</li>
 <li><strong>awtax</strong> — Turn any tax PDF -- returns, W-2, 1099, statements, even scans -- into structured data you can check</li>

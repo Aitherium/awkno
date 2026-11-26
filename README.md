@@ -18,7 +18,7 @@ awkno is a standalone reference for the Aither World ecosystem — the set of po
 
 Agent systems need documented principles. The Aither World is built on 32 laws derived from real failures on production systems — lessons about gates, silence, atomicity, and delivery that apply to every agent work you build.
 
-The ecosystem itself is <!-- awkno:stats -->74 bricks · 29 stacks · 32 laws<!-- /awkno:stats -->. awkno brings them all into your terminal: any brick's purpose and adoption path, any law's principle and reasoning, any stack's composition and status — all offline, all fast, queryable by keyword, and open to reading and redistribution.
+The ecosystem itself is <!-- awkno:stats -->88 bricks · 29 stacks · 32 laws<!-- /awkno:stats -->. awkno brings them all into your terminal: any brick's purpose and adoption path, any law's principle and reasoning, any stack's composition and status — all offline, all fast, queryable by keyword, and open to reading and redistribution.
 
 ## Quick Start
 
@@ -71,11 +71,16 @@ Shows the overview: command summary, quick start examples, and how to explore fu
 - **awavatar** — One character spec in, a rigged, animated, multi-style avatar pack out
 - **awbac** — Role-based access control that fails closed and explains itself
 - **awbeads** — A spatial canvas for a page
+- **awbench** — A hard-oracle benchmark for a served model -- no LLM judge, and no comparison across different item sets
 - **awbonsai** — Run a real model in the visitor's own browser
 - **awbrain** — Your history as a wiki of linked markdown
 - **awbrowse** — A portable browser client
+- **awcams** — Private camera recording and one-line event summaries, on storage you own
+- **awcap** — Describe a capability once; call it the same way from CLI, Python, MCP and relay
 - **awclassify** — Classify any document -- what it is, who may read it, who it is for, what it is about
+- **awcrowd** — Ask your crowd, keep every answer, and ask the answers a question
 - **awdecide** — One typed-decision contract -- choice / score / bool with a probability -- over a ladder of backends you already run (rules, tiny local models, an LLM's logprobs), fail-closed, with a Brier ledger that resolves every decision against its outcome
+- **awdeck** — An outline becomes a narrated video -- and the file says which voice really spoke it
 - **awdelphi** — Anonymous multi-round expert panels
 - **awdesk** — Aither World Desk -- the desktop body of AitherOS Online: tray, avatars, decision cards, the Living Desktop as an overlay
 - **awdiscord** — Put any agent on Discord as a real bot, with an operator in the loop
@@ -84,10 +89,13 @@ Shows the overview: command summary, quick start examples, and how to explore fu
 - **awedgerunner** — Run agent and CI work on edge runners nobody has to rack -- a volunteer's idle GPU, a phone on your own mesh, an edge worker, a free or spot CI runner -- under a lease with a hard budget cap, a named payer and an expiry
 - **awembed** — Train an embedding model that knows your corpus, and prove it beats the big one
 - **awevolve** — Point an agent at a file and a command that scores it, and let it improve
+- **awexpress** — One expression pack of stickers, emoji, captions and sounds, compiled for every app
 - **awfind** — A portable search client
 - **awflow** — A deterministic workflow runtime
 - **awfocus** — See, search and steer every Claude session from one command
+- **awgather** — Community events that live in your calendar and your Discord at once
 - **awgit** — Semantic version control on top of git
+- **awgov** — One policy decision for every agent tool call -- allow, deny with the lane to use, or needs-owner
 - **awgraph** — A semantic code graph for agents
 - **awgym** — An ARC training gym
 - **awiam** — Who is this caller? A directory and session store that fails honestly
@@ -95,6 +103,7 @@ Shows the overview: command summary, quick start examples, and how to explore fu
 - **awkit** — Render an agent panel from a tool result
 - **awkno** — The man page for the Aither World
 - **awknowledge** — How to run a coding agent so the result survives
+- **awlert** — Tamper-evident, Ed25519-signed and AES-256-GCM encrypted lifecycle alerts for services, container updates and atomic OS transitions
 - **awm** — A portable, scoped agent memory
 - **awmail** — Give an agent an email address
 - **awmine** — Mine what your agents did -- outcomes, lessons and procedures out of the transcripts they left behind
@@ -105,9 +114,12 @@ Shows the overview: command summary, quick start examples, and how to explore fu
 - **awnode** — A lightweight local gateway
 - **awpack** — First-party agent packs
 - **awpermit** — Let an agent through your door with a scope, a spend cap, and someone accountable
+- **awplay** — Stream a game from your own handheld or PC to your phone, over your own network
 - **awpool** — The free half of the elastic work pool: dispatches public-safe work onto the free GitHub-hosted runners of the public aw* mirrors, so their idle CI minutes become compute. awrun remains the paid/self-hosted lane; this is its free twin
+- **awport** — Leased, firewall-gated, forward-secret encrypted TCP/UDP port forwarding across overlay meshes and untrusted hops
 - **awpredict** — Predict what your environment does next, and how surprised you were
 - **awprism** — Turn a failure into ranked hypotheses
+- **awprove** — Drive a page as the real user, check what rendered, and get a test that goes red if it stops being true
 - **awreason** — A portable reasoning client
 - **awrecover** — Labelled snapshots with an all-or-nothing restore
 - **awrecurse** — Answer a question over a context far larger than the window
@@ -120,6 +132,7 @@ Shows the overview: command summary, quick start examples, and how to explore fu
 - **awrouter** — OpenRouter for your own fleet: pick a model backend by cost/latency/ capability, fail over, fit the context window, stream. Standalone, OpenAI-compatible, no Aither-specifics required to be valuable
 - **awrtifact** — Deliberately chunk artifacts into GitHub release assets
 - **awrun** — A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds. It also judges whether the runner pool is big enough for the queue it is draining, and can ask a host to grow it -- reserving capacity is zero-sum, so a saturated pool needs more of it, not a different share of it
+- **awscope** — One scope graph for work and home, where crossing between them takes consent
 - **awscreen** — See this machine
 - **awseal** — Sign an artifact so a stranger can verify it
 - **awsettings** — Your agent's permissions and config, following you to the next machine
@@ -128,6 +141,7 @@ Shows the overview: command summary, quick start examples, and how to explore fu
 - **awskills** — Portable agent skills
 - **awsprite** — Hatch a companion that grows only from what you teach it, then take it home
 - **awstorage** — Every drive on every node, indexed, classified and diffed -- so you can see what you own before you delete it
+- **awstream** — Dual-stream producer for YouTube Live and Discord Voice with OBS control and a live 1080p Browser Source HUD
 - **awsuite** — Your Google Workspace as agent tools, and no write happens without a yes
 - **awswarm** — Run one model too big for any single GPU across a pool of small ones
 - **awtax** — Turn any tax PDF -- returns, W-2, 1099, statements, even scans -- into structured data you can check

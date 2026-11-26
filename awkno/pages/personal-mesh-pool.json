@@ -7,7 +7,7 @@
     "awnode",
     "awdk"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "A pool across your own devices",
   "topic": "personal-mesh-pool"
 }

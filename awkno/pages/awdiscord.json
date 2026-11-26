@@ -7,7 +7,10 @@
     "awask",
     "awrelay",
     "awmail",
-    "awiam"
+    "awiam",
+    "awgather",
+    "awcrowd",
+    "awstream"
   ],
   "status": "public",
   "synopsis": "Put any agent on Discord as a real bot, with an operator in the loop.",

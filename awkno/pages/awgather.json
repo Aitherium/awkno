@@ -1,13 +1,13 @@
 {
   "adopt": "Schedule one voice-channel hangout, let people RSVP, and read back who was reminded and who came.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA community event lives in three places that never agree: the Discord event, somebody's calendar, and a pinned message. Moving the time in one leaves the others wrong, nobody gets reminded unless they set it up themselves, and afterwards nobody knows who actually showed up.\n\nInstall\nnot yet published; builds in-tree\n\nCommands\n  awgather\n\nQuick start\n  pip install -e.\n  awgather --self-test # the engine against fakes, no network\n  export DISCORD_BOT_TOKEN=... # a BOT token with Manage Events\n  awgather create --guild G --channel VOICE --title \"Community Hangout\" \\\n   --start 2026-11-21T20:00:00Z --end 2026-11-21T22:00:00Z --tz America/Los_Angeles\n  awgather list\n  awgather sync --guild G # reconcile Discord <-> calendar\n  awgather tick # reminders, start, attendance, recap",
+  "description": "Kind: tool\n\nProblem\nA community event lives in three places that never agree: the Discord event, somebody's calendar, and a pinned message. Moving the time in one leaves the others wrong, nobody gets reminded unless they set it up themselves, and afterwards nobody knows who actually showed up.\n\nInstall\npip install awgather\n\nCommands\n  awgather\n\nQuick start\n  pip install -e.\n  awgather --self-test # the engine against fakes, no network\n  export DISCORD_BOT_TOKEN=... # a BOT token with Manage Events\n  awgather create --guild G --channel VOICE --title \"Community Hangout\" \\\n   --start 2026-11-21T20:00:00Z --end 2026-11-21T22:00:00Z --tz America/Los_Angeles\n  awgather list\n  awgather sync --guild G # reconcile Discord <-> calendar\n  awgather tick # reminders, start, attendance, recap\n\nDocs\nhttps://aitherium.github.io/awgather/",
   "see_also": [
     "awdiscord",
     "awrise",
     "awrelay"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "Community events that live in your calendar and your Discord at once.",
   "topic": "awgather"
 }

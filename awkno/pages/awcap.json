@@ -1,7 +1,7 @@
 {
   "adopt": "Describe one capability in one file and get the same name, arguments and JSON back from CLI, Python, MCP and relay.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA tool that ships a CLI, a Python API and an MCP server ends up with three names, three argument shapes and three result formats, and nothing tells you which of them still work.\n\nInstall\nnot yet published; builds in-tree\n\nCommands\n  awcap",
+  "description": "Kind: tool\n\nProblem\nA tool that ships a CLI, a Python API and an MCP server ends up with three names, three argument shapes and three result formats, and nothing tells you which of them still work.\n\nInstall\npip install awcap\n\nCommands\n  awcap\n\nDocs\nhttps://aitherium.github.io/awcap/",
   "see_also": [
     "awdk",
     "awnode",
@@ -10,7 +10,7 @@
     "awflow",
     "awgit"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "Describe a capability once; call it the same way from CLI, Python, MCP and relay.",
   "topic": "awcap"
 }

@@ -1,7 +1,7 @@
 {
   "adopt": "Watch systemd unit transitions, container image digest diffs and bootc atomic status, coalesce restarts from updates, and emit Ed25519-signed, optionally AES-256-GCM encrypted alerts with a verifiable audit log.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nServices restart, containers roll onto new digests, and atomic OS images stage and boot silently. By the time someone notices a restart loop or failed unit, the journal context is gone, and plain webhook posts carry no proof of who emitted them or whether they were tampered with in transit.\n\nInstall\nnot on PyPI yet (pending publish); builds in-tree",
+  "description": "Kind: tool\n\nProblem\nServices restart, containers roll onto new digests, and atomic OS images stage and boot silently. By the time someone notices a restart loop or failed unit, the journal context is gone, and plain webhook posts carry no proof of who emitted them or whether they were tampered with in transit.\n\nInstall\npip install awlert\n\nCommands\n  awlert\n\nQuick start\n  awlert --self-test\n  awlert emit updated awdiscord \"rolled new image\" --bundle\n  awlert verify\n  awlert tail -n 10\n  awlert watch --batch-window 300\n\nDocs\nhttps://aitherium.github.io/awlert/",
   "see_also": [
     "awdit",
     "awseal",
@@ -11,7 +11,7 @@
     "awdiscord",
     "awnix"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "Tamper-evident, Ed25519-signed and AES-256-GCM encrypted lifecycle alerts for services, container updates and atomic OS transitions.",
   "topic": "awlert"
 }

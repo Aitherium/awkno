@@ -1,7 +1,7 @@
 {
   "adopt": "Write one pack manifest over your master images and build a Discord, Telegram, Slack and post-ready bundle from it with one command.",
   "category": "brick",
-  "description": "Kind: tool\n\nProblem\nA sticker set made for Discord (320 px APNG under 512 KiB) is the wrong size, format and weight for Telegram (512 px WEBP), Slack (under 128 KB) and for a LinkedIn or X post (no sticker system at all, just a post-ready image plus alt text), so every app gets its own hand-resized copy and they drift apart.\n\nInstall\nnot yet published; builds in-tree\n\nCommands\n  awexpress\n\nQuick start\n  pip install -e. # Pillow is the only dependency",
+  "description": "Kind: tool\n\nProblem\nA sticker set made for Discord (320 px APNG under 512 KiB) is the wrong size, format and weight for Telegram (512 px WEBP), Slack (under 128 KB) and for a LinkedIn or X post (no sticker system at all, just a post-ready image plus alt text), so every app gets its own hand-resized copy and they drift apart.\n\nInstall\npip install awexpress\n\nCommands\n  awexpress\n\nQuick start\n  pip install -e. # Pillow is the only dependency\n\nDocs\nhttps://aitherium.github.io/awexpress/",
   "see_also": [
     "awpack",
     "awdiscord",
@@ -11,7 +11,7 @@
     "awdk",
     "awrtifact"
   ],
-  "status": "planned",
+  "status": "public",
   "synopsis": "One expression pack of stickers, emoji, captions and sounds, compiled for every app.",
   "topic": "awexpress"
 }
