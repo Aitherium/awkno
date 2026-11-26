@@ -11,7 +11,7 @@
     "awevolve",
     "awdk"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "A scheduler that learns -- pillars 2, 3 and 6 for wakes",
   "topic": "wake-learning-loop"
 }

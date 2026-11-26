@@ -9,7 +9,7 @@
     "awskills",
     "awpack"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "The workspace bridge",
   "topic": "workspace-bridge"
 }

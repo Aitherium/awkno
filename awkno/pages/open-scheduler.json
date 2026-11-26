@@ -9,7 +9,7 @@
     "awnode",
     "awdk"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "The scheduler, open -- route, queue, clock",
   "topic": "open-scheduler"
 }

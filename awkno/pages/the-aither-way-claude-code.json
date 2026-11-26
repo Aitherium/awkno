@@ -19,7 +19,7 @@
     "awdecide",
     "awvoice"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "The Aither way to run Claude Code",
   "topic": "the-aither-way-claude-code"
 }

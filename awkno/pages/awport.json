@@ -1,0 +1,17 @@
+{
+  "adopt": "Open a TTL-bounded TCP or UDP port forward or an X25519+Ed25519+AES-256-GCM encrypted relay with fail-closed egress gating, live listener/upstream verification and automatic expiry teardown.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nMoving a service port between localhost, an overlay mesh and an untrusted remote hop usually ends in ad-hoc ssh forwards, socat scripts or decaying NAT rules with no expiry, no peer authentication, no firewall gate and no way to tell whether the listener or the upstream died first.\n\nInstall\nnot on PyPI yet (pending publish); builds in-tree",
+  "see_also": [
+    "awnet",
+    "awwall",
+    "awseal",
+    "awdit",
+    "awlert",
+    "awtunnel",
+    "awnix"
+  ],
+  "status": "planned",
+  "synopsis": "Leased, firewall-gated, forward-secret encrypted TCP/UDP port forwarding across overlay meshes and untrusted hops.",
+  "topic": "awport"
+}

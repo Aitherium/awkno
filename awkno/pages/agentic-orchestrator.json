@@ -17,7 +17,7 @@
     "awseal",
     "awshare"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "An orchestrator for agent workloads -- stateful, governed, no cluster",
   "topic": "agentic-orchestrator"
 }

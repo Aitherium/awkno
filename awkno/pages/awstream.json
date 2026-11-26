@@ -1,0 +1,14 @@
+{
+  "adopt": "Serve a transparent 1920x1080 Browser Source overlay on localhost, control OBS scenes and privacy shield over OBS WebSocket v5, and record timestamped focus and highlight markers into a post-stream recap.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nLive-streaming a coding or agent session splits state across OBS scenes, a YouTube stream dashboard, a music player and a Discord voice room. Switching scenes, triggering a privacy shield, showing the current task and track, or clipping a highlight all become manual clicks that interrupt the work.\n\nInstall\nnot on PyPI yet (pending publish); builds in-tree",
+  "see_also": [
+    "awdiscord",
+    "awvoice",
+    "awdk",
+    "awdesk"
+  ],
+  "status": "planned",
+  "synopsis": "Dual-stream producer for YouTube Live and Discord Voice with OBS control and a live 1080p Browser Source HUD.",
+  "topic": "awstream"
+}

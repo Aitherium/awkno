@@ -1,0 +1,13 @@
+{
+  "adopt": "pip install \"awdk[memory]\"\n# The toolpack ships inside awdk (adk/toolpacks/deep_research) and registers\n# its ten dr_* tools automatically when loaded by awdk or AitherOS:\nadk pack show deep-research\nadk chat --pack deep_research",
+  "category": "pack",
+  "description": "Kind: pack\n\nWhat it does\nMulti-engine keyless web research and cited report writing: multi-angle web sweeps, cached page extraction, same-domain mirroring, a citable findings knowledge graph, and Markdown/PDF/DOCX report generation (registered in the runtime with dr_* prefixes).\n\nRuntime\nawdk>=3.8.0 with extras: memory\n\nTools\n  deep_research\n  web_search\n  fetch_url\n  mirror_website\n  save_finding\n  recall\n  knowledge_graph\n  generate_markdown\n  generate_pdf\n  generate_docx",
+  "see_also": [
+    "awdk",
+    "awpack",
+    "awm"
+  ],
+  "status": "preview",
+  "synopsis": "Multi-engine keyless web research and cited report writing: multi-angle web sweeps, cached page extraction, same-domain mirroring, a citable findings knowledge graph, and Markdown/PDF/DOCX report generation (registered in the runtime with dr_* prefixes).",
+  "topic": "deep-research"
+}

@@ -253,8 +253,14 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "-k", "--apropos", dest="search", help="Search for term (like man -k)"
     )
+    from . import __version__
+
     parser.add_argument(
-        "--self-test", action="store_true", help="Run self-test"
+        "--version", action="version", version=f"awkno {__version__}"
+    )
+    parser.add_argument(
+        "--self-test", "--selftest", dest="self_test", action="store_true",
+        help="Run self-test",
     )
     # add_help=False above keeps argparse from printing its own "-h" line in
     # the custom usage, but it also made `awkno --help` exit 2 with

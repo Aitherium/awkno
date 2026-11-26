@@ -9,7 +9,7 @@
     "awkno",
     "awsettings"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "The bare agent VM",
   "topic": "agent-vm"
 }

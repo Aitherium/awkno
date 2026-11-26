@@ -1,0 +1,17 @@
+{
+  "adopt": "Watch systemd unit transitions, container image digest diffs and bootc atomic status, coalesce restarts from updates, and emit Ed25519-signed, optionally AES-256-GCM encrypted alerts with a verifiable audit log.",
+  "category": "brick",
+  "description": "Kind: tool\n\nProblem\nServices restart, containers roll onto new digests, and atomic OS images stage and boot silently. By the time someone notices a restart loop or failed unit, the journal context is gone, and plain webhook posts carry no proof of who emitted them or whether they were tampered with in transit.\n\nInstall\nnot on PyPI yet (pending publish); builds in-tree",
+  "see_also": [
+    "awdit",
+    "awseal",
+    "awshare",
+    "awtunnel",
+    "awrelay",
+    "awdiscord",
+    "awnix"
+  ],
+  "status": "planned",
+  "synopsis": "Tamper-evident, Ed25519-signed and AES-256-GCM encrypted lifecycle alerts for services, container updates and atomic OS transitions.",
+  "topic": "awlert"
+}

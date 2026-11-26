@@ -9,7 +9,7 @@
     "awask",
     "awdk"
   ],
-  "status": "partial",
+  "status": "ready",
   "synopsis": "Set and forget -- the clock, the queue, and the record",
   "topic": "set-and-forget"
 }
